@@ -3,7 +3,7 @@
 <h2 align="center"> Everything about Document AI </h2>
 
 <p align="center">
-   <strong><a href="./Approachs/approaches.md">Approaches </a></strong> •
+   <strong><a href="./Approaches/approaches.md">Approaches </a></strong> •
    <strong><a href="./datasets.md">Datasets </a></strong> •
    <strong>SOTAs </a></strong>
 </p>

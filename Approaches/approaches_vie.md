@@ -7,20 +7,29 @@ With the rapid development of Internet technology and the increasing needs of in
 
 Different from the information extraction in traditional natural language processing, results of VIE is not only determined by texts, but also closely related to the doucment layout, font style, block color, figures, charts and other components. The analysis and processing of visually rich documents is a challenging task.
 
+Recently proposed deep-learning-based VIE methods can be roughly categorized into six types, namely the **grid-based methods**, the **graph-neural-network-based (GNN-based) methods**, the **Large Scale Pre-trained Models**, the **end-to-end methods**, the **few-shot methods**, and **other methods**. 
+
+- `Grid-based Methods` take the document image as a two-dimensional matrix, pixels inside the text bounding box are filled with text embeddings, forming the grid representation for deep processing. Grid-based methods are often simple and less computationally expensive. However, its representation ability is not strong enough, features of text regions in small size may not be fully exploited. 
+- `GNN-based Methods` take the text segments as graph nodes, relations between segment coordinates are encoded for edge representations. Operations like graph convolution are applied for feature extraction. GNN-based schemes achieve a good balance in cost and performance, but some characteristics of GNN itself, such as over-smoothing and gradient vanishing often make it hard to train the model. 
+- `Large Scale Pre-trained Models` obtain effective generic models through pre-training with a vast amount of data. These methods tend to have powerful generalizability and can be applied in a wide range of scenarios that can be extended to other document understanding tasks. However, these models are often computationally expensive and require sufficient computing resources, finding a more efficient architecture and pre-training strategy is still a problem to be solved. 
+- VIE is not an isolated process, results from text detection and recognition (optical character recognition, OCR) are needed as prerequisites. Problems in OCR results, such as coordinate mismatches and text recognition errors will affect the subsequent steps. Researchers tried to build `end-to-end paradigms`, which reduce the OCR error accumulation to some extent. But compared with state-of-the-art methods, there is still some way to go. 
+- `Few-shot methods` propose some efficient structures to enhance the generalization ability of models and try to fully explore intrinsic features with only a small number of samples. Although some progress has been made, the overall model accuracy still has a lot of room for improvement from the actual application.
+
 ---
 
-<h2> Table of Contents </h2>
+<h2> 🗒️Table of Contents </h2>
 
 - [Grid-based Methods](#grid-based-methods)
   - [Chargrid](#chargrid)
   - [BERTgrid](#bertgrid)
   - [ViBERTgrid](#vibertgrid)
+  - [VisualWordgrid](#visualwordgrid)
 - [GNN-based Methods](#gnn-based-methods)
   - [Liu GNN](#liu-gnn)
   - [PICK](#pick)
   - [MatchVIE](#matchvie)
   - [GraphDoc](#graphdoc)
-- [Large Scale Pre-trained Methods](#large-scale-pre-trained-methods)
+- [Large Scale Pre-trained Models](#large-scale-pre-trained-models)
   - [LayoutLM](#layoutlm)
   - [LayoutLMv2](#layoutlmv2)
   - [LayoutXLM](#layoutxlm)
@@ -29,6 +38,16 @@ Different from the information extraction in traditional natural language proces
   - [StrucTexT](#structext)
   - [XYLayoutLM](#xylayoutlm)
   - [SelfDoc](#selfdoc)
+  - [DocFormer](#docformer)
+  - [TILT](#tilt)
+  - [UDoc](#udoc)
+  - [DocReL](#docrel)
+  - [StructuralLM](#structurallm)
+  - [BROS](#bros)
+  - [Wei Robust Layout-aware IE](#wei-robust-layout-aware-ie)
+- [End-to-End Methods](#end-to-end-methods)
+- [Few-shot Methods](#few-shot-methods)
+- [Other Methods](#other-methods)
 
 ---
 ---
@@ -97,9 +116,26 @@ Different from the information extraction in traditional natural language proces
 - **Modalities**: Semantic; Layout; Visual
 - **Abstract**: Recent grid-based document representations like BERTgrid allow the simultaneous encoding of the textual and layout information of a document in a 2D feature map so that state-of-the-art image segmentation and/or object detection models can be straightforwardly leveraged to extract key information from documents. However, such methods have not achieved comparable performance to state-of-the-art sequence- and graph-based methods such as LayoutLM and PICK yet. In this paper, we propose a new multi-modal backbone network by concatenating a BERTgrid to an intermediate layer of a CNN model, where the input of CNN is a document image and the BERTgrid is a grid of word embeddings, to generate a more powerful grid-based document representation, named ViBERTgrid. Unlike BERTgrid, the parameters of BERT and CNN in our multimodal backbone network are trained jointly. Our experimental results demonstrate that this joint training strategy improves significantly the representation ability of ViBERTgrid. Consequently, our ViBERTgrid-based key information extraction approach has achieved state-of-the-art performance on real-world datasets.
 
+---
+
+## VisualWordgrid 
+
+*Mohamed Kerroumi, Othmane Sayem and Aymen Shabou. VisualWordGrid: Information Extraction From Scanned Documents Using A Multimodal Approach. ICDAR, 2021*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2021-orange"></img>
+  <a href="https://arxiv.org/abs/2010.02358">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a> 
+</p>
+
+- **Highlights**: Introduce visual modality to grid
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: We introduce a novel approach for scanned document representation to perform field extraction. It allows the simultaneous encoding of the textual, visual and layout information in a 3-axis tensor used as an input to a segmentation model. We improve the recent Chargrid and Wordgrid \cite{chargrid} models in several ways, first by taking into account the visual modality, then by boosting its robustness in regards to small datasets while keeping the inference time low. Our approach is tested on public and private document-image datasets, showing higher performances compared to the recent state-of-the-art methods.
 
 ---
 
+<br>
 <br>
 
 # GNN-based Methods
@@ -181,7 +217,7 @@ Different from the information extraction in traditional natural language proces
 
 <br>
 
-# Large Scale Pre-trained Methods
+# Large Scale Pre-trained Models
 
 ##  LayoutLM
 
@@ -338,3 +374,157 @@ Different from the information extraction in traditional natural language proces
 - **Highlights**: Cross-modality Encoder
 - **Modalities**: Semantic; Layout; Visual
 - **Abstract**: We propose SelfDoc, a task-agnostic pre-training framework for document image understanding. Because documents are multimodal and are intended for sequential reading, our framework exploits the positional, textual, and visual information of every semantically meaningful component in a document, and it models the contextualization between each block of content. Unlike existing document pre-training models, our model is coarse-grained instead of treating individual words as input, therefore avoiding an overly fine-grained with excessive contextualization. Beyond that, we introduce cross-modal learning in the model pre-training phase to fully leverage multimodal information from unlabeled documents. For downstream usage, we propose a novel modality-adaptive attention mechanism for multimodal feature fusion by adaptively emphasizing language and vision signals. Our framework benefits from self-supervised pre-training on documents without requiring annotations by a feature masking training strategy. It achieves superior performance on multiple downstream tasks with significantly fewer document images used in the pre-training stage compared to previous works.
+
+---
+
+## DocFormer
+
+*Appalaraju et al. DocFormer: End-to-End Transformer for Document Understanding. ICCV, 2021.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2021-orange"></img>
+  <a href="https://openaccess.thecvf.com/content/ICCV2021/html/Appalaraju_DocFormer_End-to-End_Transformer_for_Document_Understanding_ICCV_2021_paper.html">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-CVF-brightgreen"></img>
+  </a>
+  <a href="https://github.com/shabie/docformer">
+    <img alt="Code 1" src="https://img.shields.io/badge/Code-Unofficial-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Novel Multi-modal Attention Layer
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: We present DocFormer - a multi-modal transformer based architecture for the task of Visual Document Understanding (VDU). VDU is a challenging problem which aims to understand documents in their varied formats(forms, receipts etc.) and layouts. In addition, DocFormer is pre-trained in an unsupervised fashion using carefully designed tasks which encourage multi-modal interaction. DocFormer uses text, vision and spatial features and combines them using a novel multi-modal self-attention layer. DocFormer also shares learned spatial embeddings across modalities which makes it easy for the model to correlate text to visual tokens and vice versa. DocFormer is evaluated on 4 different datasets each with strong baselines. DocFormer achieves state-of-the-art results on all of them, sometimes beating models 4x its size (in no. of parameters)
+
+
+---
+
+## TILT
+
+*Powalski et al. Going Full-TILT Boogie on Document Understanding with Text-Image-Layout Transformer. ICDAR, 2021.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2021-orange"></img>
+  <a href="https://arxiv.org/abs/2102.09550">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Novel Attention Mechanism
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: We address the challenging problem of Natural Language Comprehension beyond plain-text documents by introducing the TILT neural network architecture which simultaneously learns layout information, visual features, and textual semantics. Contrary to previous approaches, we rely on a decoder capable of unifying a variety of problems involving natural language. The layout is represented as an attention bias and complemented with contextualized visual information, while the core of our model is a pretrained encoder-decoder Transformer. Our novel approach achieves state-of-the-art results in extracting information from documents and answering questions which demand layout understanding (DocVQA, CORD, SROIE). At the same time, we simplify the process by employing an end-to-end model.
+
+
+---
+
+## UDoc
+
+*Gu et al. UniDoc: Unified Pretraining Framework for Document Understanding. NeurIPS, 2021.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2021-orange"></img>
+  <a href="https://proceedings.neurips.cc/paper/2021/hash/0084ae4bc24c0795d1e6a4f58444d39b-Abstract.html">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-NeruIPS-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Gated Cross-Attention
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: Document intelligence automates the extraction of information from documents and supports many business applications. Recent self-supervised learning methods on large-scale unlabeled document datasets have opened up promising directions towards reducing annotation efforts by training models with self-supervised objectives. However, most of the existing document pretraining methods are still language-dominated. We present UDoc, a new unified pretraining framework for document understanding. UDoc is designed to support most document understanding tasks, extending the Transformer to take multimodal embeddings as input. Each input element is composed of words and visual features from a semantic region of the input document image. An important feature of UDoc is that it learns a generic representation by making use of three self-supervised losses, encouraging the representation to model sentences, learn similarities, and align modalities. Extensive empirical analysis demonstrates that the pretraining procedure learns better joint representations and leads to improvements in downstream tasks.
+
+
+---
+
+## DocReL
+
+*Li et al. Relational Representation Learning in Visually-Rich Documents. ACMMM, 2022.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2022-orange"></img>
+  <a href="https://arxiv.org/abs/2205.02411">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Contrastive Learning; Global/Local Relational Consistency Modeling
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: Relational understanding is critical for a number of visually-rich documents (VRDs) understanding tasks. Through multi-modal pre-training, recent studies provide comprehensive contextual representations and exploit them as prior knowledge for downstream tasks. In spite of their impressive results, we observe that the widespread relational hints (e.g., relation of key/value fields on receipts) built upon contextual knowledge are not excavated yet. To mitigate this gap, we propose DocReL, a Document Relational Representation Learning framework. The major challenge of DocReL roots in the variety of relations. From the simplest pairwise relation to the complex global structure, it is infeasible to conduct supervised training due to the definition of relation varies and even conflicts in different tasks. To deal with the unpredictable definition of relations, we propose a novel contrastive learning task named Relational Consistency Modeling (RCM), which harnesses the fact that existing relations should be consistent in differently augmented positive views. RCM provides relational representations which are more compatible to the urgent need of downstream tasks, even without any knowledge about the exact definition of relation. DocReL achieves better performance on a wide variety of VRD relational understanding tasks, including table structure recognition, key information extraction and reading order detection.
+
+
+---
+
+## StructuralLM
+
+*Li et al. StructuralLM: Structural Pre-training for Form Understanding. ACL, 2021.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2021-orange"></img>
+  <a href="https://aclanthology.org/2021.acl-long.493/">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACL-brightgreen"></img>
+  </a>
+  <a href="https://github.com/alibaba/AliceMind/tree/main/StructuralLM">
+    <img alt="Code 1" src="https://img.shields.io/badge/Code-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Cell-level Modeling
+- **Modalities**: Semantic; Layout
+- **Abstract**: Large pre-trained language models achieve state-of-the-art results when fine-tuned on downstream NLP tasks. However, they almost exclusively focus on text-only representation, while neglecting cell-level layout information that is important for form image understanding. In this paper, we propose a new pre-training approach, StructuralLM, to jointly leverage cell and layout information from scanned documents. Specifically, we pre-train StructuralLM with two new designs to make the most of the interactions of cell and layout information: 1) each cell as a semantic unit; 2) classification of cell positions. The pre-trained StructuralLM achieves new state-of-the-art results in different types of downstream tasks, including form understanding (from 78.95 to 85.14), document visual question answering (from 72.59 to 83.94) and document image classification (from 94.43 to 96.08).
+
+
+---
+
+## BROS
+
+*Hong et al. BROS: A Pre-Trained Language Model Focusing on Text and Layout for Better Key Information Extraction from Documents. AAAI, 2022.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2022-orange"></img>
+  <a href="https://ojs.aaai.org/index.php/AAAI/article/view/21322">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-AAAI-brightgreen"></img>
+  </a>
+  <a href="https://github.com/clovaai/bros">
+    <img alt="Code 1" src="https://img.shields.io/badge/Code-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Out-of-Order OCR Results Compatible
+- **Modalities**: Semantic; Layout
+- **Abstract**: Key information extraction (KIE) from document images requires understanding the contextual and spatial semantics of texts in two-dimensional (2D) space. Many recent studies try to solve the task by developing pre-trained language models focusing on combining visual features from document images with texts and their layout. On the other hand, this paper tackles the problem by going back to the basic: effective combination of text and layout. Specifically, we propose a pre-trained language model, named BROS (BERT Relying On Spatiality), that encodes relative positions of texts in 2D space and learns from unlabeled documents with area-masking strategy. With this optimized training scheme for understanding texts in 2D space, BROS shows comparable or better performance compared to previous methods on four KIE benchmarks (FUNSD, SROIE*, CORD, and SciTSR) without relying on visual features. This paper also reveals two real-world challenges in KIE tasks-(1) minimizing the error from incorrect text ordering and (2) efficient learning from fewer downstream examples-and demonstrates the superiority of BROS over previous methods.
+
+
+---
+
+## Wei Robust Layout-aware IE
+
+*Wei et al. Robust layout-aware IE for visually rich documents with pre-trained language models. SIGIR, 2020.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2020-orange"></img>
+  <a href="https://arxiv.org/abs/2005.11017">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Font-type Encoding
+- **Modalities**: Semantic; Layout
+- **Abstract**: Many business documents processed in modern NLP and IR pipelines are visually rich: in addition to text, their semantics can also be captured by visual traits such as layout, format, and fonts. We study the problem of information extraction from visually rich documents (VRDs) and present a model that combines the power of large pre-trained language models and graph neural networks to efficiently encode both textual and visual information in business documents. We further introduce new fine-tuning objectives to improve in-domain unsupervised fine-tuning to better utilize large amount of unlabeled in-domain data. We experiment on real world invoice and resume data sets and show that the proposed method outperforms strong text-based RoBERTa baselines by 6.3% absolute F1 on invoices and 4.7% absolute F1 on resumes. When evaluated in a few-shot setting, our method requires up to 30x less annotation data than the baseline to achieve the same level of performance at ~90% F1.
+
+
+
+<br>
+<br>
+
+# End-to-End Methods
+
+
+
+<br>
+<br>
+
+# Few-shot Methods
+
+
+<br>
+<br>
+
+# Other Methods

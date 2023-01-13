@@ -1,16 +1,16 @@
 <h1 align="center"> Document AI Recommendations </h1>
 
-<h2 align="center"> Everything about Document AI </h2>
+<p align="center"><font size=4>Everything about Document AI</font></p>
 
 <p align="center">
-   <strong><a href="./Approaches/approaches.md">Approaches </a></strong> •
-   <strong><a href="./datasets.md">Datasets </a></strong> •
-   <strong>SOTAs </a></strong>
+   <strong><a href="./Approaches/approaches.md"> Approaches </a></strong> •
+   <strong><a href="./datasets.md"> Datasets </a></strong> •
+   <strong> SOTAs </a></strong>
 </p>
 
 <p align="center">
    <strong><a href="#vie">Visual Information Extraction</a></strong> •
-   <strong>Table Recognition</a></strong> •
+   <strong>Table Structure Recognition</a></strong> •
    <strong>Layout Analysis</a></strong>
 </p>
 
@@ -22,7 +22,7 @@
 
 This repository collects all information in the field of Document AI, including [algorithms](Approaches/approaches.md), [datasets](datasets.md), [metric comparisons](SOTAs/sotas.md), and so on.
 
-Document AI algorithms aims an reading, analyzing and understanding documents. Research fields include Visual Information Extraction, Table Recognition, Layout Analysis, Document Classification, Document VQA, etc. In recent years, researchers have proposed many methods based on deep learning with outstanding performance and high efficiency, which have been widely applied in real scenarios. We extensively survey the deep-learning-based algorithms and public datasets proposed in recent years and build this reposity. Hope our work helps.
+Document AI algorithms aims an reading, analyzing and understanding documents. Research fields include Visual Information Extraction, Table Structure Recognition, Layout Analysis, Document Classification, Document VQA, etc. In recent years, researchers have proposed many methods based on deep learning with outstanding performance and high efficiency, which have been widely applied in real scenarios. We extensively survey the deep-learning-based algorithms and public datasets proposed in recent years and build this reposity. Hope our work helps.
 
 <br>
 <br>
@@ -49,17 +49,17 @@ Visual information extraction can be seen as the promotion and extension of name
 
 ---
 
-<h2 id="tr" align="center"> Table Recognition </h2>
+<h2 id="tr" align="center"> Table Structure Recognition </h2>
 
 <p align="center">
-  <a href="./Approaches/approaches_tr.md">
-    <img alt="approaches-tr" src="https://img.shields.io/badge/Approaches-purple"></img>
+  <a href="./Approaches/approaches_tsr.md">
+    <img alt="approaches-tsr" src="https://img.shields.io/badge/Approaches-purple"></img>
   </a> 
-  <a href="./Datasets/datasets_tr.md">
-    <img alt="datasets-tr" src="https://img.shields.io/badge/Datasets-blue"></img>
+  <a href="./Datasets/datasets_tsr.md">
+    <img alt="datasets-tsr" src="https://img.shields.io/badge/Datasets-blue"></img>
   </a>
-  <a href="./SOTAs/sotas_tr.md">
-    <img alt="sotas-tr" src="https://img.shields.io/badge/SOTAs-green"></img>
+  <a href="./SOTAs/sotas_tsr.md">
+    <img alt="sotas-tsr" src="https://img.shields.io/badge/SOTAs-green"></img>
   </a>
 </p>
 

@@ -2,8 +2,8 @@
 
 <p align="center">
    <strong><a href="./approaches_vie.md">Visual Information Extraction </a></strong> •
-   <strong>Layout Analysis </a></strong> •
-   <strong>Table Recognition </a></strong>
+   <strong>Table Structure Recognition </a></strong> •
+   <strong>Layout Analysis </a></strong>
 </p>
 
-This section collects algorithms of Document AI. Research fields include visual information extraction, layout analysis and table recognition. Click the link above to view details.
+This section collects algorithms of Document AI. Research fields include visual information extraction, layout analysis and table structure recognition. Click the link above to view details.

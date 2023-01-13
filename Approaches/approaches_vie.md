@@ -17,7 +17,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 ---
 
-<h2> 🗒️Table of Contents </h2>
+<h2> 🗒️List of Index </h2>
 
 - [Grid-based Methods](#grid-based-methods)
   - [Chargrid](#chargrid)
@@ -46,8 +46,14 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [BROS](#bros)
   - [Wei Robust Layout-aware IE](#wei-robust-layout-aware-ie)
 - [End-to-End Methods](#end-to-end-methods)
+  - [EATEN](#eaten)
+  - [TRIE](#trie)
+  - [VIES](#vies)
+  - [Donut🍩](#donut)
 - [Few-shot Methods](#few-shot-methods)
 - [Other Methods](#other-methods)
+  - [TCPN](#tcpn)
+  - [SPADE♠](#spade)
 
 ---
 ---
@@ -73,6 +79,9 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   </a>
   <a href="https://github.com/thanhhau097/chargrid2d">
     <img alt="Code 3" src="https://img.shields.io/badge/Code-Unofficial 3-blue"></img>
+  </a>
+  <a href="https://github.com/hikopensource/DAVAR-Lab-OCR/tree/main/demo/text_ie/chargrid">
+    <img alt="Code 4" src="https://img.shields.io/badge/Code-Unofficial 4-blue"></img> 
   </a>
 </p>
 
@@ -516,6 +525,85 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 # End-to-End Methods
 
+## EATEN
+
+*Guo et al. EATEN: Entity-Aware Attention for Single Shot Visual Text Extraction. ICDAR, 2019.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2019-orange"></img>
+  <a href="https://arxiv.org/abs/1909.09380">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/beacandler/EATEN">
+    <img alt="Code 1" src="https://img.shields.io/badge/DatasetRelease-Official-yellow"></img>
+  </a>
+</p>
+
+- **Highlights**: Pure End-to-End
+- **Modalities**: Visual
+- **Abstract**: Extracting Text of Interest (ToI) from images is a crucial part of many OCR applications, such as entity recognition of cards, invoices, and receipts. Most of the existing works employ complicated engineering pipeline, which contains OCR and structure information extraction, to fulfill this task. This paper proposes an Entity-aware Attention Text Extraction Network called EATEN, which is an end-to-end trainable system to extract the ToIs without any post-processing. In the proposed framework, each entity is parsed by its corresponding entity-aware decoder, respectively. Moreover, we innovatively introduce a state transition mechanism which further improves the robustness of visual ToI extraction. In consideration of the absence of public benchmarks, we construct a dataset of almost 0.6 million images in three real-world scenarios (train ticket, passport and business card), which is publicly available at https://github.com/beacandler/EATEN. To the best of our knowledge, EATEN is the first single shot method to extract entities from images. Extensive experiments on these benchmarks demonstrate the state-of-the-art performance of EATEN.
+
+---
+
+## TRIE
+
+*Zhang et al. TRIE: End-to-End Text Reading and Information Extraction for Document Understanding. ACMMM, 2020.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2020-orange"></img>
+  <a href="https://arxiv.org/abs/2005.13118">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/hikopensource/DAVAR-Lab-OCR/tree/main/demo/text_ie/trie">
+    <img alt="Code 1" src="https://img.shields.io/badge/Code-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Seminal Work
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: Since real-world ubiquitous documents (e.g., invoices, tickets, resumes and leaflets) contain rich information, automatic document image understanding has become a hot topic. Most existing works decouple the problem into two separate tasks, (1) text reading for detecting and recognizing texts in images and (2) information extraction for analyzing and extracting key elements from previously extracted plain text. However, they mainly focus on improving information extraction task, while neglecting the fact that text reading and information extraction are mutually correlated. In this paper, we propose a unified end-to-end text reading and information extraction network, where the two tasks can reinforce each other. Specifically, the multimodal visual and textual features of text reading are fused for information extraction and in turn, the semantics in information extraction contribute to the optimization of text reading. On three real-world datasets with diverse document images (from fixed layout to variable layout, from structured text to semi-structured text), our proposed method significantly outperforms the state-of-the-art methods in both efficiency and accuracy.
+
+---
+
+## VIES
+
+*Wang et al. Towards Robust Visual Information Extraction in Real World: New Dataset and Novel Solution. AAAI, 2021.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2021-orange"></img>
+  <a href="https://ojs.aaai.org/index.php/AAAI/article/view/16378">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-AAAI-brightgreen"></img>
+  </a>
+  <a href="https://github.com/HCIILAB/EPHOIE">
+    <img alt="Code 1" src="https://img.shields.io/badge/DatasetRelease-Official-yellow"></img>
+  </a>
+</p>
+
+- **Highlights**: Segment/Char-level Encoding
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: Visual information extraction (VIE) has attracted considerable attention recently owing to its various advanced applications such as document understanding, automatic marking and intelligent education. Most existing works decoupled this problem into several independent sub-tasks of text spotting (text detection and recognition) and information extraction, which completely ignored the high correlation among them during optimization. In this paper, we propose a robust visual information extraction system (VIES) towards real-world scenarios, which is a unified end-to-end trainable framework for simultaneous text detection, recognition and information extraction by taking a single document image as input and outputting the structured information. Specifically, the information extraction branch collects abundant visual and semantic representations from text spotting for multimodal feature fusion and conversely, provides higher-level semantic clues to contribute to the optimization of text spotting. Moreover, regarding the shortage of public benchmarks, we construct a fully-annotated dataset called EPHOIE (this https URL), which is the first Chinese benchmark for both text spotting and visual information extraction. EPHOIE consists of 1,494 images of examination paper head with complex layouts and background, including a total of 15,771 Chinese handwritten or printed text instances. Compared with the state-of-the-art methods, our VIES shows significant superior performance on the EPHOIE dataset and achieves a 9.01% F-score gain on the widely used SROIE dataset under the end-to-end scenario.
+
+---
+
+## Donut🍩
+
+*Kim et al. OCR-free Document Understanding Transformer. ECCV, 2022.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2022-orange"></img>
+  <a href="https://arxiv.org/abs/2111.15664">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/clovaai/donut">
+    <img alt="Code 1" src="https://img.shields.io/badge/Code-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Pure End-to-End; Structured IE
+- **Modalities**: Visual
+- **Abstract**: Understanding document images (e.g., invoices) is a core but challenging task since it requires complex functions such as reading text and a holistic understanding of the document. Current Visual Document Understanding (VDU) methods outsource the task of reading text to off-the-shelf Optical Character Recognition (OCR) engines and focus on the understanding task with the OCR outputs. Although such OCR-based approaches have shown promising performance, they suffer from 1) high computational costs for using OCR; 2) inflexibility of OCR models on languages or types of document; 3) OCR error propagation to the subsequent process. To address these issues, in this paper, we introduce a novel OCR-free VDU model named Donut, which stands for Document understanding transformer. As the first step in OCR-free VDU research, we propose a simple architecture (i.e., Transformer) with a pre-training objective (i.e., cross-entropy loss). Donut is conceptually simple yet effective. Through extensive experiments and analyses, we show a simple OCR-free VDU model, Donut, achieves state-of-the-art performances on various VDU tasks in terms of both speed and accuracy. In addition, we offer a synthetic data generator that helps the model pre-training to be flexible in various languages and domains.
+
+---
 
 
 <br>
@@ -523,8 +611,46 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 # Few-shot Methods
 
+Under Construction
+
 
 <br>
 <br>
+
 
 # Other Methods
+
+## TCPN
+
+*Wang et al. Tag, Copy or Predict: A Unified Weakly-Supervised Learning Framework for Visual Information Extraction using Sequences. IJCAI, 2021.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2021-orange"></img>
+  <a href="https://www.ijcai.org/proceedings/2021/150">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-IJCAI-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: OCR Error Correction
+- **Modalities**: Semantic; Layout
+- **Abstract**: Visual information extraction (VIE) has attracted increasing attention in recent years. The existing methods usually first organized optical character recognition (OCR) results in plain texts and then utilized token-level category annotations as supervision to train a sequence tagging model. However, it expends great annotation costs and may be exposed to label confusion, the OCR errors will also significantly affect the final performance. In this paper, we propose a unified weakly-supervised learning framework called TCPNet (Tag, Copy or Predict Network), which introduces 1) an efficient encoder to simultaneously model the semantic and layout information in 2D OCR results, 2) a weakly-supervised training method that utilizes only sequence-level supervision; and 3) a flexible and switchable decoder which contains two inference modes: one (Copy or Predict Mode) is to output key information sequences of different categories by copying a token from the input or predicting one in each time step, and the other (Tag Mode) is to directly tag the input sequence in a single forward pass. Our method shows new state-of-the-art performance on several public benchmarks, which fully proves its effectiveness.
+
+---
+
+## SPADE♠
+
+*Hwang et al. Spatial Dependency Parsing for Semi-Structured Document Information Extraction. ACL Findings, 2021.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2021-orange"></img>
+  <a href="https://aclanthology.org/2021.findings-acl.28/">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACL-brightgreen"></img>
+  </a>
+  <a href="https://github.com/clovaai/spade">
+    <img alt="Code 1" src="https://img.shields.io/badge/Code-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Structured IE; Entity Linking
+- **Modalities**: Semantic; Layout
+- **Abstract**: Information Extraction (IE) for semi-structured document images is often approached as a sequence tagging problem by classifying each recognized input token into one of the IOB (Inside, Outside, and Beginning) categories. However, such problem setup has two inherent limitations that (1) it cannot easily handle complex spatial relationships and (2) it is not suitable for highly structured information, which are nevertheless frequently observed in real-world document images. To tackle these issues, we first formulate the IE task as spatial dependency parsing problem that focuses on the relationship among text segment nodes in the documents. Under this setup, we then propose SPADE (SPAtial DEpendency parser) that models highly complex spatial relationships and an arbitrary number of information layers in the documents in an end-to-end manner. We evaluate it on various kinds of documents such as receipts, name cards, forms, and invoices, and show that it achieves a similar or better performance compared to strong baselines including BERT-based IOB taggger, with up to 37.7% improvement.

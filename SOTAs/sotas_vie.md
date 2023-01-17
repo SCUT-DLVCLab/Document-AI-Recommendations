@@ -45,14 +45,47 @@ The [zhang-shasha](https://github.com/timtadh/zhang-shasha) library can be used 
 
 ## SROIE
 
+The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset contains 4 key categories, each category contains one or no entity. If the predicted string of a key category is consistant with the ground-truth string, it will be recorded as a TP sample. The total number of TP, total number of predictions and total number of ground-truth strings will be used to calculate the score. Evaluation scripts can be found at the [ICDAR2019 SROIE official page](https://rrc.cvc.uab.es/?ch=13&com=downloads)(Download page, Task 3 Evaluation script).
+
+|Approach|Type|Precision|Recall|F1|
+|--|--|--|--|--|
+|[ViBERTgrid(BERT-base)](../Approaches/approaches_vie.md/#vibertgrid)|Grid-based|-|-|96.25|
+|[ViBERTgrid(RoBERTa-base)](../Approaches/approaches_vie.md/#vibertgrid)|Grid-based|-|-|96.40|
+|[PICK](../Approaches/approaches_vie.md/#pick)|GNN-based|-|-|96.12|
+|[MatchVIE](../Approaches/approaches_vie.md/#matchvie)|GNN-based|-|-|96.57|
+|[GraphDoc](../Approaches/approaches_vie.md/#graphdoc)|GNN-based|-|-|98.45|
+|[LayoutLM-base](../Approaches/approaches_vie.md/#layoutlm)|Large Scale Pre-trained|94.38|94.38|94.38|
+|[LayoutLM-large](../Approaches/approaches_vie.md/#layoutlm)|Large Scale Pre-trained|95.24|95.24|95.24|
+|[LayoutLMv2-base](../Approaches/approaches_vie.md/#layoutlmv2)|Large Scale Pre-trained|96.25|96.25|96.25|
+|[LayoutLMv2-large](../Approaches/approaches_vie.md/#layoutlmv2)|Large Scale Pre-trained|99.04|96.61|97.81|
+|[TILT-base](../Approaches/approaches_vie.md/#tilt)|Large Scale Pre-trained|-|-|97.65|
+|[TILT-large](../Approaches/approaches_vie.md/#tilt)|Large Scale Pre-trained|-|-|98.10|
+|[BROS-base](../Approaches/approaches_vie.md/#bros)|Large Scale Pre-trained|-|-|95.91|
+|[BROS-large](../Approaches/approaches_vie.md/#bros)|Large Scale Pre-trained|-|-|96.62|
+|[StrucTexT(eng-base)](../Approaches/approaches_vie.md/#structext)|Large Scale Pre-trained|-|-|96.88|
+|[StrucTexT(chn&eng-base)](../Approaches/approaches_vie.md/#structext)|Large Scale Pre-trained|-|-|98.27|
+|[StrucTexT(chn&eng-large)](../Approaches/approaches_vie.md/#structext)|Large Scale Pre-trained|-|-|98.70|
+|[TRIE(ground-truth)](../Approaches/approaches_vie.md/#trie)|End to End|-|-|96.18|
+|[TRIE(end-to-end)](../Approaches/approaches_vie.md/#trie)|End to End|-|-|82.06|
+|[VIES(ground-truth)](../Approaches/approaches_vie.md/#vies)|End to End|-|-|96.12|
+|[VIES(end-to-end)](../Approaches/approaches_vie.md/#vies)|End to End|-|-|91.07|
+|[TCPN(TextLattice)](../Approaches/approaches_vie.md/#tcpn)|End to End|-|-|96.54|
+|[TCPN(Tag, end-to-end)](../Approaches/approaches_vie.md/#tcpn)|End to End|-|-|95.46|
+|[TCPN(Tag, end-to-end)](../Approaches/approaches_vie.md/#tcpn)|End to End|-|-|91.21|
+|[TCPN(Copy&Tag, end-to-end)](../Approaches/approaches_vie.md/#tcpn)|End to End|-|-|91.93|
+
+<br>
 
 ## CORD
 
+<br>
 
 ## FUNSD
 
+<br>
 
 ## XFUND
 
+<br>
 
 ## EPHOIE

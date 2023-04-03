@@ -10,13 +10,15 @@
 
 <p align="center">
    <strong><a href="#vie">Visual Information Extraction</a></strong> •
-   <strong>Table Structure Recognition</a></strong> •
+   <strong><a href="#tsr">Table Structure Recognition</a></strong> •
    <strong>Layout Analysis</a></strong>
 </p>
 
-<h2> Updates👀 </h2>
+<h2>👀Updates </h2>
 
 - **Jan 2023**: Repository Release
+
+<br>
 
 <h2> Introduction </h2>
 
@@ -45,11 +47,11 @@ Document AI algorithms aims an reading, analyzing and understanding documents. R
 
 With the rapid development of Internet technology and the increasing needs of information exchange, quantities of documents are digitalized, stored and distributed in the form of images. Numerous application scenarios, such as receipt understanding, card recognition, automatic paper scoring and document matching, are concerned on how to obtain key information from document images. The process is called visual information extraction (VIE), which aims at **mining, analyzing, and extracting key entities contained in visually rich documents**. For example, given an image of a receipt, the VIE algorithms will tell information such as store name, product details, price, etc. For documents like forms, VIE algorithms will tell the key-value pairs contained.
 
-Visual information extraction can be seen as the promotion and extension of named entity recognition (NER) and entity linking to the field of visually rich documents. Different from the information extraction in traditional natural language processing, results of VIE not only depends on texts, but also closely relates to the doucment layout, font style, block color, figures, charts and other components.
+Visual information extraction can be seen as the promotion and extension of named entity recognition(NER) and entity linking(EL) to the field of visually rich documents. Different from the information extraction in traditional natural language processing, results of VIE not only depends on texts, but also closely relates to the doucment layout, font style, block color, figures, charts and other components.
 
 ---
 
-<h2 id="tr" align="center"> Table Structure Recognition </h2>
+<h2 id="tsr" align="center"> Table Structure Recognition </h2>
 
 <p align="center">
   <a href="./Approaches/approaches_tsr.md">

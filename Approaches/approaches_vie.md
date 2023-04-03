@@ -7,13 +7,14 @@ With the rapid development of Internet technology and the increasing needs of in
 
 Different from the information extraction in traditional natural language processing, results of VIE is not only determined by texts, but also closely related to the doucment layout, font style, block color, figures, charts and other components. The analysis and processing of visually rich documents is a challenging task.
 
-Recently proposed deep-learning-based VIE methods can be roughly categorized into six types, namely the **grid-based methods**, the **graph-neural-network-based (GNN-based) methods**, the **Large Scale Pre-trained Models**, the **end-to-end methods**, the **few-shot methods**, and **other methods**. 
+Recently proposed deep-learning-based VIE methods can be roughly categorized into six types, namely the **grid-based methods**, the **graph-neural-network-based (GNN-based) methods**, the **Large Scale Pre-trained Models**, the **end-to-end methods**, the **few-shot methods**, **GPT-based methods**,and **other methods**. 
 
 - `Grid-based Methods` take the document image as a two-dimensional matrix, pixels inside the text bounding box are filled with text embeddings, forming the grid representation for deep processing. Grid-based methods are often simple and less computationally expensive. However, its representation ability is not strong enough, features of text regions in small size may not be fully exploited. 
 - `GNN-based Methods` take the text segments as graph nodes, relations between segment coordinates are encoded for edge representations. Operations like graph convolution are applied for feature extraction. GNN-based schemes achieve a good balance in cost and performance, but some characteristics of GNN itself, such as over-smoothing and gradient vanishing often make it hard to train the model. 
 - `Large Scale Pre-trained Models` obtain effective generic models through pre-training with a vast amount of data. These methods tend to have powerful generalizability and can be applied in a wide range of scenarios that can be extended to other document understanding tasks. However, these models are often computationally expensive and require sufficient computing resources, finding a more efficient architecture and pre-training strategy is still a problem to be solved. 
 - VIE is not an isolated process, results from text detection and recognition (optical character recognition, OCR) are needed as prerequisites. Problems in OCR results, such as coordinate mismatches and text recognition errors will affect the subsequent steps. Researchers tried to build `end-to-end paradigms`, which reduce the OCR error accumulation to some extent. But compared with state-of-the-art methods, there is still some way to go. 
 - `Few-shot methods` propose some efficient structures to enhance the generalization ability of models and try to fully explore intrinsic features with only a small number of samples. Although some progress has been made, the overall model accuracy still has a lot of room for improvement from the actual application.
+- Recently, the GPT series models (ChagGPT, GPT-4) have developed rapidly, and have achieved amazing results in many NLP tasks. `GPT-based methods` take advantage of the powerful capabilities of the GPT models to handle VIE by designing appropriate prompt inputs. These schemes provide a new solution to the field of Document Understanding.
 
 ---
 
@@ -50,7 +51,10 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [TRIE](#trie)
   - [VIES](#vies)
   - [Donut🍩](#donut)
+  - [ESP](#esp)
 - [Few-shot Methods](#few-shot-methods)
+- [GPT-based Methods](#gpt-based-methods)
+  - [ICL-D3IE](#icl-d3ie)
 - [Other Methods](#other-methods)
   - [TCPN](#tcpn)
   - [SPADE♠](#spade)
@@ -605,6 +609,24 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 ---
 
+## ESP
+
+*Yang et al. Modeling Entities as Semantic Points for Visual Information Extraction in the Wild. CVPR, 2023.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2023-orange"></img>
+  <a href="https://arxiv.org/abs/2303.13095">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://www.modelscope.cn/datasets/damo/SIBR/summary">
+    <img alt="DatasetRelease" src="https://img.shields.io/badge/Dataset-Official-yellow"></img>
+  </a>
+</p>
+
+- **Highlights**: Low Inference Memory Consumption; Entity Linking; Multi-line Entity Merging
+- **Modalities**: Visual
+- **Abstract**: Recently, Visual Information Extraction (VIE) has been becoming increasingly important in both the academia and industry, due to the wide range of real-world applications. Previously, numerous works have been proposed to tackle this problem. However, the benchmarks used to assess these methods are relatively plain, i.e., scenarios with real-world complexity are not fully represented in these benchmarks. As the first contribution of this work, we curate and release a new dataset for VIE, in which the document images are much more challenging in that they are taken from real applications, and difficulties such as blur, partial occlusion, and printing shift are quite common. All these factors may lead to failures in information extraction. Therefore, as the second contribution, we explore an alternative approach to precisely and robustly extract key information from document images under such tough conditions. Specifically, in contrast to previous methods, which usually either incorporate visual information into a multi-modal architecture or train text spotting and information extraction in an end-to-end fashion, we explicitly model entities as semantic points, i.e., center points of entities are enriched with semantic information describing the attributes and relationships of different entities, which could largely benefit entity labeling and linking. Extensive experiments on standard benchmarks in this field as well as the proposed dataset demonstrate that the proposed method can achieve significantly enhanced performance on entity labeling and linking, compared with previous state-of-the-art models.
+
 
 <br>
 <br>
@@ -616,6 +638,35 @@ Under Construction
 
 <br>
 <br>
+
+---
+
+# GPT-based Methods
+
+## ICL-D3IE
+
+*He et al. ICL-D3IE: In-Context Learning with Diverse Demonstrations Updating for Document Information Extraction*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2023-orange"></img>
+  <a href="https://arxiv.org/abs/2303.05063">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/MAEHCM/ICL-D3IE">
+    <img alt="Code" src="https://img.shields.io/badge/Code-GitHub-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Seminal Work
+- **Modalities**: Semantic Only
+- **Abstract**: Large language models (LLMs), such as GPT-3 and ChatGPT, have demonstrated remarkable results in various natural language processing (NLP) tasks with in-context learning, which involves inference based on a few demonstration examples. Despite their successes in NLP tasks, no investigation has been conducted to assess the ability of LLMs to perform document information extraction (DIE) using in-context learning. Applying LLMs to DIE poses two challenges: the modality and task gap. To this end, we propose a simple but effective in-context learning framework called ICL-D3IE, which enables LLMs to perform DIE with different types of demonstration examples. Specifically, we extract the most difficult and distinct segments from hard training documents as hard demonstrations for benefiting all test instances. We design demonstrations describing relationships that enable LLMs to understand positional relationships. We introduce formatting demonstrations for easy answer extraction. Additionally, the framework improves diverse demonstrations by updating them iteratively. Our experiments on three widely used benchmark datasets demonstrate that the ICL-D3IE framework enables GPT-3/ChatGPT to achieve superior performance when compared to previous pre-trained methods fine-tuned with full training in both the in-distribution (ID) setting and in the out-of-distribution (OOD) setting.
+
+
+<br>
+<br>
+
+---
+
 
 
 # Other Methods

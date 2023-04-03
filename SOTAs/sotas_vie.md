@@ -39,8 +39,6 @@ The [zhang-shasha](https://github.com/timtadh/zhang-shasha) library can be used 
 - [XFUND](#xfund)
 - [EPHOIE](#ephoie)
 
-
-
 ---
 
 ## SROIE
@@ -189,7 +187,7 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
 </tr>
 </tr>
     <td rowspan=4>Other Methods</td>
-    <td rowspan=4><a href="../Approaches/approaches_vie.md/#vies">VIES</a></td>
+    <td rowspan=4><a href="../Approaches/approaches_vie.md/#tcpn">TCPN</a></td>
     <td>TextLattice</td>
     <td>-</td>
     <td>-</td>
@@ -219,8 +217,6 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
 <br>
 
 ## CORD
-
-CORD is an English receipt dataset proposed by Colva AI, and it has two subtasks: Entity Extraction and Entity Linking. It contains 1,000 samples, 800 of which are used for training, 100 for validation, and 100 for testing. The annotations include segment-level and word-level OCR results, key information categories of each segments, and entity linkings. The dataset contains 4 main key information categories, each of them can be further divided into sub-categories, forming a total of 30 key information classes. Different from other datasets, the key information of CORD has a hierarchical relationship, which increases the difficulty of information extraction.
 
 <table align="center">
 <tr>
@@ -444,9 +440,9 @@ CORD is an English receipt dataset proposed by Colva AI, and it has two subtasks
 
 ## FUNSD
 
-FUNSD contains 199 form data sampled from the RVL-CDIP dataset, 149 of which are used for training and 50 for testing. The images of the dataset have low resolution, complex layouts, and varied styles. Each form contains three kinds of information including Header, Question, and Answer. The pair linkings between Questions and Answers are given, and the task requires extracting key entities (Entity Extraction) and question-answer pairs (Entity Linking). The dataset contains OCR results at word-level and segment-level. 
+FUNSD requires extracting key entities (Entity Extraction) and key-value pairs (Entity Linking). Micro-F1 is taken as the evaluation metric. Each document contains two kinds of key information: Question and Answer, and each key category has multiple instances. In Entity Extraction task, the predicted entity will be considered as TP if and only if its content and category are consistent with the ground-truth. In Entity Linking task, the prediction will be considered as TP if and only if the predicted pair exists in the ground-truth pairs. 
 
-It is noticable that the two subtasks are independent in most of the mainstream approaches' settings. Take LayoutLM as an example, in Entity Linking task, the [official implementation](https://github.com/microsoft/unilm) takes groud-truth of keys and values as input and predict the linkings only, the performance of entity extraction is not considered when calculating the metric. 
+It is noticable that the two subtasks are independent in most of the mainstream approaches' settings. Take LayoutLM as an example, in Entity Linking task, the [official implementation](https://github.com/microsoft/unilm) takes the groud-truth of Entity Extraction as input and predict the linkings only, the performance of entity extraction is not considered in this case. 
 
 <table align="center">
 <tr>
@@ -761,6 +757,355 @@ It is noticable that the two subtasks are independent in most of the mainstream 
 
 ## XFUND
 
+XFUND is an extension of the FUNSD dataset. It covers 7 languages, including Chinese, Japanese, Spanish, French, Italian, German, and Portuguese. It contains 1,393 fully annotated forms, and each language includes 199 forms, where the training set includes 149 forms, and the test set includes 50 forms. XFUND also has two subtasks, and its evaluation protocol is consistent with the one in FUNSD.
+
+Note: In the following charts, only the scores reproted on XFUND is counted when calculating the Average F1-score. Hence the values of the Avg. score may be different from the ones reported in papers.
+
+<table align="center">
+<tr>
+    <th rowspan=2> Type </th>
+    <th rowspan=2 colspan=2> Approach </th>
+    <th colspan=8> Entity Extraction </th>
+    <th colspan=8> Entity Linking </th>
+</tr>
+<tr>
+    <td>ZH</td>
+    <td>JA</td>
+    <td>ES</td>
+    <td>FR</td>
+    <td>IT</td>
+    <td>DE</td>
+    <td>PT</td>
+    <td>Avg.</td>
+    <td>ZH</td>
+    <td>JA</td>
+    <td>ES</td>
+    <td>FR</td>
+    <td>IT</td>
+    <td>DE</td>
+    <td>PT</td>
+    <td>Avg.</td>
+</tr>
+</tr>
+    <td rowspan=10>Large Scale Pre-trained</td>
+    <td rowspan=6><a href="../Approaches/approaches_vie.md/#layoutlxlm">LayoutXLM</a></td>
+    <td>base, Language Specific Fine-tuning</td>
+    <td>89.24</td>
+    <td>79.21</td>
+    <td>75.50</td>
+    <td>79.02</td>
+    <td>80.02</td>
+    <td>82.22</td>
+    <td>79.03</td>
+    <td>82.40</td>
+    <td>70.73</td>
+    <td>69.63</td>
+    <td>68.96</td>
+    <td>63.53</td>
+    <td>64.15</td>
+    <td>65.51</td>
+    <td>57.18</td>
+    <td>65.67</td>
+</tr>
+<tr>
+    <td>large, Language Specific Fine-tuning</td>
+    <td>91.61</td>
+    <td>80.33</td>
+    <td>78.30</td>
+    <td>80.98</td>
+    <td>82.75</td>
+    <td>83.61</td>
+    <td>82.73</td>
+    <td>82.90</td>
+    <td>78.88</td>
+    <td>72.25</td>
+    <td>76.66</td>
+    <td>71.02</td>
+    <td>76.91</td>
+    <td>68.43</td>
+    <td>67.96</td>
+    <td>73.16</td>
+</tr>
+<tr>
+    <td>base, Zero-shot transfer</td>
+    <td>60.19</td>
+    <td>47.15</td>
+    <td>45.65</td>
+    <td>57.57</td>
+    <td>48.46</td>
+    <td>52.52</td>
+    <td>53.90</td>
+    <td>52.21</td>
+    <td>44.94</td>
+    <td>44.08</td>
+    <td>47.08</td>
+    <td>44.16</td>
+    <td>40.90</td>
+    <td>38.20</td>
+    <td>36.85</td>
+    <td>42.31</td>
+</tr>
+<tr>
+    <td>large, Zero-shot transfer</td>
+    <td>68.96</td>
+    <td>51.90</td>
+    <td>49.76</td>
+    <td>61.35</td>
+    <td>55.17</td>
+    <td>59.05</td>
+    <td>60.77</td>
+    <td>58.14</td>
+    <td>55.31</td>
+    <td>56.96</td>
+    <td>57.80</td>
+    <td>56.15</td>
+    <td>51.84</td>
+    <td>48.90</td>
+    <td>47.95</td>
+    <td>53.56</td>
+</tr>
+<tr>
+    <td>base, Multitask Fine-tuning</td>
+    <td>89.73</td>
+    <td>79.64</td>
+    <td>77.98</td>
+    <td>81.73</td>
+    <td>82.10</td>
+    <td>83.22</td>
+    <td>82.41</td>
+    <td>82.40</td>
+    <td>82.41</td>
+    <td>81.42</td>
+    <td>81.04</td>
+    <td>82.21</td>
+    <td>83.10</td>
+    <td>78.54</td>
+    <td>70.44</td>
+    <td>79.88</td>
+</tr>
+<tr>
+    <td>large, Multitask Fine-tuning</td>
+    <td>91.55</td>
+    <td>82.16</td>
+    <td>80.55</td>
+    <td>83.84</td>
+    <td>83.72</td>
+    <td>85.30</td>
+    <td>86.50</td>
+    <td>84.80</td>
+    <td>90.00</td>
+    <td>86.21</td>
+    <td>85.92</td>
+    <td>86.69</td>
+    <td>86.75</td>
+    <td>82.63</td>
+    <td>81.60</td>
+    <td>85.69</td>
+</tr>
+</tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#xylayoutlm">XYLayoutLM</a></td>
+    <td>91.76</td>
+    <td>80.57</td>
+    <td>76.87</td>
+    <td>79.97</td>
+    <td>81.75</td>
+    <td>83.35</td>
+    <td>80.01</td>
+    <td>82.04</td>
+    <td>74.45</td>
+    <td>70.59</td>
+    <td>72.59</td>
+    <td>65.21</td>
+    <td>65.72</td>
+    <td>67.03</td>
+    <td>58.98</td>
+    <td>67.79</td>
+</tr>
+</tr>
+    <td rowspan=3><a href="../Approaches/approaches_vie.md/#lilt">LiLT</a></td>
+    <td>[InfoXLM] base, Language Specific Fine-tuning</td>
+    <td>89.38</td>
+    <td>79.64</td>
+    <td>79.11</td>
+    <td>79.53</td>
+    <td>83.76</td>
+    <td>82.31</td>
+    <td>82.20</td>
+    <td>82.27</td>
+    <td>72.97</td>
+    <td>70.37</td>
+    <td>71.95</td>
+    <td>69.65</td>
+    <td>70.43</td>
+    <td>65.58</td>
+    <td>58.74</td>
+    <td>68.53</td>
+</tr>
+<tr>
+    <td>[InfoXLM] base, Zero-shot transfer</td>
+    <td>61.52</td>
+    <td>51.84</td>
+    <td>51.01</td>
+    <td>59.23</td>
+    <td>53.71</td>
+    <td>60.13</td>
+    <td>63.25</td>
+    <td>57.24</td>
+    <td>47.64</td>
+    <td>50.81</td>
+    <td>49.68</td>
+    <td>52.09</td>
+    <td>46.97</td>
+    <td>41.69</td>
+    <td>42.72</td>
+    <td>47.37</td>
+</tr>
+<tr>
+    <td>[InfoXLM] base, Multi-task Fine-tuning</td>
+    <td>90.47</td>
+    <td>80.88</td>
+    <td>83.40</td>
+    <td>85.77</td>
+    <td>87.92</td>
+    <td>87.69</td>
+    <td>84.93</td>
+    <td>85.86</td>
+    <td>84.71</td>
+    <td>83.45</td>
+    <td>83.35</td>
+    <td>84.66</td>
+    <td>84.58</td>
+    <td>78.78</td>
+    <td>76.43</td>
+    <td>82.28</td>
+</tr>
+</tr>
+    <td rowspan=2>End-to-End</td>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#esp">ESP</a></td>
+    <td>Language Specific Fine-tuning</td>
+    <td>90.30</td>
+    <td>81.10</td>
+    <td>85.40</td>
+    <td>90.50</td>
+    <td>88.90</td>
+    <td>87.20</td>
+    <td>87.50</td>
+    <td>87.30</td>
+    <td>90.80</td>
+    <td>88.30</td>
+    <td>85.20</td>
+    <td>90.90</td>
+    <td>90.00</td>
+    <td>85.20</td>
+    <td>86.20</td>
+    <td>88.10</td>
+</tr>
+<tr>
+    <td>Multitask Fine-tuning</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>89.13</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>92.31</td>
+</tr>
+</table>
+
 <br>
 
 ## EPHOIE
+
+EPHOIE contains 11 key categories. It takes the micro-F1 as the evaluation metric. If the predicted string of a key category is consistant with the ground-truth string, it will be recorded as a TP sample.
+
+<table align="center">
+<tr>
+    <th > Type </th>
+    <th colspan=2> Approach </th>
+    <th> Precision </th>
+    <th> Recall </th>
+    <th> F1 </th>
+</tr>
+<tr>
+    <td rowspan=1>Grid-based</td>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#matchvie">MathcVIE</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>96.87</td>
+</tr>
+<tr>
+    <td rowspan=4>Large-Scale Pre-trained</td>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#structext">StrucTexT</a></td>
+    <td>chn&eng-base</td>
+    <td>-</td>
+    <td>-</td>
+    <td>98.84</td>
+</tr>
+<tr>
+    <td>chn&eng-large</td>
+    <td>-</td>
+    <td>-</td>
+    <td>99.30</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#lilt">LiLT</a></td>
+    <td>[InfoXLM]base</td>
+    <td>96.99</td>
+    <td>98.20</td>
+    <td>97.59</td>
+</tr>
+<tr>
+    <td>[ZH-RoBERTa]base</td>
+    <td>97.62</td>
+    <td>98.33</td>
+    <td>97.97</td>
+</tr>
+<tr>
+    <td rowspan=2>End-to-End</td>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#vies">VIES</a></td>
+    <td>ground-truth</td>
+    <td>-</td>
+    <td>-</td>
+    <td>95.23</td>
+</tr>
+<tr>
+    <td>end-to-end</td>
+    <td>-</td>
+    <td>-</td>
+    <td>83.81</td>
+</tr>
+<tr>
+    <td rowspan=4>Other Methods</td>
+    <td rowspan=4><a href="../Approaches/approaches_vie.md/#tcpn">TCPN</a></td>
+    <td>TextLattice</td>
+    <td>-</td>
+    <td>-</td>
+    <td>98.06</td>
+</tr>
+<tr>
+    <td>Copy Mode, end-to-end</td>
+    <td>-</td>
+    <td>-</td>
+    <td>84.67</td>
+</tr>
+<tr>
+    <td>Tag Mode, end-to-end</td>
+    <td>-</td>
+    <td>-</td>
+    <td>86.19</td>
+</tr>
+<tr>
+    <td>Tag Mode, ground-truth</td>
+    <td>-</td>
+    <td>-</td>
+    <td>97.59</td>
+</tr>

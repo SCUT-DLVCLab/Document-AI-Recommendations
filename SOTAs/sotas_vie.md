@@ -218,12 +218,17 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
 
 ## CORD
 
+Many mainstream SOTAs treat CORD as an Entity Extraction dataset and follow the calculation protocol of SROIE. These practices are in fact controversial. Authors of the CORD dataset, the clovaai team, do not explicitly specify how to compute metrics for this dataset, but when we browse the [source code](https://github.com/clovaai/donut/blob/217cffb111a57ebce1025ff84a722a8d9914e05b/donut/util.py#L242) of their work (e.g. Donut, SPADE), we can see that they compute the F1-scores for Document Structure Parsing. For example, a receipt usually contains information about the items purchased, including its name, count, and unit price. These entities are hierarchically related, and an item can be represented by a python List in forms of `[item_name, item_count, item_price]`. The algorithm should extract all of the item information List as well as other information like changes, total price from a given document. The prediction will be counted as TP when a same information List exists in the ground-truth.
+
+Scores reported on both Entity Extraction and Document Structure Parsing are shown below. 
+
+
 <table align="center">
 <tr>
     <th rowspan=2> Type </th>
     <th rowspan=2 colspan=2> Approach </th>
     <th colspan=3> Entity Extraction </th>
-    <th colspan=3> Entity Linking </th>
+    <th colspan=3> Document Structure Parsing </th>
 </tr>
 <tr>
     <th> Precision </th>
@@ -410,10 +415,10 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td colspan=2><a href="../Approaches/approaches_vie.md/#donut">Donut</a></td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>91.60</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#esp">ESP</a></td>
@@ -425,15 +430,80 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>98.80</td>
 </tr>
 <tr>
-    <td rowspan=1>Other Methods</td>
-    <td colspan=2><a href="../Approaches/approaches_vie.md/#spade">SPADE</a></td>
+    <td rowspan=8>Other Methods</td>
+    <td rowspan=8><a href="../Approaches/approaches_vie.md/#spade">SPADE</a></td>
+    <td>♠ CORD, oracle input</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>92.50</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
 </tr>
+<tr>
+    <td>♠ CORD</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>88.20</td>
+</tr>
+<tr>
+    <td>♠ CORD+</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>87.40</td>
+</tr>
+<tr>
+    <td>♠ CORD++</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>83.10</td>
+</tr>
+<tr>
+    <td>♠ w/o TCM, CORD, oracle input</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>91.50</td>
+</tr>
+<tr>
+    <td>♠ w/o TCM, CORD</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>87.40</td>
+</tr>
+<tr>
+    <td>♠ w/o TCM, CORD+</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>86.10</td>
+</tr>
+<tr>
+    <td>♠ w/o TCM, CORD++</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>82.60</td>
+</tr>
+
 </table>
 
 <br>
@@ -1025,7 +1095,7 @@ Note: In the following charts, only the scores reproted on XFUND is counted when
 
 ## EPHOIE
 
-EPHOIE contains 11 key categories. It takes the micro-F1 as the evaluation metric. If the predicted string of a key category is consistant with the ground-truth string, it will be recorded as a TP sample.
+EPHOIE contains 11 key categories. It takes the micro-F1 as the evaluation metric. If the predicted string of a key category is consistant with the ground-truth string and not empty, it will be recorded as a TP sample.
 
 <table align="center">
 <tr>

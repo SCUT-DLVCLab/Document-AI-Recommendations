@@ -2,7 +2,7 @@
 
 <p align="center">
    <strong><a href="./approaches_vie.md">Visual Information Extraction </a></strong> •
-   <strong>Table Structure Recognition </a></strong> •
+   <strong><a href="./approaches_tsr.md">Table Structure Recognition </a></strong> •
    <strong>Layout Analysis </a></strong>
 </p>
 

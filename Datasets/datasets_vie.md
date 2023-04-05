@@ -9,11 +9,10 @@
 - [XFUND](#xfund)
 - [EPHOIE](#ephoie)
 - [CER-VIR](#cer-vir)
+- [SIBR](#sibr)
 - [EATEN](#eaten)
 - [WildReceipt](#wildreceipt)
 - [Kleister](#kleister)
-- [DeepForm](#deepform)
-- [SIBR](#sibr)
 
 
 <br>
@@ -64,6 +63,12 @@
         <td rowspan=2>Entity F1-score</td>
     </tr>
 </table>
+
+<p>
+    <a href="../SOTAs/sotas_vie.md/#sroie">
+        <img alt="Link2" src="https://img.shields.io/badge/SOTAs-metric comparison-daa520"></img>
+    </a> 
+</p>
 
 SROIE is a dataset for the 2019 ICDAR Robust Reading Challenge on Scanned Receipts OCR and Information Extraction competition. It contains 973 samples, 626 for training and 347 for testing. Each receipt contains four kinds of key entities: Company, Address, Date, and Total. 
 
@@ -123,6 +128,12 @@ It is worth noting that the quality of the data annotation will greatly affect t
     </tr>
 </table>
 
+<p>
+    <a href="../SOTAs/sotas_vie.md/#cord">
+        <img alt="Link2" src="https://img.shields.io/badge/SOTAs-metric comparison-daa520"></img>
+    </a> 
+</p>
+
 CORD is an English receipt dataset proposed by Colva AI. 1000 samples are currently publicly available, 800 for training, 100 for validation, and 100 for testing. The receipt images are obtained through cameras, hence inteference like paper bending and background noise may inevitably occur. The data contains high-quality annotations, key labels for each words and linking between entities are provided. The dataset contains a total of four main key information categories such as payment information, and each main category can be further divided into 30 sub-key fields. Unlike other datasets, entities in CORD are hierarchically related. Models should be able to extract all the structured fields, which makes the task challenging.
 
 <p align=center>
@@ -174,6 +185,12 @@ CORD is an English receipt dataset proposed by Colva AI. 1000 samples are curren
         <td>Pair F1-score </td>
     </tr>
 </table>
+
+<p>
+    <a href="../SOTAs/sotas_vie.md/#funsd">
+        <img alt="Link2" src="https://img.shields.io/badge/SOTAs-metric comparison-daa520"></img>
+    </a> 
+</p>
 
 A dataset for Text Detection, Optical Character Recognition, Spatial Layout Analysis and Form Understanding. Contains 199 fully annotated forms, with 31485 words, 9707 semantic entities and 5304 relations. The OCR result of each text segment and word are given, and the category of each paragraph and linkings between entities are included in the annotations.
 
@@ -229,6 +246,12 @@ A dataset for Text Detection, Optical Character Recognition, Spatial Layout Anal
     </tr>
 </table>
 
+<p>
+    <a href="../SOTAs/sotas_vie.md/#xfund">
+        <img alt="Link2" src="https://img.shields.io/badge/SOTAs-metric comparison-daa520"></img>
+    </a> 
+</p>
+
 XFUND is a multilingual form understanding benchmark dataset that includes human-labeled forms with key-value pairs in 7 languages (Chinese, Japanese, Spanish, French, Italian, German, Portuguese). It is an extension of the FUNSD dataset, the annotations and evaluation metric are the same as FUNSD.
 
 <p align=center>
@@ -275,6 +298,12 @@ XFUND is a multilingual form understanding benchmark dataset that includes human
         <td>Entity F1-score</td>
     </tr>
 </table>
+
+<p>
+    <a href="../SOTAs/sotas_vie.md/#ephoie">
+        <img alt="Link2" src="https://img.shields.io/badge/SOTAs-metric comparison-daa520"></img>
+    </a> 
+</p>
 
 THe EPHOIE Dataset contains 1,494 images which are collected and scanned from real examination papers of various schools in China, and the authors crop the paper head regions which contains all key information. The texts are composed of handwritten and printed Chinese characters in horizontal and arbitrary quadrilateral shape. Complex layouts and noisy background also enhance the generalization of EPHOIE dataset. The dataset contains a total of 11 key categories including name, class, student id, and so on. Annotations of each character are given, hence we can directly apply token classification models using the original labels.
 
@@ -336,6 +365,60 @@ The CER-VIR dataset contains receipts in both Chinese and English. Each sample c
 
 <p align=center>
     <img src="../img/dataset_img/CER_VIR.png" width=500>
+</p>
+
+<br>
+
+# SIBR
+
+<p>
+    <img alt="License" src="https://img.shields.io/badge/License-Apache License 2.0-c1c1c1"></img>
+    <img align=right alt="Commercial" src="https://img.shields.io/badge/Commercial-✔️-brightgreen"></img>
+    <img align=right  alt="Adapt" src="https://img.shields.io/badge/Adapt-✔️-brightgreen"></img>
+    <img align=right alt="Share" src="https://img.shields.io/badge/Share-✔️-brightgreen"></img>
+    </a>
+</p>
+
+<table align=center>
+    <th colspan=3>Number of Samples</th>
+    <th rowspan=2>Type</th>
+    <th rowspan=2>Language</th>
+    <th rowspan=2>Access Link</th>
+    <th rowspan=2>Task</th>
+    <th rowspan=2>Evaluation Metric</th>
+    <tr>
+        <th>Train</th>
+        <th>Validate</th>
+        <th>Test</th>
+    </tr>
+    <tr>
+        <td rowspan=2>600</td>
+        <td rowspan=2>-</td>
+        <td rowspan=2>400</td>
+        <td rowspan=2>Receipt, Bills</td>
+        <td rowspan=2>Chinese, English</td>
+        <td rowspan=2>
+            <p>
+                <a href="https://www.modelscope.cn/datasets/damo/SIBR/summary">
+                    <img alt="Link" src="https://img.shields.io/badge/Official-2e8b57"></img>
+                </a>
+            </p>
+        </td>
+        <td rowspan=1>Entity Extraction</td>
+        <td rowspan=1>Entity F1-score</td>
+    </tr>
+    <tr>
+        <td rowspan=1>Entity Linking</td>
+        <td rowspan=1>
+            Pair F1-score
+        </td>
+    </tr>
+</table>
+
+There are 1000 images in the SIBR, including 600 Chinese invoices, 300 English bills of entry, and 100 bilingual receipts. SIBR is well annotated with 71227 entity-level boxes and 39004 links. Compared with real scene datasets such as SROIE and EPHOIE, SIBR has more diverse appearances and richer structures. The document images in SIBR are much more challenging in that they are taken from real applications and difficulties such as severe noise, uneven illumination, image deformation, printing shift and complicated links. Similar to FUNSD, the SIBR dataset contains 3 kinds of key information including question, answer, and header. It is worth noting that **the entity with multiple lines in SIBR is represented by text segments and intra-links between segments. Models are required to extract the full entity given only the text segment annotations**. 
+
+<p align=center>
+    <img src="../img/dataset_img/SIBR_1.png" height=150>
 </p>
 
 <br>
@@ -525,12 +608,8 @@ The goal of the NDA task is to Extract the key information from NDAs (Non-Disclo
 
 The goal of the Charity task is to retrieve 8 kinds of key information including charity address (but not other addresses), charity number, charity name and its annual income and spending in GBP (British Pounds) in PDF files published by British charities. It contains 2788 financial reports with 61643 pages in total.
 
-<br>
-
-# DeepForm
-
-<br>
-
-# SIBR
+<p align=center>
+    <img src="../img/dataset_img/Kleister_NDA_1.png" width=500>
+</p>
 
 <br>

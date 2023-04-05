@@ -22,7 +22,7 @@
 
 <h2> Introduction </h2>
 
-This repository collects all information in the field of Document AI, including [algorithms](Approaches/approaches.md), [datasets](datasets.md), [performance comparisons](SOTAs/sotas.md), and so on.
+This repository collects all information in the field of Document AI, including [algorithms](Approaches/approaches.md), [datasets](Datasets/datasets.md), [performance comparisons](SOTAs/sotas.md), and so on.
 
 Document AI algorithms aims an reading, analyzing and understanding documents. Research fields include Visual Information Extraction, Table Structure Recognition, Layout Analysis, Document Classification, Document VQA, etc. In recent years, researchers have proposed many methods based on deep learning with outstanding performance and high efficiency, which have been widely applied in real scenarios. We extensively survey the deep-learning-based algorithms and public datasets proposed in recent years and build this reposity. Hope our work helps.
 

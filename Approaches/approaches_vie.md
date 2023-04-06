@@ -54,9 +54,9 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [StrucTexTv2](#structextv2)
   - [ESP](#esp)
 - [Few-shot Methods](#few-shot-methods)
-  - [LASER](laser)
-  - [LF-Attn](lf-attn)
-  - [Deep Partial Graph Matching](deep-partial-graph-matching)
+  - [LASER](#laser)
+  - [LF-Attn](#lf-attn)
+  - [Deep Partial Graph Matching](#deep-partial-graph-matching)
 - [GPT-based Methods](#gpt-based-methods)
   - [ICL-D3IE](#icl-d3ie)
 - [Other Methods](#other-methods)
@@ -664,7 +664,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 <p>
   <img alt="year" src="https://img.shields.io/badge/Year-2022-orange"></img>
   <a href="https://aclanthology.org/2022.findings-acl.329">
-    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACL Findings-brightgreen"></img>
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACL-brightgreen"></img>
   </a>
   <a href="https://github.com/zlwang-cs/LASER-release">
     <img alt="DatasetRelease" src="https://img.shields.io/badge/Dataset-Official-blue"></img>
@@ -684,7 +684,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 <p>
   <img alt="year" src="https://img.shields.io/badge/Year-2022-orange"></img>
   <a href="https://dl.acm.org/doi/abs/10.1145/3394171.3413511">
-    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACMMM-brightgreen"></img>
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACM-brightgreen"></img>
   </a>
   <a href="https://github.com/AlibabaPAI/one_shot_text_labeling">
     <img alt="DatasetRelease" src="https://img.shields.io/badge/Dataset-Official-blue"></img>
@@ -718,7 +718,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 ## ICL-D3IE
 
-*He et al. ICL-D3IE: In-Context Learning with Diverse Demonstrations Updating for Document Information Extraction*
+*He et al. ICL-D3IE: In-Context Learning with Diverse Demonstrations Updating for Document Information Extraction. arXiv preprint, 2023.*
 
 <p>
   <img alt="year" src="https://img.shields.io/badge/Year-2023-orange"></img>

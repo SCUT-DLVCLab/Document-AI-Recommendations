@@ -54,6 +54,9 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [StrucTexTv2](#structextv2)
   - [ESP](#esp)
 - [Few-shot Methods](#few-shot-methods)
+  - [LASER](laser)
+  - [LF-Attn](lf-attn)
+  - [Deep Partial Graph Matching](deep-partial-graph-matching)
 - [GPT-based Methods](#gpt-based-methods)
   - [ICL-D3IE](#icl-d3ie)
 - [Other Methods](#other-methods)
@@ -654,11 +657,60 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 # Few-shot Methods
 
-Under Construction
+## LASER
 
+*Wang Z, Shang J. Towards Few-shot Entity Recognition in Document Images: A Label-aware Sequence-to-Sequence Framework. ACL Findings, 2022.*
 
-<br>
-<br>
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2022-orange"></img>
+  <a href="https://aclanthology.org/2022.findings-acl.329">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACL Findings-brightgreen"></img>
+  </a>
+  <a href="https://github.com/zlwang-cs/LASER-release">
+    <img alt="DatasetRelease" src="https://img.shields.io/badge/Dataset-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: LayoutReader
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**:Entity recognition is a fundamental task in understanding document images. Traditional sequence labeling frameworks treat the entity types as class IDs and rely on extensive data and high-quality annotations to learn semantics which are typically expensive in practice. In this paper, we aim to build an entity recognition model requiring only a few shots of annotated document images. To overcome the data limitation, we propose to leverage the label surface names to better inform the model of the target entity type semantics and also embed the labels into the spatial embedding space to capture the spatial correspondence between regions and labels. Specifically, we go beyond sequence labeling and develop a novel labelaware seq2seq framework, LASER. The proposed model follows a new labeling scheme that generates the label surface names wordby word explicitly after generating the entities. During training, LASER refines the label semantics by updating the label surface name representations and also strengthens the label-region correlation. In this way, LASER recognizes the entities from document images through both semantic and layout correspondence. Extensive experiments on two benchmark datasets demonstrate the superiority of LASER under the few-shot setting.
+
+---
+
+## LF-Attn
+
+*Cheng M, Qiu M, Shi X, et al. One-shot text field labeling using attention and belief propagation for structure information extraction. ACMM, 2022.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2022-orange"></img>
+  <a href="https://dl.acm.org/doi/abs/10.1145/3394171.3413511">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACMMM-brightgreen"></img>
+  </a>
+  <a href="https://github.com/AlibabaPAI/one_shot_text_labeling">
+    <img alt="DatasetRelease" src="https://img.shields.io/badge/Dataset-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Landmark Attention; Field Attention
+- **Modalities**: Semantic; Layout
+- **Abstract**: Structured information extraction from document images usually consists of three steps: text detection, text recognition, and text field labeling. While text detection and text recognition have been heavily studied and improved a lot in literature, text field labeling is less explored and still faces many challenges. Existing learning based methods for text labeling task usually require a large amount of labeled examples to train a specific model for each type of document. However, collecting large amounts of document images and labeling them is difficult and sometimes impossible due to privacy issues. Deploying separate models for each type of document also consumes a lot of resources. Facing these challenges, we explore one-shot learning for the text field labeling task. Existing one-shot learning methods for the task are mostly rule-based and have difficulty in labeling fields in crowded regions with few landmarks and fields consisting of multiple separate text regions. To alleviate these problems, we proposed a novel deep end-to-end trainable approach for one-shot text field labeling, which makes use of attention mechanism to transfer the layout information between document images. We further applied conditional random field on the transferred layout information for the refinement of field labeling. We collected and annotated a real-world one-shot field labeling dataset with a large variety of document types and conducted extensive experiments to examine the effectiveness of the proposed model. To stimulate research in this direction, the collected dataset and the one-shot model will be released.
+
+---
+
+## Deep Partial Graph Matching
+
+*Yao M, Liu Z, Wang L, et al. One-shot Key Information Extraction from Document with Deep Partial Graph Matching. arXiv, 2021.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2021-orange"></img>
+  <a href="https://arxiv.org/abs/2109.13967">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Graph Matching
+- **Modalities**: Semantic; Layout
+- **Abstract**: Automating the Key Information Extraction (KIE) from documents improves efficiency, productivity, and security in many industrial scenarios such as rapid indexing and archiving. Many existing supervised learning methods for the KIE task need to feed a large number of labeled samples and learn separate models for different types of documents. However, collecting and labeling a large dataset is time-consuming and is not a userfriendly requirement for many cloud platforms. To overcome these challenges, we propose a deep end-to-end trainable network for one-shot KIE using partial graph matching. Contrary to previous methods that the learning of similarity and solving are optimized separately, our method enables the learning of the two processes in an end-to-end framework. Existing one-shot KIE methods are either template or simple attention-based learning approach that struggle to handle texts that are shifted beyond their desired positions caused by printers, as illustrated in Fig. 1. To solve this problem, we add one-to-(at most)-one constraint such that we will find the globally optimized solution even if some texts are drifted. Further, we design a multimodal context ensemble block to boost the performance through fusing features of spatial, textual, and aspect representations. To promote research of KIE, we collected and annotated a one-shot document KIE dataset named DKIE with diverse types of images. The DKIE dataset consists of 2.5K document images captured by mobile phones in natural scenes, and it is the largest available one-shot KIE dataset up to now. The results of experiments on DKIE show that our method achieved state-of-the-art performance compared with recent one-shot and supervised learning approaches. The dataset and proposed one-shot KIE model will be released soon.
 
 ---
 

@@ -87,7 +87,7 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>98.45</td>
 </tr>
 </tr>
-    <td rowspan=11>Large Scale Pre-trained</td>
+    <td rowspan=14>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
     <td>base</td>
     <td>94.38</td>
@@ -157,6 +157,26 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>98.70</td>
+</tr>
+</tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#wukong-reader">WUKONG-READER</a></td>
+    <td>base</td>
+    <td>-</td>
+    <td>-</td>
+    <td>96.88</td>
+</tr>
+<tr>
+    <td>large</td>
+    <td>-</td>
+    <td>-</td>
+    <td>98.15</td>
+</tr>
+</tr>
+    <td rowspan=1><a href="../Approaches/approaches_vie.md/#ernie-layout">ERNIE-layout</a></td>
+    <td>large</td>
+    <td>-</td>
+    <td>-</td>
+    <td>97.55</td>
 </tr>
 </tr>
     <td rowspan=4>End-to-End</td>
@@ -249,7 +269,7 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
 </tr>
 </tr>
-    <td rowspan=17>Large Scale Pre-trained</td>
+    <td rowspan=20>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
     <td>base</td>
     <td>94.37</td>
@@ -410,6 +430,35 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
 </tr>
+</tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#wukong-reader">WUKONG-READER</a></td>
+    <td>base</td>
+    <td>-</td>
+    <td>-</td>
+    <td>96.54</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>large</td>
+    <td>-</td>
+    <td>-</td>
+    <td>97.27</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td rowspan=1><a href="../Approaches/approaches_vie.md/#ernie-layout">ERNIE-layout</a></td>
+    <td>large</td>
+    <td>-</td>
+    <td>-</td>
+    <td>96.99</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
 <tr>
     <td rowspan=2>End-to-End</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#donut">Donut</a></td>
@@ -548,7 +597,7 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
 </tr>
-    <td rowspan=27>Large Scale Pre-trained</td>
+    <td rowspan=30>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
         <td>base</td>
         <td>75.97</td>
@@ -800,6 +849,35 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>46.10</td>
+</tr>
+</tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#wukong-reader">WUKONG-READER</a></td>
+    <td>base</td>
+    <td>-</td>
+    <td>-</td>
+    <td>91.52</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>large</td>
+    <td>-</td>
+    <td>-</td>
+    <td>93.62</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td rowspan=1><a href="../Approaches/approaches_vie.md/#ernie-layout">ERNIE-layout</a></td>
+    <td>large</td>
+    <td>-</td>
+    <td>-</td>
+    <td>93.12</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td rowspan=1>End-to-End</td>

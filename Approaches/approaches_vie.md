@@ -46,11 +46,14 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [StructuralLM](#structurallm)
   - [BROS](#bros)
   - [Wei Robust Layout-aware IE](#wei-robust-layout-aware-ie)
+  - [WUKONG-READER](#wukong-reader)
+  - [ERNIE-Layout](#ernie-layout)
 - [End-to-End Methods](#end-to-end-methods)
   - [EATEN](#eaten)
   - [TRIE](#trie)
   - [VIES](#vies)
   - [Donut🍩](#donut)
+  - [Dessurt](#dessurt)
   - [StrucTexTv2](#structextv2)
   - [ESP](#esp)
 - [Few-shot Methods](#few-shot-methods)
@@ -526,7 +529,42 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Modalities**: Semantic; Layout
 - **Abstract**: Many business documents processed in modern NLP and IR pipelines are visually rich: in addition to text, their semantics can also be captured by visual traits such as layout, format, and fonts. We study the problem of information extraction from visually rich documents (VRDs) and present a model that combines the power of large pre-trained language models and graph neural networks to efficiently encode both textual and visual information in business documents. We further introduce new fine-tuning objectives to improve in-domain unsupervised fine-tuning to better utilize large amount of unlabeled in-domain data. We experiment on real world invoice and resume data sets and show that the proposed method outperforms strong text-based RoBERTa baselines by 6.3% absolute F1 on invoices and 4.7% absolute F1 on resumes. When evaluated in a few-shot setting, our method requires up to 30x less annotation data than the baseline to achieve the same level of performance at ~90% F1.
 
+---
 
+## WUKONG-READER
+
+*Bai et al. WUKONG-READER: Multi-modal Pre-training for Fine-grained Visual Document Understanding. arXiv preprint, 2022.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2022-orange"></img>
+  <a href="https://arxiv.org/abs/2212.09621">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Segment-level Modeling; Excellent Performance
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: Unsupervised pre-training on millions of digital-born or scanned documents has shown promising advances in visual document understanding~(VDU). While various vision-language pre-training objectives are studied in existing solutions, the document textline, as an intrinsic granularity in VDU, has seldom been explored so far. A document textline usually contains words that are spatially and semantically correlated, which can be easily obtained from OCR engines. In this paper, we propose Wukong-Reader, trained with new pre-training objectives to leverage the structural knowledge nested in document textlines. We introduce textline-region contrastive learning to achieve fine-grained alignment between the visual regions and texts of document textlines. Furthermore, masked region modeling and textline-grid matching are also designed to enhance the visual and layout representations of textlines. Experiments show that our Wukong-Reader has superior performance on various VDU tasks such as information extraction. The fine-grained alignment over textlines also empowers Wukong-Reader with promising localization ability.
+
+---
+
+## ERNIE-Layout
+
+*Peng et al. ERNIE-Layout: Layout Knowledge Enhanced Pre-training for Visually-rich Document Understanding. EMNLP Findings, 2022.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2022-orange"></img>
+  <a href="https://aclanthology.org/2022.findings-emnlp.274/">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACL-brightgreen"></img>
+  </a>
+  <a href="https://github.com/PaddlePaddle/PaddleNLP/tree/release/2.4/model_zoo/ernie-layout">
+    <img alt="Code 1" src="https://img.shields.io/badge/Code-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Reading Order Serialization
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: Recent years have witnessed the rise and success of pre-training techniques in visually-rich document understanding. However, most existing methods lack the systematic mining and utilization of layout-centered knowledge, leading to sub-optimal performances. In this paper, we propose ERNIE-Layout, a novel document pre-training solution with layout knowledge enhancement in the whole workflow, to learn better representations that combine the features from text, layout, and image. Specifically, we first rearrange input sequences in the serialization stage, and then present a correlative pre-training task, reading order prediction, to learn the proper reading order of documents. To improve the layout awareness of the model, we integrate a spatial-aware disentangled attention into the multi-modal transformer and a replaced regions prediction task into the pre-training phase. Experimental results show that ERNIE-Layout achieves superior performance on various downstream tasks, setting new state-of-the-art on key information extraction, document image classification, and document question answering datasets. The code and models are publicly available at PaddleNLP.
 
 <br>
 <br>
@@ -607,9 +645,29 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   </a>
 </p>
 
-- **Highlights**: Pure End-to-End; Structured IE
+- **Highlights**: Pure End-to-End; Structured IE; Data Synthesis
 - **Modalities**: Visual
 - **Abstract**: Understanding document images (e.g., invoices) is a core but challenging task since it requires complex functions such as reading text and a holistic understanding of the document. Current Visual Document Understanding (VDU) methods outsource the task of reading text to off-the-shelf Optical Character Recognition (OCR) engines and focus on the understanding task with the OCR outputs. Although such OCR-based approaches have shown promising performance, they suffer from 1) high computational costs for using OCR; 2) inflexibility of OCR models on languages or types of document; 3) OCR error propagation to the subsequent process. To address these issues, in this paper, we introduce a novel OCR-free VDU model named Donut, which stands for Document understanding transformer. As the first step in OCR-free VDU research, we propose a simple architecture (i.e., Transformer) with a pre-training objective (i.e., cross-entropy loss). Donut is conceptually simple yet effective. Through extensive experiments and analyses, we show a simple OCR-free VDU model, Donut, achieves state-of-the-art performances on various VDU tasks in terms of both speed and accuracy. In addition, we offer a synthetic data generator that helps the model pre-training to be flexible in various languages and domains.
+
+---
+
+## Dessurt
+
+*Davis et al. End-to-end Document Recognition and Understanding with Dessurt. ECCV, 2022*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2022-orange"></img>
+  <a href="https://arxiv.org/abs/2203.16618">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/herobd/dessurt">
+    <img alt="Code 1" src="https://img.shields.io/badge/Code-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Pure End-to-End; Structured IE; Data Synthesis
+- **Modalities**: Visual
+- **Abstract**: We introduce Dessurt, a relatively simple document understanding transformer capable of being fine-tuned on a greater variety of document tasks than prior methods. It receives a document image and task string as input and generates arbitrary text autoregressively as output. Because Dessurt is an end-to-end architecture that performs text recognition in addition to the document understanding, it does not require an external recognition model as prior methods do. Dessurt is a more flexible model than prior methods and is able to handle a variety of document domains and tasks. We show that this model is effective at 9 different dataset-task combinations.
 
 ---
 

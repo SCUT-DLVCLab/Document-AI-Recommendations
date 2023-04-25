@@ -269,7 +269,7 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
 </tr>
 </tr>
-    <td rowspan=20>Large Scale Pre-trained</td>
+    <td rowspan=21>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
     <td>base</td>
     <td>94.37</td>
@@ -459,6 +459,15 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
 </tr>
+</tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#geolayoutlm">GeoLayoutLM</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>97.97</td>
+    <td>-</td>
+    <td>-</td>
+    <td>99.45</td>
+</tr>
 <tr>
     <td rowspan=2>End-to-End</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#donut">Donut</a></td>
@@ -597,7 +606,7 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
 </tr>
-    <td rowspan=30>Large Scale Pre-trained</td>
+    <td rowspan=31>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
         <td>base</td>
         <td>75.97</td>
@@ -878,6 +887,15 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>-</td>
+</tr>
+</tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#geolayoutlm">GeoLayoutLM</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>92.86</td>
+    <td>-</td>
+    <td>-</td>
+    <td>89.45</td>
 </tr>
 <tr>
     <td rowspan=1>End-to-End</td>

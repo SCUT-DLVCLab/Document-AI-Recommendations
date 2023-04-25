@@ -5,7 +5,7 @@
 
 With the rapid development of Internet technology and the increasing needs of information exchange, quantities of documents are digitalized, stored and distributed in the form of images. Numerous application scenarios, such as receipt understanding, card recognition, automatic paper scoring and document matching, are concerned on how to obtain key information from document images. The process is called visual information extraction (VIE), which aims at **mining, analyzing, and extracting information contained in visually rich documents**. Take receipt understanding as an example, given an image of a receipt, the VIE algorithms will tell information such as store name, product details, price, etc.
 
-Different from the information extraction in traditional natural language processing, results of VIE is not only determined by texts, but also closely related to the doucment layout, font style, block color, figures, charts and other components. The analysis and processing of visually rich documents is a challenging task.
+Different from the information extraction in traditional natural language processing, results of VIE is not only determined by texts, but also closely related to the document layout, font style, block color, figures, charts and other components. The analysis and processing of visually rich documents is a challenging task.
 
 Recently proposed deep-learning-based VIE methods can be roughly categorized into six types, namely the **grid-based methods**, the **graph-neural-network-based (GNN-based) methods**, the **Large Scale Pre-trained Models**, the **end-to-end methods**, the **few-shot methods**, **GPT-based methods**,and **other methods**. 
 
@@ -14,7 +14,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - `Large Scale Pre-trained Models` obtain effective generic models through pre-training with a vast amount of data. These methods tend to have powerful generalizability and can be applied in a wide range of scenarios that can be extended to other document understanding tasks. However, these models are often computationally expensive and require sufficient computing resources, finding a more efficient architecture and pre-training strategy is still a problem to be solved. 
 - VIE is not an isolated process, results from text detection and recognition (optical character recognition, OCR) are needed as prerequisites. Problems in OCR results, such as coordinate mismatches and text recognition errors will affect the subsequent steps. Researchers tried to build `end-to-end paradigms`, which reduce the OCR error accumulation to some extent. But compared with state-of-the-art methods, there is still some way to go. 
 - `Few-shot methods` propose some efficient structures to enhance the generalization ability of models and try to fully explore intrinsic features with only a small number of samples. Although some progress has been made, the overall model accuracy still has a lot of room for improvement from the actual application.
-- Recently, the GPT series models (ChagGPT, GPT-4) have developed rapidly, and have achieved amazing results in many NLP tasks. `GPT-based methods` take advantage of the powerful capabilities of the GPT models to handle VIE by designing appropriate prompt inputs. These schemes provide a new solution to the field of Document Understanding.
+- Recently, the GPT series models (ChatGPT, GPT-4) have developed rapidly, and have achieved amazing results in many NLP tasks. `GPT-based methods` take advantage of the powerful capabilities of the GPT models to handle VIE by designing appropriate prompt inputs. These schemes provide a new solution to the field of Document Understanding.
 
 ---
 
@@ -48,6 +48,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [Wei Robust Layout-aware IE](#wei-robust-layout-aware-ie)
   - [WUKONG-READER](#wukong-reader)
   - [ERNIE-Layout](#ernie-layout)
+  - [GeoLayoutLM](#geolayoutlm)
 - [End-to-End Methods](#end-to-end-methods)
   - [EATEN](#eaten)
   - [TRIE](#trie)
@@ -565,6 +566,27 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Highlights**: Reading Order Serialization
 - **Modalities**: Semantic; Layout; Visual
 - **Abstract**: Recent years have witnessed the rise and success of pre-training techniques in visually-rich document understanding. However, most existing methods lack the systematic mining and utilization of layout-centered knowledge, leading to sub-optimal performances. In this paper, we propose ERNIE-Layout, a novel document pre-training solution with layout knowledge enhancement in the whole workflow, to learn better representations that combine the features from text, layout, and image. Specifically, we first rearrange input sequences in the serialization stage, and then present a correlative pre-training task, reading order prediction, to learn the proper reading order of documents. To improve the layout awareness of the model, we integrate a spatial-aware disentangled attention into the multi-modal transformer and a replaced regions prediction task into the pre-training phase. Experimental results show that ERNIE-Layout achieves superior performance on various downstream tasks, setting new state-of-the-art on key information extraction, document image classification, and document question answering datasets. The code and models are publicly available at PaddleNLP.
+
+--
+
+## GeoLayoutLM
+
+*Luo et al. GeoLayoutLM: Geometric Pre-training for Visual Information Extraction. CVPR, 2023.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2023-orange"></img>
+  <a href="https://arxiv.org/abs/2304.10759">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/DocumentUnderstanding/GeoLayoutLM">
+    <img alt="Code 1" src="https://img.shields.io/badge/Code-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Excellent Relation Extraction Performance
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: Visual information extraction (VIE) plays an important role in Document Intelligence. Generally, it is divided into two tasks: semantic entity recognition (SER) and relation extraction (RE). Recently, pre-trained models for documents have achieved substantial progress in VIE, particularly in SER. However, most of the existing models learn the geometric representation in an implicit way, which has been found insufficient for the RE task since geometric information is especially crucial for RE. Moreover, we reveal another factor that limits the performance of RE lies in the objective gap between the pre-training phase and the fine-tuning phase for RE. To tackle these issues, we propose in this paper a multi-modal framework, named GeoLayoutLM, for VIE. GeoLayoutLM explicitly models the geometric relations in pre-training, which we call geometric pre-training. Geometric pre-training is achieved by three specially designed geometry-related pre-training tasks. Additionally, novel relation heads, which are pre-trained by the geometric pre-training tasks and fine-tuned for RE, are elaborately designed to enrich and enhance the feature representation. According to extensive experiments on standard VIE benchmarks, GeoLayoutLM achieves highly competitive scores in the SER task and significantly outperforms the previous state-of-the-arts for RE (\eg, the F1 score of RE on FUNSD is boosted from 80.35\% to 89.45\%).
+
 
 <br>
 <br>

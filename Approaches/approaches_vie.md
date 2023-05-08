@@ -30,6 +30,8 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [PICK](#pick)
   - [MatchVIE](#matchvie)
   - [GraphDoc](#graphdoc)
+  - [FormNet](#formnet)
+  - [FormNetV2](#formnetv2)
 - [Large Scale Pre-trained Models](#large-scale-pre-trained-models)
   - [LayoutLM](#layoutlm)
   - [LayoutLMv2](#layoutlmv2)
@@ -49,6 +51,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [WUKONG-READER](#wukong-reader)
   - [ERNIE-Layout](#ernie-layout)
   - [GeoLayoutLM](#geolayoutlm)
+  - [KVPFormer](#kvpformer)
 - [End-to-End Methods](#end-to-end-methods)
   - [EATEN](#eaten)
   - [TRIE](#trie)
@@ -154,7 +157,6 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Modalities**: Semantic; Layout; Visual
 - **Abstract**: We introduce a novel approach for scanned document representation to perform field extraction. It allows the simultaneous encoding of the textual, visual and layout information in a 3-axis tensor used as an input to a segmentation model. We improve the recent Chargrid and Wordgrid \cite{chargrid} models in several ways, first by taking into account the visual modality, then by boosting its robustness in regards to small datasets while keeping the inference time low. Our approach is tested on public and private document-image datasets, showing higher performances compared to the recent state-of-the-art methods.
 
----
 
 <br>
 <br>
@@ -233,9 +235,42 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Modalities**: Semantic; Layout; Visual
 - **Abstract**: Document intelligence as a relatively new research topic supports many business applications. Its main task is to automatically read, understand, and analyze documents. However, due to the diversity of formats (invoices, reports, forms, etc.) and layouts in documents, it is difficult to make machines understand documents. In this paper, we present the GraphDoc, a multimodal graph attention-based model for various document understanding tasks. GraphDoc is pre-trained in a multimodal framework by utilizing text, layout, and image information simultaneously. In a document, a text block relies heavily on its surrounding contexts, accordingly we inject the graph structure into the attention mechanism to form a graph attention layer so that each input node can only attend to its neighborhoods. The input nodes of each graph attention layer are composed of textual, visual, and positional features from semantically meaningful regions in a document image. We do the multimodal feature fusion of each node by the gate fusion layer. The contextualization between each node is modeled by the graph attention layer. GraphDoc learns a generic representation from only 320k unlabeled documents via the Masked Sentence Modeling task. Extensive experimental results on the publicly available datasets show that GraphDoc achieves state-of-the-art performance, which demonstrates the effectiveness of our proposed method.
 
+---
+
+##  FormNet
+
+*Lee et al. FormNet: Structural Encoding beyond Sequential Modeling in Form Document Information Extraction. ACL, 2022*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2022-orange"></img>
+  <a href="https://arxiv.org/abs/2203.08411">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Low Data Consumption
+- **Modalities**: Semantic; Layout
+- **Abstract**: Sequence modeling has demonstrated state-of-the-art performance on natural language and document understanding tasks. However, it is challenging to correctly serialize tokens in form-like documents in practice due to their variety of layout patterns. We propose Form Net, a structure-aware sequence model to mitigate the suboptimal serialization of forms. First, we design Rich Attention that leverages the spatial relationship between tokens in a form for more precise attention score calculation. Second, we construct Super-Tokens for each word by embedding representations from their neighboring tokens through graph convolutions. FormNet therefore explicitly recovers local syntactic information that may have been lost during serialization. In experiments, FormNet outperforms existing methods with a more compact model size and less pre training data, establishing new state-of-the-art performance on CORD, FUNSD and Payment benchmarks.
 
 ---
 
+##  FormNetV2
+
+*Lee et al. FormNetV2: Multimodal Graph Contrastive Learning for Form Document Information Extraction. ACL, 2023*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2023-orange"></img>
+  <a href="https://arxiv.org/abs/2305.02549">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Excellent performance; Contrastive learning
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: The recent advent of self-supervised pre-training techniques has led to a surge in the use of multimodal learning in form document understanding. However, existing approaches that extend the mask language modeling to other modalities require careful multi-task tuning, complex reconstruction target designs, or additional pre-training data. In FormNetV2, we introduce a centralized multimodal graph contrastive learning strategy to unify self-supervised pre-training for all modalities in one loss. The graph contrastive objective maximizes the agreement of multimodal representations, providing a natural interplay for all modalities without special customization. In addition, we extract image features within the bounding box that joins a pair of tokens connected by a graph edge, capturing more targeted visual cues without loading a sophisticated and separately pre-trained image embedder. FormNetV2 establishes new state-of-the-art performance on FUNSD, CORD, SROIE and Payment benchmarks with a more compact model size.
+
+
+<br>
 <br>
 
 # Large Scale Pre-trained Models
@@ -586,6 +621,23 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Highlights**: Excellent Relation Extraction Performance
 - **Modalities**: Semantic; Layout; Visual
 - **Abstract**: Visual information extraction (VIE) plays an important role in Document Intelligence. Generally, it is divided into two tasks: semantic entity recognition (SER) and relation extraction (RE). Recently, pre-trained models for documents have achieved substantial progress in VIE, particularly in SER. However, most of the existing models learn the geometric representation in an implicit way, which has been found insufficient for the RE task since geometric information is especially crucial for RE. Moreover, we reveal another factor that limits the performance of RE lies in the objective gap between the pre-training phase and the fine-tuning phase for RE. To tackle these issues, we propose in this paper a multi-modal framework, named GeoLayoutLM, for VIE. GeoLayoutLM explicitly models the geometric relations in pre-training, which we call geometric pre-training. Geometric pre-training is achieved by three specially designed geometry-related pre-training tasks. Additionally, novel relation heads, which are pre-trained by the geometric pre-training tasks and fine-tuned for RE, are elaborately designed to enrich and enhance the feature representation. According to extensive experiments on standard VIE benchmarks, GeoLayoutLM achieves highly competitive scores in the SER task and significantly outperforms the previous state-of-the-arts for RE (\eg, the F1 score of RE on FUNSD is boosted from 80.35\% to 89.45\%).
+
+--
+
+## KVPFormer
+
+*Hu et al. A Question-Answering Approach to Key Value Pair Extraction from Form-like Document Images. AAAI, 2023.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2023-orange"></img>
+  <a href="https://arxiv.org/abs/2304.07957">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Excellent Relation Extraction Performance
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: In this paper, we present a new question-answering (QA) based key-value pair extraction approach, called KVPFormer, to robustly extracting key-value relationships between entities from form-like document images. Specifically, KVPFormer first identifies key entities from all entities in an image with a Transformer encoder, then takes these key entities as questions and feeds them into a Transformer decoder to predict their corresponding answers (i.e., value entities) in parallel. To achieve higher answer prediction accuracy, we propose a coarse-to-fine answer prediction approach further, which first extracts multiple answer candidates for each identified question in the coarse stage and then selects the most likely one among these candidates in the fine stage. In this way, the learning difficulty of answer prediction can be effectively reduced so that the prediction accuracy can be improved. Moreover, we introduce a spatial compatibility attention bias into the self-attention/cross-attention mechanism for KVPFormer to better model the spatial interactions between entities. With these new techniques, our proposed KVPFormer achieves state-of-the-art results on FUNSD and XFUND datasets, outperforming the previous best-performing method by 7.2% and 13.2% in F1 score, respectively.
 
 
 <br>

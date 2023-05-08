@@ -68,7 +68,7 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>96.40</td>
 </tr>
 <tr>
-    <td rowspan=3>GNN-based</td>
+    <td rowspan=4>GNN-based</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#pick">PICK</a></td>
     <td>-</td>
     <td>-</td>
@@ -85,6 +85,12 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>98.45</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#formnetv2">FormNetV2</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>98.31</td>
 </tr>
 </tr>
     <td rowspan=14>Large Scale Pre-trained</td>
@@ -259,11 +265,29 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <th> F1 </th>
 </tr>
 <tr>
-    <td rowspan=1>GNN-based</td>
+    <td rowspan=3>GNN-based</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#graphdoc">GraphDoc</a></td>
     <td>-</td>
     <td>-</td>
     <td>96.93</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#formnet">FormNet</a></td>
+    <td>98.02</td>
+    <td>96.55</td>
+    <td>97.28</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#formnetv2">FomNetV2</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>97.70</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -588,7 +612,7 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <th> F1 </th>
 </tr>
 <tr>
-    <td rowspan=2>GNN-based</td>
+    <td rowspan=4>GNN-based</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#graphdoc">GraphDoc</a></td>
     <td>-</td>
     <td>-</td>
@@ -606,7 +630,25 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
 </tr>
-    <td rowspan=31>Large Scale Pre-trained</td>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#formnet">FormNet</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>84.69</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#formnetv2">FormNetV2</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>92.51</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+    <td rowspan=32>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
         <td>base</td>
         <td>75.97</td>
@@ -897,6 +939,15 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>89.45</td>
 </tr>
+</tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#kvpformer">KVPFormer</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>90.86</td>
+</tr>
 <tr>
     <td rowspan=1>End-to-End</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#esp">ESP</a></td>
@@ -953,7 +1004,7 @@ Note: In the following charts, only the scores reproted on XFUND is counted when
     <td>Avg.</td>
 </tr>
 </tr>
-    <td rowspan=10>Large Scale Pre-trained</td>
+    <td rowspan=11>Large Scale Pre-trained</td>
     <td rowspan=6><a href="../Approaches/approaches_vie.md/#layoutlxlm">LayoutXLM</a></td>
     <td>base, Language Specific Fine-tuning</td>
     <td>89.24</td>
@@ -1144,6 +1195,25 @@ Note: In the following charts, only the scores reproted on XFUND is counted when
     <td>78.78</td>
     <td>76.43</td>
     <td>82.28</td>
+</tr>
+</tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#kvpformer">KVPFormer</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>94.27</td>
+    <td>94.23</td>
+    <td>95.23</td>
+    <td>97.19</td>
+    <td>94.11</td>
+    <td>92.41</td>
+    <td>92.19</td>
+    <td>94.23</td>
 </tr>
 </tr>
     <td rowspan=2>End-to-End</td>

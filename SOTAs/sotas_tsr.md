@@ -10,8 +10,14 @@ This page contains performance on public benchmarks of visual information extrac
 For comparing two cell structures, we use a method inspired by Hurst’s proto-links: for each table region we generate a list of adjacency relations between each content cell and its nearest neighbour in horizontal and vertical directions. No adjacency relations are generated between blank cells or a blank cell and a content cell. This 1-D list of adjacency relations can be compared to the ground truth by using precision and recall measures. If both cells are identical and the direction matches, then it is marked as correctly retrieved; otherwise it is marked as incorrect. Using neighbourhoods makes the comparison invariant to the absolute position of the table (e.g. if everything is shifted by one cell) and also avoids ambiguities arising with dealing with different types of errors (merged/split cells, inserted empty column, etc.).
 
 $$
-precision = \frac{correct adjacency relations}{total adjacency relations} \\
-recall = \frac{correct adjacency relations}{detected adjacency relations} \\
+precision = \frac{correct adjacency relations}{total adjacency relations}
+$$
+
+$$
+recall = \frac{correct adjacency relations}{detected adjacency relations}
+$$
+
+$$
 F1 = \frac{2 \times precision \times recall}{precision + recall}
 $$
 

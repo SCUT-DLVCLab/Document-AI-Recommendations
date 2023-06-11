@@ -290,7 +290,7 @@ XFUND is a multilingual form understanding benchmark dataset that includes human
         <td>Chinese</td>
         <td>
             <p>
-                <a href="https://github.com/HCIILAB/EPHOIEalysis/XFUND">
+                <a href="https://github.com/HCIILAB/EPHOIE">
                     <img alt="Link" src="https://img.shields.io/badge/Official-2e8b57"></img>
                 </a>
             </p>

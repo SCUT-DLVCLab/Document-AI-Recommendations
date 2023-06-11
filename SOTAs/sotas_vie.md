@@ -10,12 +10,8 @@ This page contains performance on public benchmarks of visual information extrac
 Given the prediction of the model and the ground-truth, if the predicted string of a key category is completely consistent with the ground-truth, then it will be recorded as a true positive(TP) sample. Let $N_p$ denotes the number of predicted string, $N_g$ for the number of ground-truth entities, $N_t$ for the number of TP samples, then we have
 
 $$
-precision = \frac{N_t}{N_p}
-$$
-$$
-recall = \frac{N_t}{N_g}
-$$
-$$
+precision = \frac{N_t}{N_p} \\
+recall = \frac{N_t}{N_g} \\
 F1 = \frac{2 \times precision \times recall}{precision + recall}
 $$
 

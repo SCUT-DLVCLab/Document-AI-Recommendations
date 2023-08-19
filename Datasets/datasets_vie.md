@@ -14,6 +14,7 @@
 - [WildReceipt](#wildreceipt)
 - [Kleister](#kleister)
 - [VRDU](#vrdu)
+- [POIE](#poie)
 
 
 <br>
@@ -183,7 +184,7 @@ CORD is an English receipt dataset proposed by Colva AI. 1000 samples are curren
     </tr>
     <tr>
         <td>Entity Linking</td>
-        <td>Pair F1-score </td>
+        <td>Linking F1-score </td>
     </tr>
 </table>
 
@@ -243,7 +244,7 @@ A dataset for Text Detection, Optical Character Recognition, Spatial Layout Anal
     </tr>
     <tr>
         <td rowspan=1>Entity Linking</td>
-        <td rowspan=1>Pair F1-score </td>
+        <td rowspan=1>Linking F1-score </td>
     </tr>
 </table>
 
@@ -411,7 +412,7 @@ The CER-VIR dataset contains receipts in both Chinese and English. Each sample c
     <tr>
         <td rowspan=1>Entity Linking</td>
         <td rowspan=1>
-            Pair F1-score
+            Linking F1-score
         </td>
     </tr>
 </table>
@@ -675,5 +676,49 @@ The Registration Forms subset contains 6 types of fields namely file_date, forei
 
 It is common practice to compare the extracted entity with the ground-truth using strict string matching. However, such a simple approach may lead to unreasonable results in many scenarios. For example, “$ 40,000” does not match with “40,000” because of the missing dollar sign when extracting the total price from a receipt, and “July 1, 2022” does not match with “07/01/2022”. Dates may be present in different formats in different parts of the document, and a model should not be arbitrarily penalized for picking the wrong instance. We implement different matching functions for each entity name based on the type associated with that entity. The VRDU evaluation scripts will convert all price values into a numeric type before comparison. Similarly, date strings are parsed, and a standard date-equality function is used to determine equality.
 
+
+<br>
+
+# POIE
+
+<p>
+    <img alt="License" src="https://img.shields.io/badge/License-Unknown-c1c1c1"></img>
+</p>
+
+<table align=center>
+    <th colspan=3>Number of Samples</th>
+    <th rowspan=2>Type</th>
+    <th rowspan=2>Language</th>
+    <th rowspan=2>Access Link</th>
+    <th rowspan=2>Task</th>
+    <th rowspan=2>Evaluation Metric</th>
+    <tr>
+        <th>Train</th>
+        <th>Validate</th>
+        <th>Test</th>
+    </tr>
+    <tr>
+        <td rowspan=1>2250</td>
+        <td rowspan=1>-</td>
+        <td rowspan=1>750</td>
+        <td rowspan=1>Product Nutrition Tables</td>
+        <td rowspan=1>English</td>
+        <td rowspan=1>
+            <p>
+                <a href="https://github.com/jfkuang/CFAM">
+                    <img alt="Link" src="https://img.shields.io/badge/Official-2e8b57"></img>
+                </a>
+            </p>
+        </td>
+        <td rowspan=1>Entity Extraction</td>
+        <td rowspan=1>Entity F1-score</td>
+    </tr>
+</table>
+
+The images in POIE contain Nutrition Facts labels from various commodities in the real world, which have larger variances in layout, severe distortion, noisy backgrounds, and more types of entities than existing datasets. POIE contains images with variable appearances and styles (such as structured, semi-structured, and unstructured styles), complex layouts, and noisy backgrounds distorted by folds, bends, deformations, and perspectives. The types of entities in POIE reach 21, and a few entities have different forms, which is very common and pretty challenging for VIE in the wild. Besides there are often multiple words in each entity, which appears zero or once in every image. These properties mentioned above can help enhance the robustness and generalization of VIE models to better cope with more challenging applications.
+
+<p align=center>
+    <img src="../img/dataset_img/POIE_1.jpg" height=400>
+</p>
 
 <br>

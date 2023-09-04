@@ -191,7 +191,7 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>97.55</td>
 </tr>
 </tr>
-    <td rowspan=4>End-to-End</td>
+    <td rowspan=5>End-to-End</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#trie">TRIE</a></td>
     <td>ground-truth</td>
     <td>-</td>
@@ -216,6 +216,13 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>91.07</td>
+</tr>
+</tr>
+    <td rowspan=1><a href="../Approaches/approaches_vie.md/#kuang-cfam">Kuang CFAM</a></td>
+    <td>end-to-end</td>
+    <td>-</td>
+    <td>-</td>
+    <td>85.87</td>
 </tr>
 </tr>
     <td rowspan=4>Other Methods</td>

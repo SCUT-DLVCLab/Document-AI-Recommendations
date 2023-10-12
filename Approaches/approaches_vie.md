@@ -52,6 +52,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [ERNIE-Layout](#ernie-layout)
   - [GeoLayoutLM](#geolayoutlm)
   - [KVPFormer](#kvpformer)
+  - [GraphLayoutLM](#graphlayoutlm)
 - [End-to-End Methods](#end-to-end-methods)
   - [EATEN](#eaten)
   - [TRIE](#trie)
@@ -644,6 +645,22 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Modalities**: Semantic; Layout; Visual
 - **Abstract**: In this paper, we present a new question-answering (QA) based key-value pair extraction approach, called KVPFormer, to robustly extracting key-value relationships between entities from form-like document images. Specifically, KVPFormer first identifies key entities from all entities in an image with a Transformer encoder, then takes these key entities as questions and feeds them into a Transformer decoder to predict their corresponding answers (i.e., value entities) in parallel. To achieve higher answer prediction accuracy, we propose a coarse-to-fine answer prediction approach further, which first extracts multiple answer candidates for each identified question in the coarse stage and then selects the most likely one among these candidates in the fine stage. In this way, the learning difficulty of answer prediction can be effectively reduced so that the prediction accuracy can be improved. Moreover, we introduce a spatial compatibility attention bias into the self-attention/cross-attention mechanism for KVPFormer to better model the spatial interactions between entities. With these new techniques, our proposed KVPFormer achieves state-of-the-art results on FUNSD and XFUND datasets, outperforming the previous best-performing method by 7.2% and 13.2% in F1 score, respectively.
 
+--
+
+## GraphLayoutLM
+
+*Li et al. Enhancing Visually-Rich Document Understanding via Layout Structure Modeling. ACMMM, 2023.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2023-orange"></img>
+  <a href="https://arxiv.org/abs/2308.07777">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Excellent Entity Extraction Performance; LayoutLM with graph
+- **Modalities**: Semantic; Layout; Visual;
+- **Abstract**: In recent years, the use of multi-modal pre-trained Transformers has led to significant advancements in visually-rich document un- derstanding. However, existing models have mainly focused on features such as text and vision while neglecting the importance of layout relationship between text nodes. In this paper, we pro- pose GraphLayoutLM, a novel document understanding model that leverages the modeling of layout structure graph to inject document layout knowledge into the model. GraphLayoutLM utilizes a graph reordering algorithm to adjust the text sequence based on the graph structure. Additionally, our model uses a layout-aware multi-head self-attention layer to learn document layout knowledge. The pro- posed model enables the understanding of the spatial arrangement of text elements, improving document comprehension. We evaluate our model on various benchmarks, including FUNSD, XFUND and CORD, and achieve state-of-the-art results among these datasets. Our experimental results demonstrate that our proposed method provides a significant improvement over existing approaches and showcases the importance of incorporating layout information into document understanding models. We also conduct an ablation study to investigate the contribution of each component of our model. The results show that both the graph reordering algorithm and the layout-aware multi-head self-attention layer play a crucial role in achieving the best performance.
 
 <br>
 <br>

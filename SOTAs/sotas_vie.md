@@ -1168,12 +1168,18 @@ In real application, we need to extract all the key-value pairs from the documen
         <td>-</td>
         <td>-</td>
         <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>89.88</td>
     <td>87.92</td>
     <td>88.89</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1186,6 +1192,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>73.90</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td rowspan=1>End-to-End</td>

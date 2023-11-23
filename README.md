@@ -14,10 +14,8 @@
    <strong>Layout Analysis</a></strong>
 </p>
 
-<h2>👀Updates </h2>
 
-- **April 2023**: Repository Release
-
+<br>
 <br>
 
 <h2> Introduction </h2>
@@ -26,10 +24,12 @@ This repository collects all information in the field of Document AI, including 
 
 Document AI algorithms aims an reading, analyzing and understanding documents. Research fields include Visual Information Extraction, Table Structure Recognition, Layout Analysis, Document Classification, Document VQA, etc. In recent years, researchers have proposed many methods based on deep learning with outstanding performance and high efficiency, which have been widely applied in real scenarios. We extensively survey the deep-learning-based algorithms and public datasets proposed in recent years and build this reposity. Hope our work helps.
 
+
+> If you found errors or want to add more related papers, please feel free to contact us. Any pull requests are welcome.
+
 <br>
 <br>
 
----
 
 <h2 id="vie" align="center"> Visual Information Extraction </h2>
 
@@ -49,7 +49,7 @@ With the rapid development of Internet technology and the increasing needs of in
 
 Visual information extraction can be seen as the promotion and extension of named entity recognition(NER) and entity linking(EL) to the field of visually rich documents. Different from the information extraction in traditional natural language processing, results of VIE not only depends on texts, but also closely relates to the doucment layout, font style, block color, figures, charts and other components.
 
----
+<br>
 
 <h2 id="tsr" align="center"> Table Structure Recognition </h2>
 
@@ -70,11 +70,6 @@ Tabular data have been widely used to help people manage and extract important i
 TSR aims to **recognize the cellular structures of tables from table images by extracting the coordinates of cell boxes and row/column spanning information.** This task is very challenging since tables may have complex structures, diverse styles and contents, and become geometrically distorted or even curved during an image capturing process.
 
 <br>
-<br>
-<br>
-
-----
-
 <br>
 
 <h2> Acknowledgment </h2>

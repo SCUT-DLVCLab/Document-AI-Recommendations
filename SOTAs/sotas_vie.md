@@ -654,7 +654,9 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
 
 FUNSD requires extracting key entities (Entity Extraction) and key-value pairs (Entity Linking). Micro-F1 is taken as the evaluation metric. Each document contains two kinds of key information: Question and Answer, and each key category has multiple instances. In Entity Extraction task, the predicted entity will be considered as TP if and only if its content and category are consistent with the ground-truth. In Entity Linking task, the prediction will be considered as TP if and only if the predicted pair exists in the ground-truth pairs. 
 
-It is noticable that the two subtasks are independent in most of the mainstream approaches' settings. Take LayoutLM as an example, in Entity Linking task, the [official implementation](https://github.com/microsoft/unilm) takes the groud-truth of Entity Extraction as input and predict the linkings only, the performance of entity extraction is not considered in this case. 
+It is noticeable that the two subtasks are considered independent in most of the mainstream approaches' settings. Take LayoutLM as an example, in Entity Linking task, the [official implementation](https://github.com/microsoft/unilm) takes the ground-truth of Entity Extraction as input and predict the linkings only, the performance of entity extraction is not considered in this case. 
+
+In real application, we need to extract all the key-value pairs from the document, which requires combining the EE and EL task, predicting the whole kv-pair content. We termed this task as the end-to-end pair extraction. In this case, challenges like error accumulation and segment text aggregation should be considered. However, only a few studies notice this challenge, while most of the work follow the traditional settings of separate EE&EL. We look forward to more studies on this case.
 
 <table align="center">
 <tr>
@@ -662,6 +664,7 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <th rowspan=2 colspan=2> Approach </th>
     <th colspan=3> Entity Extraction </th>
     <th colspan=3> Entity Linking </th>
+    <th colspan=3> E2E Pair Extraction </th>
 </tr>
 <tr>
     <th> Precision </th>
@@ -670,6 +673,22 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <th> Precision </th>
     <th> Recall </th>
     <th> F1 </th>
+    <th> Precision </th>
+    <th> Recall </th>
+    <th> F1 </th>
+</tr>
+<tr>
+    <td rowspan=1>Grid-based</td>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#msau-paf">MSAU-PAF</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>83.00</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>75.00</td>
 </tr>
 <tr>
     <td rowspan=4>GNN-based</td>
@@ -677,6 +696,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>87.77</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -689,6 +711,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#formnet">FormNet</a></td>
@@ -698,12 +723,18 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#formnetv2">FormNetV2</a></td>
     <td>-</td>
     <td>-</td>
     <td>92.51</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -717,12 +748,18 @@ It is noticable that the two subtasks are independent in most of the mainstream 
         <td>-</td>
         <td>-</td>
         <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>75.96</td>
     <td>82.19</td>
     <td>78.95</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -736,12 +773,18 @@ It is noticable that the two subtasks are independent in most of the mainstream 
         <td>-</td>
         <td>-</td>
         <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>83.24</td>
     <td>85.19</td>
     <td>84.20</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -755,6 +798,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
         <td>-</td>
         <td>-</td>
         <td>54.83</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
 </tr>
 <tr>
     <td>large, Language Specific Fine-tuning</td>
@@ -764,6 +810,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>64.04</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>base, Multitask Fine-tuning</td>
@@ -773,6 +822,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>66.71</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large, Multitask Fine-tuning</td>
@@ -782,6 +834,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>76.83</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlmv3">LayoutLMv3</a></td>
@@ -789,6 +844,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
         <td>-</td>
         <td>-</td>
         <td>90.29</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -801,6 +859,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#xylayoutlm">XYLayoutLM</a></td>
@@ -810,6 +871,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#selfdoc">SelfDoc</a></td>
@@ -819,6 +883,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#DocFormer">DocFormer</a></td>
@@ -826,6 +893,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
         <td>80.76</td>
         <td>86.09</td>
         <td>83.34</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -838,6 +908,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#structurallm">StructuralLM-large</a></td>
@@ -847,6 +920,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#bros">BROS</a></td>
@@ -857,6 +933,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>71.46</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
@@ -866,6 +945,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>77.01</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=3><a href="../Approaches/approaches_vie.md/#structext">StrucTexT</a></td>
@@ -876,6 +958,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>44.10</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>chn&eng-base</td>
@@ -885,6 +970,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>70.45</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>chn&eng-large</td>
@@ -894,6 +982,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>74.21</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#udoc">UDoc</a></td>
@@ -904,12 +995,18 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>UDoc*</td>
     <td>-</td>
     <td>-</td>
     <td>87.93</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -923,12 +1020,18 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>[InfoXLM]base</td>
     <td>84.67</td>
     <td>87.09</td>
     <td>85.86</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -941,6 +1044,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>62.76</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>[InfoXLM]base, Multitask Fine-tuning</td>
@@ -950,8 +1056,10 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>74.07</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
-
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#docrel">DocReL</a></td>
     <td>-</td>
@@ -960,6 +1068,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>46.10</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#wukong-reader">WUKONG-READER</a></td>
@@ -970,12 +1081,18 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>-</td>
     <td>-</td>
     <td>93.62</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -989,6 +1106,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#geolayoutlm">GeoLayoutLM</a></td>
@@ -998,6 +1118,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>89.45</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#kvpformer">KVPFormer</a></td>
@@ -1007,6 +1130,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>90.86</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#graphlayoutlm">GraphLayoutLM</a></td>
@@ -1017,12 +1143,55 @@ It is noticable that the two subtasks are independent in most of the mainstream 
         <td>-</td>
         <td>-</td>
         <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>-</td>
     <td>-</td>
     <td>94.39</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#docformerv2">DocFormerv2</a></td>
+        <td>base</td>
+        <td>89.15</td>
+        <td>87.60</td>
+        <td>88.37</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>large</td>
+    <td>89.88</td>
+    <td>87.92</td>
+    <td>88.89</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#doctr">DocTr</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>84.00</td>
+    <td>-</td>
+    <td>-</td>
+    <td>73.90</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1064,6 +1233,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>88.88</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td rowspan=1>Other Methods</td>
@@ -1074,6 +1246,9 @@ It is noticable that the two subtasks are independent in most of the mainstream 
     <td>-</td>
     <td>-</td>
     <td>41.30</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </table>
 

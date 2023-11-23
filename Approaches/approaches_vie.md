@@ -55,6 +55,8 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [KVPFormer](#kvpformer)
   - [TPP](#tpp)
   - [GraphLayoutLM](#graphlayoutlm)
+  - [DocFormerv2](#docformerv2)
+  - [DocTr](#doctr)
 - [End-to-End Methods](#end-to-end-methods)
   - [EATEN](#eaten)
   - [TRIE](#trie)
@@ -65,6 +67,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [ESP](#esp)
   - [Kuang CFAM](#kuang-cfam)
   - [Pix2Struct](#pix2struct)
+  - [SeRum](#serum)
 - [Few-shot Methods](#few-shot-methods)
   - [LASER](#laser)
   - [LF-Attn](#lf-attn)
@@ -698,6 +701,40 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Modalities**: Semantic; Layout; Visual;
 - **Abstract**: In recent years, the use of multi-modal pre-trained Transformers has led to significant advancements in visually-rich document un- derstanding. However, existing models have mainly focused on features such as text and vision while neglecting the importance of layout relationship between text nodes. In this paper, we pro- pose GraphLayoutLM, a novel document understanding model that leverages the modeling of layout structure graph to inject document layout knowledge into the model. GraphLayoutLM utilizes a graph reordering algorithm to adjust the text sequence based on the graph structure. Additionally, our model uses a layout-aware multi-head self-attention layer to learn document layout knowledge. The pro- posed model enables the understanding of the spatial arrangement of text elements, improving document comprehension. We evaluate our model on various benchmarks, including FUNSD, XFUND and CORD, and achieve state-of-the-art results among these datasets. Our experimental results demonstrate that our proposed method provides a significant improvement over existing approaches and showcases the importance of incorporating layout information into document understanding models. We also conduct an ablation study to investigate the contribution of each component of our model. The results show that both the graph reordering algorithm and the layout-aware multi-head self-attention layer play a crucial role in achieving the best performance.
 
+--
+
+## DocFormerv2
+
+*Appalaraju, Srikar, et al. DocFormerv2: Local Features for Document Understanding. arXiv, 2023.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2023-orange"></img>
+  <a href="https://arxiv.org/pdf/2306.01733.pdf">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Encdoer-decoder Structure
+- **Modalities**: Semantic; Layout; Visual;
+- **Abstract**: We propose DocFormerv2, a multi-modal transformer for Visual Document Understanding (VDU). The VDU do- main entails understanding documents (beyond mere OCR predictions) e.g., extracting information from a form, VQA for documents and other tasks. VDU is challenging as it needs a model to make sense of multiple modalities (visual, language and spatial) to make a prediction. Our approach, termed DocFormerv2 is an encoder-decoder transformer which takes as input - vision, language and spatial fea- tures. DocFormerv2 is pre-trained with unsupervised tasks employed asymmetrically i.e., two novel document tasks on encoder and one on the auto-regressive decoder. The un- supervised tasks have been carefully designed to ensure that the pre-training encourages local-feature alignment between multiple modalities. DocFormerv2 when evalu- ated on nine datasets shows state-of-the-art performance over strong baselines e.g. TabFact (4.3%), InfoVQA (1.4%), FUNSD (1%). Furthermore, to show generalization ca- pabilities, on three VQA tasks involving scene-text, Doc- Formerv2 outperforms previous comparably-sized models and even does better than much larger models (such as GIT2, PaLi and Flamingo) on some tasks. Extensive ab- lations show that due to its pre-training, DocFormerv2 un- derstands multiple modalities better than prior-art in VDU.
+
+--
+
+## DocTr
+
+*Liao, Haofu, et al. DocTr: Document transformer for structured information extraction in documents. ICCV, 2023.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2023-orange"></img>
+  <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Liao_DocTr_Document_Transformer_for_Structured_Information_Extraction_in_Documents_ICCV_2023_paper.pdf">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Excellent Performance; New Paradigm
+- **Modalities**: Semantic; Layout; Visual;
+- **Abstract**: We present a new formulation for structured information extraction (SIE) from visually rich documents. We address the limitations of existing IOB tagging and graph-based for- mulations, which are either overly reliant on the correct ordering of input text or struggle with decoding a complex graph. Instead, motivated by anchor-based object detectors in computer vision, we represent an entity as an anchor word and a bounding box, and represent entity linking as the as- sociation between anchor words. This is more robust to text ordering, and maintains a compact graph for entity linking. The formulation motivates us to introduce 1) a Document Transformer (DocTr) that aims at detecting and associating entity bounding boxes in visually rich documents, and 2) a simple pre-training strategy that helps learn entity detection in the context of language. Evaluations on three SIE bench- marks show the effectiveness of the proposed formulation, and the overall approach outperforms existing solutions.
+
 <br>
 <br>
 
@@ -883,6 +920,24 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Highlights**: Pure End-to-End; New pretraining strategy
 - **Modalities**: Visual
 - **Abstract**: Visually-situated language is ubiquitous—sources range from textbooks with diagrams to web pages with images and tables, to mobile apps with buttons and forms. Perhaps due to this diversity, previous work has typically relied on domain-specific recipes with limited sharing of the underlying data, model architectures, and objectives. We present Pix2Struct, a pretrained image-to-text model for purely visual language understanding, which can be finetuned on tasks containing visually-situated language. Pix2Struct is pretrained by learning to parse masked screenshots of web pages into simplified HTML. The web, with its richness of visual elements cleanly reflected in the HTML structure, provides a large source of pretraining data well suited to the diversity of downstream tasks. Intuitively, this objective subsumes common pretraining signals such as OCR, language modeling, and image captioning. In addition to the novel pretraining strategy, we introduce a variable-resolution input representation and a more flexible integration of language and vision inputs, where language prompts such as questions are rendered directly on top of the input image. For the first time, we show that a single pretrained model can achieve state-of-the-art results in six out of nine tasks across four domains: documents, illustrations, user interfaces, and natural images.
+
+
+---
+
+## SeRum
+
+*Cao, Haoyu, et al. Attention Where It Matters: Rethinking Visual Document Understanding with Selective Region Concentration. ICCV, 2023.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2023-orange"></img>
+  <a href="https://arxiv.org/pdf/2309.01131.pdf">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-PMLR-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Pure End-to-End; New pretraining strategy
+- **Modalities**: Visual
+- **Abstract**: We propose a novel end-to-end document understand- ing model called SeRum (SElective Region Understanding Model) for extracting meaningful information from docu- ment images, including document analysis, retrieval, and office automation. Unlike state-of-the-art approaches that rely on multi-stage technical schemes and are computa- tionally expensive, SeRum converts document image under- standing and recognition tasks into a local decoding pro- cess of the visual tokens of interest, using a content-aware token merge module. This mechanism enables the model to pay more attention to regions of interest generated by the query decoder, improving the model’s effectiveness and speeding up the decoding speed of the generative scheme. We also designed several pre-training tasks to enhance the understanding and local awareness of the model. Exper- imental results demonstrate that SeRum achieves state-of- the-art performance on document understanding tasks and competitive results on text spotting tasks. SeRum represents a substantial advancement towards enabling efficient and effective end-to-end document understanding.
 
 
 <br>

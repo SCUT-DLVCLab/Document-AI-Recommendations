@@ -99,7 +99,7 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>98.31</td>
 </tr>
 </tr>
-    <td rowspan=14>Large Scale Pre-trained</td>
+    <td rowspan=16>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
     <td>base</td>
     <td>94.38</td>
@@ -189,6 +189,19 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>97.55</td>
+</tr>
+</tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutmask">LayoutMask</a></td>
+    <td>base</td>
+    <td>-</td>
+    <td>-</td>
+    <td>96.87</td>
+</tr>
+<tr>
+    <td>large</td>
+    <td>-</td>
+    <td>-</td>
+    <td>97.27</td>
 </tr>
 </tr>
     <td rowspan=5>End-to-End</td>
@@ -306,7 +319,7 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
 </tr>
 </tr>
-    <td rowspan=26>Large Scale Pre-trained</td>
+    <td rowspan=28>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
     <td>base</td>
     <td>94.37</td>
@@ -552,6 +565,25 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>94.40</td>
 </tr>
+</tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutmask">LayoutMask</a></td>
+    <td>base</td>
+    <td>-</td>
+    <td>-</td>
+    <td>96.99</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>large</td>
+    <td>-</td>
+    <td>-</td>
+    <td>97.19</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
 <tr>
     <td rowspan=2>End-to-End</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#donut">Donut</a></td>
@@ -739,8 +771,8 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
 </tr>
-    <td rowspan=37>Large Scale Pre-trained</td>
-    <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
+<td rowspan=41>Large Scale Pre-trained</td>
+<td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
         <td>base</td>
         <td>75.97</td>
         <td>81.55</td>
@@ -1184,7 +1216,7 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
 </tr>
-</tr>
+<tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#doctr">DocTr</a></td>
     <td>-</td>
     <td>-</td>
@@ -1195,6 +1227,56 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#docformerv2">DocFormerv2</a></td>
+        <td>base</td>
+        <td>89.15</td>
+        <td>87.60</td>
+        <td>88.37</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+</tr>
+<tr>
+    <td>large</td>
+    <td>89.88</td>
+    <td>87.92</td>
+    <td>88.89</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutmask">LayoutMask</a></td>
+        <td>base</td>
+        <td>-</td>
+        <td>-</td>
+        <td>92.91</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>large</td>
+        <td>-</td>
+        <td>-</td>
+        <td>93.20</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
 </tr>
 <tr>
     <td rowspan=1>End-to-End</td>

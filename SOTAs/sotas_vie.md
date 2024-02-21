@@ -771,7 +771,7 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
 </tr>
-<td rowspan=41>Large Scale Pre-trained</td>
+<td rowspan=42>Large Scale Pre-trained</td>
 <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
         <td>base</td>
         <td>75.97</td>
@@ -1224,25 +1224,6 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>73.90</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-</tr>
-</tr>
-    <td rowspan=2><a href="../Approaches/approaches_vie.md/#docformerv2">DocFormerv2</a></td>
-        <td>base</td>
-        <td>89.15</td>
-        <td>87.60</td>
-        <td>88.37</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-</tr>
-<tr>
-    <td>large</td>
-    <td>89.88</td>
-    <td>87.92</td>
-    <td>88.89</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>

@@ -7,7 +7,7 @@ This page contains performance on public benchmarks of visual information extrac
 
 <h3><b>F1-score</b></h3>
 
-Given the prediction of the model and the ground-truth, if the predicted string of a key category is completely consistent with the ground-truth, then it will be recorded as a true positive(TP) sample. Let $N_p$ denotes the number of predicted string, $N_g$ for the number of ground-truth entities, $N_t$ for the number of TP samples, then we have
+Given the prediction of the model and the ground-truth, if the predicted content is completely consistent with the ground-truth, it will be recorded as a true positive(TP) sample. Let $N_p$ denotes the number of predictions, $N_g$ for the number of ground-truths, $N_t$ for the number of TP samples, then we have
 
 $$
 precision = \frac{N_t}{N_p}
@@ -21,7 +21,33 @@ $$
 F1 = \frac{2 \times precision \times recall}{precision + recall}
 $$
 
+<h4><b>Entity F1 score</b></h4>
+
+Used as a metric for Entity Extraction (or Semantic Entity Recognition, SER) task. It the predicted string and key category are both consistent with the ground-truth, it will be recorded as a TP sample. The total number of TP, total number of predictions and total number of ground-truth strings will be used to calculate the score.
+
 When using the BIO-tagging schema, the [seqeval](https://github.com/chakki-works/seqeval) library is a good choice for calculating the F1-score.
+
+<h4><b>Linking F1 score</b></h4>
+
+Used as a metric for Entity Linking (or Relation Extraction, RE) task. Models takes the ground-truths of Entity Extraction as input, then predicts the linking relation between entities. A linking is considered as TP if and only if the predicted pair exists in the ground-truth pairs.
+
+
+<h4><b>Pair F1 score</b></h4>
+
+Used as a metric for end-to-end pair extraction task. A prediction is considered TP if and only if the predicted key-value pair exactly matches the ground-truth pair. The total number of TP, total number of predictions and total number of ground-truth pairs will be used to calculate the score.
+
+<h4><b>QA F1 score</b></h4>
+
+Used as the metric for LLM-based models.
+
+For Entity Extraction, two types of operations are used:
+1. The model takes the text content of an entity as input, then predicts its corresponding key category. Used for datasets like FUNSD, where each key category contains multiple entities.
+2. The model takes the key category name as input, then predicts the corresponding text content. Used for datasets where each key category contains one or no entity.
+
+For Entity Linking, the model takes the question entity as input, then predicts the corresponding answer entity.
+
+⚠️ **It is worth-noting that, the QA F1 score is a loosened metric compared to the conventional settings, since prior information like the entity span is provided to the model. Hence, scores obtained through the QA pipeline cannot be directly compared with the scores obtained through the conventional settings.** In this section, we will separately list these QA scores.
+
 
 <h3><b>Edit Distance Score</b></h3>
 

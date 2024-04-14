@@ -585,7 +585,7 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
 </tr>
 <tr>
-    <td rowspan=2>End-to-End</td>
+    <td rowspan=3>End-to-End</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#donut">Donut</a></td>
     <td>-</td>
     <td>-</td>
@@ -601,7 +601,16 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>95.65</td>
     <td>-</td>
     <td>-</td>
-    <td>98.80</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#udop">UDOP</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>97.58</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td rowspan=8>Other Methods</td>
@@ -771,7 +780,7 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
 </tr>
-<td rowspan=42>Large Scale Pre-trained</td>
+<td rowspan=41>Large Scale Pre-trained</td>
 <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
         <td>base</td>
         <td>75.97</td>
@@ -1228,15 +1237,6 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
 </tr>
-</tr>
-    <td colspan=2><a href="../Approaches/approaches_vie.md/#doctr">DocTr</a></td>
-    <td>-</td>
-    <td>-</td>
-    <td>84.00</td>
-    <td>-</td>
-    <td>-</td>
-    <td>73.90</td>
-</tr>
 <tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#docformerv2">DocFormerv2</a></td>
         <td>base</td>
@@ -1288,7 +1288,7 @@ In real application, we need to extract all the key-value pairs from the documen
         <td>-</td>
 </tr>
 <tr>
-    <td rowspan=1>End-to-End</td>
+    <td rowspan=2>End-to-End</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#esp">ESP</a></td>
     <td>-</td>
     <td>-</td>
@@ -1296,6 +1296,18 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>88.88</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+<td colspan=2><a href="../Approaches/approaches_vie.md/#udop">UDOP</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>91.62</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>

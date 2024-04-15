@@ -70,6 +70,8 @@ The [zhang-shasha](https://github.com/timtadh/zhang-shasha) library can be used 
 - [FUNSD](#funsd)
 - [XFUND](#xfund)
 - [EPHOIE](#ephoie)
+- [DeepForm](#deepform)
+- [Kleister Charity](#kleister-charity)
 
 ---
 
@@ -84,6 +86,7 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <th> Precision </th>
     <th> Recall </th>
     <th> F1 </th>
+    <th> QA F1 </th>
 </tr>
 <tr>
     <td rowspan=2>Grid-based</td>
@@ -92,12 +95,14 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>96.25</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>RoBERTa-base</td>
     <td>-</td>
     <td>-</td>
     <td>96.40</td>
+    <td>-</td>
 </tr>
 <tr>
     <td rowspan=4>GNN-based</td>
@@ -105,24 +110,28 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>96.12</td>
+    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#matchvie">MatchVIE</a></td>
     <td>-</td>
     <td>-</td>
     <td>96.57</td>
+    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#graphdoc">GraphDoc</a></td>
     <td>-</td>
     <td>-</td>
     <td>98.45</td>
+    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#formnetv2">FormNetV2</a></td>
     <td>-</td>
     <td>-</td>
     <td>98.31</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=16>Large Scale Pre-trained</td>
@@ -131,12 +140,14 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>94.38</td>
     <td>94.38</td>
     <td>94.38</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>95.24</td>
     <td>95.24</td>
     <td>95.24</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlmv2">LayoutLMv2</a></td>
@@ -144,12 +155,14 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>96.25</td>
     <td>96.25</td>
     <td>96.25</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>99.04</td>
     <td>96.61</td>
     <td>97.81</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#tilt">TILT</a></td>
@@ -157,12 +170,14 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>97.65</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>-</td>
     <td>-</td>
     <td>98.10</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#bros">BROS</a></td>
@@ -170,12 +185,14 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>95.91</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>-</td>
     <td>-</td>
     <td>96.62</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=3><a href="../Approaches/approaches_vie.md/#structext">StrucTexT</a></td>
@@ -183,18 +200,21 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>96.88</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>chn&eng-base</td>
     <td>-</td>
     <td>-</td>
     <td>98.27</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>chn&eng-large</td>
     <td>-</td>
     <td>-</td>
     <td>98.70</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#wukong-reader">WUKONG-READER</a></td>
@@ -202,12 +222,14 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>96.88</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>-</td>
     <td>-</td>
     <td>98.15</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=1><a href="../Approaches/approaches_vie.md/#ernie-layout">ERNIE-layout</a></td>
@@ -215,6 +237,7 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>97.55</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutmask">LayoutMask</a></td>
@@ -222,12 +245,14 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>96.87</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>-</td>
     <td>-</td>
     <td>97.27</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=5>End-to-End</td>
@@ -236,12 +261,14 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>96.18</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>end-to-end</td>
     <td>-</td>
     <td>-</td>
     <td>82.06</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#vies">VIES</a></td>
@@ -249,12 +276,14 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>96.12</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>end-to-end</td>
     <td>-</td>
     <td>-</td>
     <td>91.07</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=1><a href="../Approaches/approaches_vie.md/#kuang-cfam">Kuang CFAM</a></td>
@@ -262,6 +291,74 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>85.87</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td rowspan=9>LLM-based</td>
+    <td colspan=2><a href="../Approaches/approached_vie.md/#hrvda">HRVDA</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>91.00</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#monkey">Monkey</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>41.90</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#unidoc">UniDoc</a></td>
+    <td>224</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>1.40</td>
+</tr>
+<tr>
+    <td>336</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>2.92</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#docpedia">DocPedia</a></td>
+    <td>224</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>17.01</td>
+</tr>
+<tr>
+    <td>336</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>21.44</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutllm">LayoutLLM</a></td>
+    <td>Llama2-7B-chat</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>70.97</td>
+</tr>
+<tr>
+    <td>Vicuna-1.5-7B</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>72.12</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approached_vie.md/#omniparser">OmniParser</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>85.60</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=4>Other Methods</td>
@@ -270,24 +367,28 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
     <td>-</td>
     <td>-</td>
     <td>96.54</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>Tag, ground-truth</td>
     <td>-</td>
     <td>-</td>
     <td>95.46</td>
+    <td>-</td>
 </tr>
 </tr>
     <td>Tag, end-to-end</td>
     <td>-</td>
     <td>-</td>
     <td>91.21</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>Tag&Copy, end-to-end</td>
     <td>-</td>
     <td>-</td>
     <td>91.93</td>
+    <td>-</td>
 </tr>
 
 </table>
@@ -305,16 +406,22 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
 <tr>
     <th rowspan=2> Type </th>
     <th rowspan=2 colspan=2> Approach </th>
-    <th colspan=3> Entity Extraction </th>
-    <th colspan=3> Document Structure Parsing </th>
+    <th colspan=4> Entity Extraction </th>
+    <th colspan=3> Entity Linking </th>
+    <th colspan=4> Document Structure Parsing </th>
 </tr>
 <tr>
     <th> Precision </th>
     <th> Recall </th>
     <th> F1 </th>
+    <th> QA F1 </th>
     <th> Precision </th>
     <th> Recall </th>
     <th> F1 </th>
+    <th> Precision </th>
+    <th> Recall </th>
+    <th> F1 </th>
+    <th> TED Acc </th>
 </tr>
 <tr>
     <td rowspan=3>GNN-based</td>
@@ -322,6 +429,11 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>96.93</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -334,12 +446,22 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#formnetv2">FomNetV2</a></td>
     <td>-</td>
     <td>-</td>
     <td>97.70</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -354,12 +476,22 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>94.32</td>
     <td>95.54</td>
     <td>94.93</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -373,12 +505,22 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>95.65</td>
     <td>96.37</td>
     <td>96.01</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -392,12 +534,22 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>-</td>
     <td>-</td>
     <td>97.46</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -411,12 +563,22 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>97.25</td>
     <td>96.74</td>
     <td>96.99</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -430,12 +592,22 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>-</td>
     <td>-</td>
     <td>96.33</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -448,7 +620,12 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>96.50</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>95.73</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
@@ -457,7 +634,12 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>97.28</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>97.40</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#udoc">UDoc</a></td>
@@ -468,12 +650,22 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>UDoc*</td>
     <td>-</td>
     <td>-</td>
     <td>96.86</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -487,6 +679,11 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>[InfoXLM]base</td>
@@ -496,12 +693,22 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#docrel">DocReL</a></td>
     <td>-</td>
     <td>-</td>
     <td>97.00</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -515,12 +722,22 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>-</td>
     <td>-</td>
     <td>97.27</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -534,6 +751,11 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#geolayoutlm">GeoLayoutLM</a></td>
@@ -542,7 +764,12 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>97.97</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>99.45</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#graphlayoutlm">GraphLayoutLM</a></td>
@@ -553,12 +780,22 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>-</td>
     <td>-</td>
     <td>97.75</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -572,12 +809,22 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>97.71</td>
     <td>97.70</td>
     <td>97.70</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -589,7 +836,12 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>98.20</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>94.40</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutmask">LayoutMask</a></td>
@@ -597,6 +849,11 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>96.99</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -609,22 +866,37 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td rowspan=3>End-to-End</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#donut">Donut</a></td>
     <td>-</td>
     <td>-</td>
+    <td>84.10</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>91.60</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>90.90</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#esp">ESP</a></td>
     <td>-</td>
     <td>-</td>
     <td>95.65</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -637,6 +909,69 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td rowspan=4>LLM-based</td>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#hrvda">HRVDA</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>89.30</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutllm">LayoutLLM</a></td>
+    <td>Llama2-7B-chat</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>62.21</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>Vicuna-1.5-7B</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>63.10</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#omniparser">OmniParser</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>84.80</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>88.00</td>
 </tr>
 <tr>
     <td rowspan=8>Other Methods</td>
@@ -647,7 +982,12 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>92.50</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>♠ CORD</td>
@@ -656,7 +996,12 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>88.20</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>♠ CORD+</td>
@@ -665,7 +1010,12 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>87.40</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>♠ CORD++</td>
@@ -674,7 +1024,12 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>83.10</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>♠ w/o TCM, CORD, oracle input</td>
@@ -683,7 +1038,12 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>91.50</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>♠ w/o TCM, CORD</td>
@@ -692,7 +1052,12 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>87.40</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>♠ w/o TCM, CORD+</td>
@@ -701,7 +1066,12 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>86.10</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>♠ w/o TCM, CORD++</td>
@@ -710,7 +1080,12 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>82.60</td>
+    <td>-</td>
 </tr>
 
 </table>
@@ -729,17 +1104,19 @@ In real application, we need to extract all the key-value pairs from the documen
 <tr>
     <th rowspan=2> Type </th>
     <th rowspan=2 colspan=2> Approach </th>
-    <th colspan=3> Entity Extraction </th>
-    <th colspan=3> Entity Linking </th>
+    <th colspan=4> Entity Extraction </th>
+    <th colspan=4> Entity Linking </th>
     <th colspan=3> E2E Pair Extraction </th>
 </tr>
 <tr>
     <th> Precision </th>
     <th> Recall </th>
     <th> F1 </th>
+    <th> QA F1 </th>
     <th> Precision </th>
     <th> Recall </th>
     <th> F1 </th>
+    <th> QA F1 </th>
     <th> Precision </th>
     <th> Recall </th>
     <th> F1 </th>
@@ -750,6 +1127,8 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>83.00</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -769,12 +1148,16 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#matchvie">MatchVIE</a></td>
     <td>-</td>
     <td>-</td>
     <td>81.33</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -793,12 +1176,16 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#formnetv2">FormNetV2</a></td>
     <td>-</td>
     <td>-</td>
     <td>92.51</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -818,12 +1205,16 @@ In real application, we need to extract all the key-value pairs from the documen
         <td>-</td>
         <td>-</td>
         <td>-</td>
+        <td>-</td>
+        <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>75.96</td>
     <td>82.19</td>
     <td>78.95</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -837,6 +1228,8 @@ In real application, we need to extract all the key-value pairs from the documen
         <td>80.29</td>
         <td>85.39</td>
         <td>82.76</td>
+        <td>-</td>
+        <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -855,6 +1248,8 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=4><a href="../Approaches/approaches_vie.md/#layoutlxlm">LayoutXLM</a></td>
@@ -864,7 +1259,9 @@ In real application, we need to extract all the key-value pairs from the documen
         <td>79.40</td>
         <td>-</td>
         <td>-</td>
+        <td>-</td>
         <td>54.83</td>
+        <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -876,7 +1273,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>82.25</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>64.04</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -888,7 +1287,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>79.24</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>66.71</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -900,7 +1301,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>80.68</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>76.83</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -911,6 +1314,8 @@ In real application, we need to extract all the key-value pairs from the documen
         <td>-</td>
         <td>-</td>
         <td>90.29</td>
+        <td>-</td>
+        <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -929,6 +1334,8 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+        <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#xylayoutlm">XYLayoutLM</a></td>
@@ -937,7 +1344,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>83.35</td>
     <td>-</td>
     <td>-</td>
-    <td></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -949,7 +1358,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>83.36</td>
     <td>-</td>
     <td>-</td>
-    <td></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -960,6 +1371,8 @@ In real application, we need to extract all the key-value pairs from the documen
         <td>80.76</td>
         <td>86.09</td>
         <td>83.34</td>
+        <td>-</td>
+        <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -978,6 +1391,8 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#structurallm">StructuralLM-large</a></td>
@@ -986,7 +1401,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>85.14</td>
     <td>-</td>
     <td>-</td>
-    <td></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -999,7 +1416,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>83.05</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>71.46</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1011,7 +1430,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>84.52</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>77.01</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1024,7 +1445,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>83.09</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>44.10</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1036,7 +1459,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>84.83</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>70.45</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1048,7 +1473,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>87.56</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>74.21</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1065,12 +1492,16 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>UDoc*</td>
     <td>-</td>
     <td>-</td>
     <td>87.93</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1090,12 +1521,16 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>[InfoXLM]base</td>
     <td>84.67</td>
     <td>87.09</td>
     <td>85.86</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1110,7 +1545,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>84.15</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>62.76</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1122,7 +1559,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>85.74</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>74.07</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1134,7 +1573,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>46.10</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1151,12 +1592,16 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>-</td>
     <td>-</td>
     <td>93.62</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1176,6 +1621,8 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#geolayoutlm">GeoLayoutLM</a></td>
@@ -1184,7 +1631,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>92.86</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>89.45</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1196,7 +1645,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>90.86</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1207,6 +1658,8 @@ In real application, we need to extract all the key-value pairs from the documen
         <td>-</td>
         <td>-</td>
         <td>93.15</td>
+        <td>-</td>
+        <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -1225,16 +1678,20 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#docformerv2">DocFormerv2</a></td>
-        <td>base</td>
-        <td>89.15</td>
-        <td>87.60</td>
-        <td>88.37</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+    <td>base</td>
+    <td>89.15</td>
+    <td>87.60</td>
+    <td>88.37</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1244,6 +1701,8 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>89.88</td>
     <td>87.92</td>
     <td>88.89</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1258,7 +1717,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>84.00</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>73.90</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1275,12 +1736,16 @@ In real application, we need to extract all the key-value pairs from the documen
         <td>-</td>
         <td>-</td>
         <td>-</td>
+        <td>-</td>
+        <td>-</td>
 </tr>
 <tr>
     <td>large</td>
     <td>89.88</td>
     <td>87.92</td>
     <td>88.89</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1300,12 +1765,16 @@ In real application, we need to extract all the key-value pairs from the documen
         <td>-</td>
         <td>-</td>
         <td>-</td>
+        <td>-</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>large</td>
         <td>-</td>
         <td>-</td>
         <td>93.20</td>
+        <td>-</td>
+        <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -1321,7 +1790,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>91.12</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>88.88</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1337,6 +1808,110 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td rowspan=7>LLM-based</td>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#monkey">Monkey</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>24.10</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#unidoc">UniDoc</a></td>
+    <td>224</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>1.19</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>336</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>1.02</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#docpedia">DocPedia</a></td>
+    <td>224</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>18.75</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>336</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>29.86</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutllm">LayoutLLM</a></td>
+    <td>Llama2-7B-chat</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>78.65</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>Vicuna-1.5-7B</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>79.98</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td rowspan=1>Other Methods</td>
@@ -1346,7 +1921,9 @@ In real application, we need to extract all the key-value pairs from the documen
     <td>71.60</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>41.30</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1728,3 +2305,95 @@ EPHOIE contains 11 key categories. It takes the micro-F1 as the evaluation metri
     <td>-</td>
     <td>97.59</td>
 </tr>
+</table>
+
+
+
+## DeepForm
+
+
+<table align="center">
+<tr>
+    <th > Type </th>
+    <th colspan=2> Approach </th>
+    <th> QA F1 </th>
+</tr>
+<tr>
+    <td rowspan=1>End-to-end</td>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#donut🍩">Donut</a></td>
+    <td>61.60</td>
+</tr>
+<tr>
+    <td rowspan=6>LLM-based</td>
+    <td colspan=2>Qwen-VL</td>
+    <td>4.10</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#monkey">Monkey</a></td>
+    <td>40.60</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#mplug-docowl">mPLUG-DocOwl</a></td>
+    <td>42.60</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#mplug-docowl-15">mPLUG-DocOwl 1.5</a></td>
+    <td>DocOwl-1.5</td>
+    <td>68.80</td>
+</tr>
+<tr>
+    <td>DocOwl-1.5 chat</td>
+    <td>68.80</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#ureader">UReader</a></td>
+    <td>49.50</td>
+</tr>
+
+</table>
+
+
+
+
+## Kleister Charity
+
+Kleister Charity (KLC) contains 8 kind of key categories. It contains 2788 financial reports with 61643 pages in total. This benchmark is commonly used by LLM-based approaches in a QA-manner.
+
+<table align="center">
+<tr>
+    <th > Type </th>
+    <th colspan=2> Approach </th>
+    <th> QA F1 </th>
+</tr>
+<tr>
+    <td rowspan=1>End-to-end</td>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#donut🍩">Donut</a></td>
+    <td>30.00</td>
+</tr>
+<tr>
+    <td rowspan=6>LLM-based</td>
+    <td colspan=2>Qwen-VL</td>
+    <td>15.90</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#monkey">Monkey</a></td>
+    <td>32.80</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#mplug-docowl">mPLUG-DocOwl</a></td>
+    <td>30.30</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#mplug-docowl-15">mPLUG-DocOwl 1.5</a></td>
+    <td>DocOwl-1.5</td>
+    <td>37.90</td>
+</tr>
+<tr>
+    <td>DocOwl-1.5 chat</td>
+    <td>38.70</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#ureader">UReader</a></td>
+    <td>32.80</td>
+</tr>
+</table>

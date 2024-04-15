@@ -77,8 +77,15 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - [LLM-based Methods](#llm-based-methods)
   - [ICL-D3IE](#icl-d3ie)
   - [mPLUG-DocOwl](#mplug-docowl)
+  - [mPLUG-DocOwl 1.5](#mplug-docowl-15)
+  - [UReader](#ureader)
   - [LLaVAR](#llavar)
   - [UniDoc](#unidoc)
+  - [DocPedia](#docpedia)
+  - [Monkey](#monkey)
+  - [HRVDA](#hrvda)
+  - [OmniParser](#omniparser)
+  - [LayoutLLM](#layoutllm)
 - [Other Methods](#other-methods)
   - [TCPN](#tcpn)
   - [SPADE♠](#spade)
@@ -1040,6 +1047,10 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Modalities**: Semantic; Layout
 - **Abstract**: Automating the Key Information Extraction (KIE) from documents improves efficiency, productivity, and security in many industrial scenarios such as rapid indexing and archiving. Many existing supervised learning methods for the KIE task need to feed a large number of labeled samples and learn separate models for different types of documents. However, collecting and labeling a large dataset is time-consuming and is not a userfriendly requirement for many cloud platforms. To overcome these challenges, we propose a deep end-to-end trainable network for one-shot KIE using partial graph matching. Contrary to previous methods that the learning of similarity and solving are optimized separately, our method enables the learning of the two processes in an end-to-end framework. Existing one-shot KIE methods are either template or simple attention-based learning approach that struggle to handle texts that are shifted beyond their desired positions caused by printers, as illustrated in Fig. 1. To solve this problem, we add one-to-(at most)-one constraint such that we will find the globally optimized solution even if some texts are drifted. Further, we design a multimodal context ensemble block to boost the performance through fusing features of spatial, textual, and aspect representations. To promote research of KIE, we collected and annotated a one-shot document KIE dataset named DKIE with diverse types of images. The DKIE dataset consists of 2.5K document images captured by mobile phones in natural scenes, and it is the largest available one-shot KIE dataset up to now. The results of experiments on DKIE show that our method achieved state-of-the-art performance compared with recent one-shot and supervised learning approaches. The dataset and proposed one-shot KIE model will be released soon.
 
+
+<br>
+<br>
+
 ---
 
 # LLM-based Methods
@@ -1083,6 +1094,45 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 ---
 
+
+## mPLUG-DocOwl 1.5
+
+*Hu et al. mPLUG-DocOwl 1.5: Unified Structure Learning for OCR-free Document Understanding. arXiv preprint 2403.12895, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2403.12895">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/X-PLUG/mPLUG-DocOwl">
+    <img alt="Code" src="https://img.shields.io/badge/Code-GitHub-blue"></img>
+  </a>
+</p>
+
+- **Modalities**: Visual + Semantic Prompt
+- **Abstract**: Structure information is critical for understanding the semantics of text-rich images, such as documents, tables, and charts. Existing Multimodal Large Language Models (MLLMs) for Visual Document Understanding are equipped with text recognition ability but lack general structure understanding abilities for text-rich document images. In this work, we emphasize the importance of structure information in Visual Document Understanding and propose the Unified Structure Learning to boost the performance of MLLMs. Our Unified Structure Learning comprises structure-aware parsing tasks and multi-grained text localization tasks across 5 domains: document, webpage, table, chart, and natural image. To better encode structure information, we design a simple and effective vision-to-text module H-Reducer, which can not only maintain the layout information but also reduce the length of visual features by merging horizontal adjacent patches through convolution, enabling the LLM to understand high-resolution images more efficiently. Furthermore, by constructing structure-aware text sequences and multi-grained pairs of texts and bounding boxes for publicly available text-rich images, we build a comprehensive training set DocStruct4M to support structure learning. Finally, we construct a small but high-quality reasoning tuning dataset DocReason25K to trigger the detailed explanation ability in the document domain. Our model DocOwl 1.5 achieves state-of-the-art performance on 10 visual document understanding benchmarks, improving the SOTA performance of MLLMs with a 7B LLM by more than 10 points in 5/10 benchmarks.
+
+---
+
+## UReader
+
+*Ye et al. UReader: Universal OCR-free Visually-situated Language Understanding with Multimodal Large Language Model. EMNLP Findings, 2023.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2023-orange"></img>
+  <a href="https://aclanthology.org/2023.findings-emnlp.187/">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACL-brightgreen"></img>
+  </a>
+  <a href="https://github.com/LukeForeverYoung/UReader">
+    <img alt="Code" src="https://img.shields.io/badge/Code-GitHub-blue"></img>
+  </a>
+</p>
+
+- **Modalities**: Visual + Semantic Prompt
+- **Abstract**: Text is ubiquitous in our visual world, conveying crucial information, such as in documents, websites, and everyday photographs. In this work, we propose UReader, a first exploration of universal OCR-free visually-situated language understanding based on the Multimodal Large Language Model (MLLM). By leveraging the shallow text recognition ability of the MLLM, we only finetuned 1.2% parameters and the training cost is much lower than previous work following domain-specific pretraining and finetuning paradigms. Concretely, UReader is jointly finetuned on a wide range of Visually-situated Language Understanding tasks via a unified instruction format. To enhance the visual text and semantic understanding, we further apply two auxiliary tasks with the same format, namely text reading and key points generation tasks. We design a shape-adaptive cropping module before the encoder-decoder architecture of MLLM to leverage the frozen low-resolution vision encoder for processing high-resolution images. Without downstream finetuning, our single model achieves state-of-the-art ocr-free performance in 8 out of 10 visually-situated language understanding tasks, across 5 domains: documents, tables, charts, natural images, and webpage screenshots. Codes and instruction-tuning datasets will be released.
+
+---
+
 ## LLaVAR
 
 *Zhang et al. LLaVAR: Enhanced Visual Instruction Tuning for Text-Rich Image Understanding. arXiv preprint 2306.17107, 2023.*
@@ -1117,14 +1167,113 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Abstract**: In the era of Large Language Models (LLMs), tremendous strides have been made in the field of multimodal understanding. However, existing advanced algorithms are limited to effectively utilizing the immense representation capabilities and rich world knowledge inherent to these large pre-trained models, and the beneficial connections among tasks within the context of text-rich scenarios have not been sufficiently explored. In this work, we introduce UniDoc, a novel multimodal model equipped with text detection and recognition capabilities, which are deficient in existing approaches. Moreover, UniDoc capitalizes on the beneficial interactions among tasks to enhance the performance of each individual task. To implement UniDoc, we perform unified multimodal instruct tuning on the contributed large-scale instruction following datasets. Quantitative and qualitative experimental results show that UniDoc sets state-of-the-art scores across multiple challenging benchmarks. To the best of our knowledge, this is the first large multimodal model capable of simultaneous text detection, recognition, spotting, and understanding.
 
 
+---
+
+## DocPedia
+
+*Feng et al. DocPedia: Unleashing the Power of Large Multimodal Model in the Frequency Domain for Versatile Document Understanding. arXiv preprint 2311.11810, 2023.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2023-orange"></img>
+  <a href="https://arxiv.org/abs/2311.11810">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Modalities**: Visual + Semantic Prompt
+- **Abstract**: This work presents DocPedia, a novel large multimodal model (LMM) for versatile OCR-free document understanding, capable of parsing images up to 2,560×2,560 resolution. Unlike existing work either struggle with high-resolution documents or give up the large language model thus vision or language ability constrained, our DocPedia directly processes visual input in the frequency domain rather than the pixel space. The unique characteristic enables DocPedia to capture a greater amount of visual and textual information using a limited number of visual tokens. To consistently enhance both perception and comprehension abilities of our model, we develop a dual-stage training strategy and enrich instructions/annotations of all training tasks covering multiple document types. Extensive quantitative and qualitative experiments conducted on various publicly available benchmarks confirm the mutual benefits of jointly learning perception and comprehension tasks. The results provide further evidence of the effectiveness and superior performance of our DocPedia over other methods.
+
+
+---
+
+<!-- TODO replace cvpr links -->
+
+## Monkey
+
+*Li et al. Monkey: Image Resolution and Text Label Are Important Things for Large Multi-modal Models. CVPR, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2311.06607">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/Yuliang-Liu/Monkey">
+    <img alt="Code" src="https://img.shields.io/badge/Code-GitHub-blue"></img>
+  </a>
+</p>
+
+- **Modalities**: Visual + Semantic Prompt
+- **Abstract**: Large Multimodal Models (LMMs) have shown promise in vision-language tasks but struggle with high-resolution input and detailed scene understanding. Addressing these challenges, we introduce Monkey to enhance LMM capabilities. Firstly, Monkey processes input images by dividing them into uniform patches, each matching the size (e.g., 448×448) used in the original training of the welltrained vision encoder. Equipped with individual adapter for each patch, Monkey can handle higher resolutions up to 1344×896 pixels, enabling the detailed capture of complex visual information. Secondly, it employs a multi-level description generation method, enriching the context for scene-object associations. This two-part strategy ensures more effective learning from generated data: the higher resolution allows for a more detailed capture of visuals, which in turn enhances the effectiveness of comprehensive descriptions. Extensive ablative results validate the effectiveness of our designs. Additionally, experiments on 18 datasets further demonstrate that Monkey surpasses existing LMMs in many tasks like Image Captioning and various Visual Question Answering formats. Specially, in qualitative tests focused on dense text question answering, Monkey has exhibited encouraging results compared with GPT4V.
+
+
+---
+
+<!-- TODO replace cvpr links -->
+
+## HRVDA
+
+*Liu et al. HRVDA: High-Resolution Visual Document Assistant. CVPR, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2404.06918">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Modalities**: Visual + Semantic Prompt
+- **Abstract**: Leveraging vast training data, multimodal large language models (MLLMs) have demonstrated formidable general visual comprehension capabilities and achieved remarkable performance across various tasks. However, their performance in visual document understanding still leaves much room for improvement. This discrepancy is primarily attributed to the fact that visual document understanding is a fine-grained prediction task. In natural scenes, MLLMs typically use low-resolution images, leading to a substantial loss of visual information. Furthermore, general-purpose MLLMs do not excel in handling document-oriented instructions. In this paper, we propose a High-Resolution Visual Document Assistant (HRVDA), which bridges the gap between MLLMs and visual document understanding. This model employs a content filtering mechanism and an instruction filtering module to separately filter out the content-agnostic visual tokens and instruction-agnostic visual tokens, thereby achieving efficient model training and inference for high-resolution images. In addition, we construct a document-oriented visual instruction tuning dataset and apply a multi-stage training strategy to enhance the model's document modeling capabilities. Extensive experiments demonstrate that our model achieves state-of-the-art performance across multiple document understanding datasets, while maintaining training efficiency and inference speed comparable to low-resolution models.
+
+
+---
+
+<!-- TODO replace cvpr links -->
+
+## OmniParser
+
+*Wan et al. OmniParser: A Unified Framework for Text Spotting, Key Information Extraction and Table Recognition. CVPR, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2403.19128">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/AlibabaResearch/AdvancedLiterateMachinery">
+    <img alt="Code" src="https://img.shields.io/badge/Code-GitHub-blue"></img>
+  </a>
+</p>
+
+- **Modalities**: Visual
+- **Abstract**: Recently, visually-situated text parsing (VsTP) has experienced notable advancements, driven by the increasing demand for automated document understanding and the emergence of Generative Large Language Models (LLMs) capable of processing document-based questions. Various methods have been proposed to address the challenging problem of VsTP. However, due to the diversified targets and heterogeneous schemas, previous works usually design task-specific architectures and objectives for individual tasks, which inadvertently leads to modal isolation and complex workflow. In this paper, we propose a unified paradigm for parsing visually-situated text across diverse scenarios. Specifically, we devise a universal model, called OmniParser, which can simultaneously handle three typical visually-situated text parsing tasks: text spotting, key information extraction, and table recognition. In OmniParser, all tasks share the unified encoder-decoder architecture, the unified objective: point-conditioned text generation, and the unified input & output representation: prompt & structured sequences. Extensive experiments demonstrate that the proposed OmniParser achieves state-of-the-art (SOTA) or highly competitive performances on 7 datasets for the three visually-situated text parsing tasks, despite its unified, concise design.
+
+
+---
+
+<!-- TODO replace cvpr links -->
+
+## LayoutLLM
+
+*Luo et al. LayoutLLM: Layout Instruction Tuning with Large Language Models for Document Understanding. CVPR, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2404.05225">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/DocumentUnderstanding/LayoutLLM">
+    <img alt="Paper Link" src="https://img.shields.io/badge/Data-GitHub-yellow"></img>
+  </a>
+
+</p>
+
+- **Modalities**: Visual, Semantic, Layout
+- **Abstract**: Recently, leveraging large language models (LLMs) or multimodal large language models (MLLMs) for document understanding has been proven very promising. However, previous works that employ LLMs/MLLMs for document understanding have not fully explored and utilized the document layout information, which is vital for precise document understanding. In this paper, we propose LayoutLLM, an LLM/MLLM based method for document understanding. The core of LayoutLLM is a layout instruction tuning strategy, which is specially designed to enhance the comprehension and utilization of document layouts. The proposed layout instruction tuning strategy consists of two components: Layout-aware Pre-training and Layout-aware Supervised Fine-tuning. To capture the characteristics of document layout in Layout-aware Pre-training, three groups of pre-training tasks, corresponding to document-level, region-level and segment-level information, are introduced. Furthermore, a novel module called layout chain-of-thought (LayoutCoT) is devised to enable LayoutLLM to focus on regions relevant to the question and generate accurate answers. LayoutCoT is effective for boosting the performance of document understanding. Meanwhile, it brings a certain degree of interpretability, which could facilitate manual inspection and correction. Experiments on standard benchmarks show that the proposed LayoutLLM significantly outperforms existing methods that adopt open-source 7B LLMs/MLLMs for document understanding.
+
 
 <br>
 <br>
 
 ---
-
-
-
 
 
 

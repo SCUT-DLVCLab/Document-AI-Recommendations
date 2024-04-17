@@ -715,12 +715,15 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 ## DocFormerv2
 
-*Appalaraju, Srikar, et al. DocFormerv2: Local Features for Document Understanding. arXiv, 2023.*
+*Appalaraju, Srikar, et al. DocFormerv2: Local Features for Document Understanding. AAAI, 2024.*
 
 <p>
-  <img alt="year" src="https://img.shields.io/badge/Year-2023-orange"></img>
-  <a href="https://arxiv.org/pdf/2306.01733.pdf">
-    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://ojs.aaai.org/index.php/AAAI/article/view/27828">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-AAAI-brightgreen"></img>
+  </a>
+  <a href="https://github.com/uakarsh/docformerv2">
+    <img alt="Code 1" src="https://img.shields.io/badge/DatasetRelease-Official-yellow"></img>
   </a>
 </p>
 

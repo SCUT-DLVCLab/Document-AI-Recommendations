@@ -2404,7 +2404,7 @@ Kleister Charity (KLC) contains 8 kind of key categories. It contains 2788 finan
     <td>30.00</td>
 </tr>
 <tr>
-    <td rowspan=6>LLM-based</td>
+    <td rowspan=8>LLM-based</td>
     <td colspan=2>Qwen-VL</td>
     <td>15.90</td>
 </tr>
@@ -2428,5 +2428,14 @@ Kleister Charity (KLC) contains 8 kind of key categories. It contains 2788 finan
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#ureader">UReader</a></td>
     <td>32.80</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#doco">DoCo</a></td>
+    <td>Qwen-VL-Chat</td>
+    <td>33.80</td>
+</tr>
+<tr>
+    <td>mPLUG-Owl</td>
+    <td>32.90</td>
 </tr>
 </table>

@@ -51,6 +51,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [Wei Robust Layout-aware IE](#wei-robust-layout-aware-ie)
   - [WUKONG-READER](#wukong-reader)
   - [ERNIE-Layout](#ernie-layout)
+  - [QGN](#qgn)
   - [GeoLayoutLM](#geolayoutlm)
   - [KVPFormer](#kvpformer)
   - [TPP](#tpp)
@@ -637,6 +638,24 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Highlights**: Reading Order Serialization
 - **Modalities**: Semantic; Layout; Visual
 - **Abstract**: Recent years have witnessed the rise and success of pre-training techniques in visually-rich document understanding. However, most existing methods lack the systematic mining and utilization of layout-centered knowledge, leading to sub-optimal performances. In this paper, we propose ERNIE-Layout, a novel document pre-training solution with layout knowledge enhancement in the whole workflow, to learn better representations that combine the features from text, layout, and image. Specifically, we first rearrange input sequences in the serialization stage, and then present a correlative pre-training task, reading order prediction, to learn the proper reading order of documents. To improve the layout awareness of the model, we integrate a spatial-aware disentangled attention into the multi-modal transformer and a replaced regions prediction task into the pre-training phase. Experimental results show that ERNIE-Layout achieves superior performance on various downstream tasks, setting new state-of-the-art on key information extraction, document image classification, and document question answering datasets. The code and models are publicly available at PaddleNLP.
+
+---
+
+## QGN
+
+*Cao et al. Query-driven Generative Network for Document Information Extraction in the Wild. ACMMM, 2022.*
+
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2022-orange"></img>
+  <a href="https://dl.acm.org/doi/10.1145/3503161.3547877">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACM-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Capable of real-world OCR input
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: This paper focuses on solving Document Information Extraction (DIE) in the wild problem, which is rarely explored before. In contrast to existing studies mainly tailored for document cases in known templates with predefined layouts and keys under the ideal input without OCR errors involved, we aim to build up a more practical DIE paradigm for real-world scenarios where input document images may contain unknown layouts and keys in the scenes of the problematic OCR results. To achieve this goal, we propose a novel architecture, termed Query-driven Generative Network (QGN), which is equipped with two consecutive modules, i.e., Layout Context-aware Module (LCM) and Structured Generation Module (SGM). Given a document image with unseen layouts and fields, the former LCM yields the value prefix candidates serving as the query prompts for the SGM to generate the final key-value pairs even with OCR noise. To further investigate the potential of our method, we create a new large-scale dataset, named LArge-scale STructured Documents (LastDoc4000), containing 4,000 documents with 1,511 layouts and 3,500 different keys. In experiments, we demonstrate that our QGN consistently achieves the best F1-score on the new LastDoc4000 dataset by at most 30.32% absolute improvement. A more comprehensive experimental analysis and experiments on other public benchmarks also verify the effectiveness and robustness of our proposed method for the wild DIE task.
 
 ---
 

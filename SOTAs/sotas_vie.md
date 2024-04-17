@@ -136,7 +136,7 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
 </tr>
 </tr>
-    <td rowspan=16>Large Scale Pre-trained</td>
+    <td rowspan=17>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
     <td>base</td>
     <td>94.38</td>
@@ -239,6 +239,13 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
     <td>-</td>
     <td>97.55</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#qgn">QGN</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>97.90</td>
     <td>-</td>
 </tr>
 </tr>
@@ -500,7 +507,7 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
 </tr>
 </tr>
-    <td rowspan=28>Large Scale Pre-trained</td>
+    <td rowspan=29>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
     <td>base</td>
     <td>94.37</td>
@@ -781,6 +788,20 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
     <td>-</td>
     <td>96.99</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#qgn">QGN</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>96.84</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -2272,7 +2293,7 @@ EPHOIE consists of 11 key categories for **Entity Extraction** and takes the **E
     <td>96.87</td>
 </tr>
 <tr>
-    <td rowspan=4>Large-Scale Pre-trained</td>
+    <td rowspan=5>Large-Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#structext">StrucTexT</a></td>
     <td>chn&eng-base</td>
     <td>-</td>
@@ -2297,6 +2318,12 @@ EPHOIE consists of 11 key categories for **Entity Extraction** and takes the **E
     <td>97.62</td>
     <td>98.33</td>
     <td>97.97</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#qgn">QGN</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>98.49</td>
 </tr>
 <tr>
     <td rowspan=2>End-to-End</td>

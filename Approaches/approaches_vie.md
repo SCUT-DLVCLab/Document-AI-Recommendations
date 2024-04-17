@@ -3,18 +3,18 @@
 
 <h2> Introduction </h2>
 
-With the rapid development of Internet technology and the increasing needs of information exchange, quantities of documents are digitalized, stored and distributed in the form of images. Numerous application scenarios, such as receipt understanding, card recognition, automatic paper scoring and document matching, are concerned on how to obtain key information from document images. The process is called visual information extraction (VIE), which aims at **mining, analyzing, and extracting information contained in visually rich documents**. Take receipt understanding as an example, given an image of a receipt, the VIE algorithms will tell information such as store name, product details, price, etc.
+With the rapid advancement of Internet technology and the increasing demand for information exchange, a large number of documents are now digitized, stored, and distributed as images. In various application scenarios, such as receipt understanding, card recognition, automatic paper scoring, and document matching, there is a need to extract key information from document images. This process is known as visual information extraction (VIE), which involves mining, analyzing, and extracting information from visually rich documents. For example, in receipt understanding, VIE algorithms can extract information such as store name, product details, and price from an image of a receipt.
 
-Different from the information extraction in traditional natural language processing, results of VIE is not only determined by texts, but also closely related to the document layout, font style, block color, figures, charts and other components. The analysis and processing of visually rich documents is a challenging task.
+Unlike information extraction from plain text, VIE results are not solely determined by the text content. They are also influenced by factors such as document layout, font style, block color, figures, charts, and other visual components. Analyzing and processing visually rich documents present a challenging task.
 
-Recently proposed deep-learning-based VIE methods can be roughly categorized into six types, namely the **grid-based methods**, the **graph-neural-network-based (GNN-based) methods**, the **Large Scale Pre-trained Models**, the **end-to-end methods**, the **few-shot methods**, **GPT-based methods**,and **other methods**. 
+Recently proposed deep-learning-based VIE methods can be roughly categorized into six types, namely the **grid-based methods**, the **graph-neural-network-based (GNN-based) methods**, the **Large Scale Pre-trained Models**, the **end-to-end methods**, the **few-shot methods**, **LLM-based methods**,and **other methods**. 
 
-- `Grid-based Methods` take the document image as a two-dimensional matrix, pixels inside the text bounding box are filled with text embeddings, forming the grid representation for deep processing. Grid-based methods are often simple and less computationally expensive. However, its representation ability is not strong enough, features of text regions in small size may not be fully exploited. 
-- `GNN-based Methods` take the text segments as graph nodes, relations between segment coordinates are encoded for edge representations. Operations like graph convolution are applied for feature extraction. GNN-based schemes achieve a good balance in cost and performance, but some characteristics of GNN itself, such as over-smoothing and gradient vanishing often make it hard to train the model. 
-- `Large Scale Pre-trained Models` obtain effective generic models through pre-training with a vast amount of data. These methods tend to have powerful generalizability and can be applied in a wide range of scenarios that can be extended to other document understanding tasks. However, these models are often computationally expensive and require sufficient computing resources, finding a more efficient architecture and pre-training strategy is still a problem to be solved. 
-- VIE is not an isolated process, results from text detection and recognition (optical character recognition, OCR) are needed as prerequisites. Problems in OCR results, such as coordinate mismatches and text recognition errors will affect the subsequent steps. Researchers tried to build `end-to-end paradigms`, which reduce the OCR error accumulation to some extent. But compared with state-of-the-art methods, there is still some way to go. 
-- `Few-shot methods` propose some efficient structures to enhance the generalization ability of models and try to fully explore intrinsic features with only a small number of samples. Although some progress has been made, the overall model accuracy still has a lot of room for improvement from the actual application.
-- Large Language Models (LLMs) have achieved outstanding performance in various NLP tasks. `LLM-based methods` take advantage of the powerful capabilities of the LLMs to handle VIE by designing appropriate prompt inputs or applying finetuning with task-specific instructions. These schemes provide a new solution to the field of Document Understanding.
+- `Grid-based Methods` treat the document image as a two-dimensional matrix, with text embeddings filling the pixels inside the text bounding box. This grid representation allows for deep feature processing. While grid-based methods are simple and computationally efficient, they may not fully exploit the features of text regions in small sizes.
+- `GNN-based Methods` These methods consider text segments as graph nodes and encode the relations between segment coordinates for edge representations. Graph convolution and similar operations are used for feature extraction. GNN-based schemes strike a good balance between cost and performance. However, inherent characteristics of GNN, such as over-smoothing and gradient vanishing, often make the training process challenging.
+- `Large Scale Pre-trained Models` These methods leverage pre-training with a large amount of data to obtain effective generic models. They exhibit strong generalizability and can be applied to a wide range of scenarios and other document understanding tasks. However, these models tend to be computationally expensive and require significant computing resources. Finding more efficient architectures and pre-training strategies is an ongoing challenge. 
+- VIE is not a standalone process, results from text detection and recognition (optical character recognition, OCR) are required as prerequisites. Issues in OCR results, such as coordinate mismatches and text recognition errors, can impact subsequent steps. Researchers have explored `End-to-end` paradigms to reduce OCR error accumulation, but there is still progress to be made compared to state-of-the-art methods.
+- `Few-shot methods` propose efficient structures to enhance model generalization and fully explore intrinsic features with only a small number of samples. While some progress has been made, there is still room for improvement in overall model accuracy for practical applications.
+- Large Language Models (LLMs) have demonstrated exceptional performance in various NLP tasks. `LLM-based methods` take advantage of the powerful capabilities of the LLMs to handle VIE by designing appropriate prompt inputs or applying finetuning with task-specific instructions. These approaches offer a new solution to the field of Document Understanding.
 
 ---
 
@@ -84,6 +84,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [DocPedia](#docpedia)
   - [Monkey](#monkey)
   - [HRVDA](#hrvda)
+  - [DoCo](#doco)
   - [OmniParser](#omniparser)
   - [LayoutLLM](#layoutllm)
 - [Other Methods](#other-methods)
@@ -1223,6 +1224,25 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 - **Modalities**: Visual + Semantic Prompt
 - **Abstract**: Leveraging vast training data, multimodal large language models (MLLMs) have demonstrated formidable general visual comprehension capabilities and achieved remarkable performance across various tasks. However, their performance in visual document understanding still leaves much room for improvement. This discrepancy is primarily attributed to the fact that visual document understanding is a fine-grained prediction task. In natural scenes, MLLMs typically use low-resolution images, leading to a substantial loss of visual information. Furthermore, general-purpose MLLMs do not excel in handling document-oriented instructions. In this paper, we propose a High-Resolution Visual Document Assistant (HRVDA), which bridges the gap between MLLMs and visual document understanding. This model employs a content filtering mechanism and an instruction filtering module to separately filter out the content-agnostic visual tokens and instruction-agnostic visual tokens, thereby achieving efficient model training and inference for high-resolution images. In addition, we construct a document-oriented visual instruction tuning dataset and apply a multi-stage training strategy to enhance the model's document modeling capabilities. Extensive experiments demonstrate that our model achieves state-of-the-art performance across multiple document understanding datasets, while maintaining training efficiency and inference speed comparable to low-resolution models.
+
+---
+
+
+<!-- TODO replace cvpr links -->
+
+## DoCo
+
+*Li et al. Enhancing Visual Document Understanding with Contrastive Learning in Large Visual-Language Models. CVPR, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2402.19014">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Modalities**: Visual + Semantic Prompt
+- **Abstract**: Recently, the advent of Large Visual-Language Models (LVLMs) has received increasing attention across various domains, particularly in the field of visual document understanding (VDU). Different from conventional vision-language tasks, VDU is specifically concerned with text-rich scenarios containing abundant document elements. Nevertheless, the importance of fine-grained features remains largely unexplored within the community of LVLMs, leading to suboptimal performance in text-rich scenarios. In this paper, we abbreviate it as the fine-grained feature collapse issue. With the aim of filling this gap, we propose a contrastive learning framework, termed Document Object COntrastive learning (DoCo), specifically tailored for the downstream tasks of VDU. DoCo leverages an auxiliary multimodal encoder to obtain the features of document objects and align them to the visual features generated by the vision encoder of LVLM, which enhances visual representation in text-rich scenarios. It can represent that the contrastive learning between the visual holistic representations and the multimodal fine-grained features of document objects can assist the vision encoder in acquiring more effective visual cues, thereby enhancing the comprehension of text-rich documents in LVLMs. We also demonstrate that the proposed DoCo serves as a plug-and-play pre-training method, which can be employed in the pre-training of various LVLMs without inducing any increase in computational complexity during the inference process. Extensive experimental results on multiple benchmarks of VDU reveal that LVLMs equipped with our proposed DoCo can achieve superior performance and mitigate the gap between VDU and generic vision-language tasks.
 
 
 ---

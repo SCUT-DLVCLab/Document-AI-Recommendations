@@ -6,4 +6,4 @@
    <strong>Layout Analysis </a></strong>
 </p>
 
-This section collects benchmarks of Document AI. Research fields include visual information extraction, table structure recognition and layout analysis. Click the link above to view details.
+This section provides an introduction to commonly used datasets for Document AI in different research fields, such as visual information extraction, table structure recognition, and layout analysis. It includes information on dataset size, data splits, download links, and evaluation protocols. For more detailed information, please click the link above.

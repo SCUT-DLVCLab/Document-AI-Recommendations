@@ -1,13 +1,13 @@
 <h3 align="center"> Visual Information Extraction </h3>
 <h1 align="center"> SOTAs </h1>
 
-This page contains performance on public benchmarks of visual information extraction alogorithms. Data are collected from papers & official code repositories.
+This page serves as a compilation of the performance metrics achieved by various visual information extraction algorithms on public benchmarks. The data presented here are collected from research papers as well as official code repositories.
 
 <h2>🎖️Commonly Used Metrics</h2>
 
 <h3><b>F1-score</b></h3>
 
-Given the prediction of the model and the ground-truth, if the predicted content is completely consistent with the ground-truth, it will be recorded as a true positive(TP) sample. Let $N_p$ denotes the number of predictions, $N_g$ for the number of ground-truths, $N_t$ for the number of TP samples, then we have
+Given the prediction of the model and the ground-truth, if the predicted content is exactly consistent with the ground-truth, it will be recorded as a true positive(TP) sample. Let $N_p$ denotes the number of predictions, $N_g$ for the number of ground-truths, $N_t$ for the number of TP samples, then we have
 
 $$
 precision = \frac{N_t}{N_p}
@@ -23,30 +23,30 @@ $$
 
 <h4><b>Entity F1 score</b></h4>
 
-Used as a metric for Entity Extraction (or Semantic Entity Recognition, SER) task. It the predicted string and key category are both consistent with the ground-truth, it will be recorded as a TP sample. The total number of TP, total number of predictions and total number of ground-truth strings will be used to calculate the score.
+The Entity F1 score is a metric used for the Entity Extraction task (also known as Semantic Entity Recognition, SER). It measures the accuracy of the predicted string and its corresponding category with respect to the ground-truth. When both the predicted string and category match the ground-truth, it is considered a TP sample. 
 
-When using the BIO-tagging schema, the [seqeval](https://github.com/chakki-works/seqeval) library is a good choice for calculating the F1-score.
+If you are using BIO-tagging models, such as LayoutLM, LiLT, etc., you can utilize the [seqeval](https://github.com/chakki-works/seqeval) library for metric calculation.
 
 <h4><b>Linking F1 score</b></h4>
 
-Used as a metric for Entity Linking (or Relation Extraction, RE) task. Models takes the ground-truths of Entity Extraction as input, then predicts the linking relation between entities. A linking is considered as TP if and only if the predicted pair exists in the ground-truth pairs.
+Used as a metric for Entity Linking (or Relation Extraction, RE) task. **Models takes the ground-truths of Entity Extraction as input**, then predicts the linking relation between entities. A linking is considered as TP if and only if the predicted pair exists in the ground-truth pairs.
 
 
 <h4><b>Pair F1 score</b></h4>
 
-Used as a metric for end-to-end pair extraction task. A prediction is considered TP if and only if the predicted key-value pair exactly matches the ground-truth pair. The total number of TP, total number of predictions and total number of ground-truth pairs will be used to calculate the score.
+Used as a metric for end-to-end pair extraction task. A prediction is considered TP if and only if the predicted key-value pair exactly matches the ground-truth pair.
 
 <h4><b>QA F1 score</b></h4>
 
-Used as the metric for LLM-based models.
+The metric is used specifically for LLM-based models.
 
-For Entity Extraction, two types of operations are used:
-1. The model takes the text content of an entity as input, then predicts its corresponding key category. Used for datasets like FUNSD, where each key category contains multiple entities.
-2. The model takes the key category name as input, then predicts the corresponding text content. Used for datasets where each key category contains one or no entity.
+For Entity Extraction, two types of operations are employed:
+1. The model takes the text content of an entity as input and predicts its corresponding key category. Used for datasets like FUNSD, where each key category contains multiple entities.
+2. The model takes the key category name as input and predicts the corresponding text content. Used for datasets where each key category contains one or no entity.
 
 For Entity Linking, the model takes the question entity as input, then predicts the corresponding answer entity.
 
-⚠️ **It is worth-noting that, the QA F1 score is a loosened metric compared to the conventional settings, since prior information like the entity span is provided to the model. Hence, scores obtained through the QA pipeline cannot be directly compared with the scores obtained through the conventional settings.** In this section, we will separately list these QA scores.
+⚠️ **It is worth-noting that, the QA F1 score is a more relaxed metric compared to the conventional settings, since prior information like the entity span is provided to the model. Therefore, scores obtained through the QA pipeline cannot be directly compared with the scores obtained through the conventional settings.** In this section, we will list these QA scores separately.
 
 
 <h3><b>Edit Distance Score</b></h3>
@@ -59,7 +59,7 @@ $$
 
 where $i$, $d$, $m$, $N$ denotes the number of insertions, number of deletions, number of modifications and the total number of instances occurring in the ground truth, respectively.
 
-The [zhang-shasha](https://github.com/timtadh/zhang-shasha) library can be used to calculate the edit distance between strings.
+The document parsing task in CORD employs this metric. The [zhang-shasha](https://github.com/timtadh/zhang-shasha) library can be used to calculate the edit distance between strings.
 
 <br>
 
@@ -77,7 +77,9 @@ The [zhang-shasha](https://github.com/timtadh/zhang-shasha) library can be used 
 
 ## SROIE
 
-The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset contains 4 key categories, each category contains one or no entity. If the predicted string of a key category is consistant with the ground-truth string, it will be recorded as a TP sample. The total number of TP, total number of predictions and total number of ground-truth strings will be used to calculate the score. Evaluation scripts can be found at the [ICDAR2019 SROIE official page](https://rrc.cvc.uab.es/?ch=13&com=downloads) (Download tab, Task 3 Evaluation script).
+The SROIE dataset takes the entity micro F1-score as the evaluation metric. The dataset contains 4 key categories, each category contains one or no entity. The dataset consists of four key categories, with each category containing one or no entity. In this metric, if the predicted string of a key category is consistent with the ground-truth string, it will be recorded as a true positive (TP) sample. The total number of TP samples, total number of predictions, and total number of ground-truth strings are used to calculate the micro-F1 score.
+
+You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROIE official page](https://rrc.cvc.uab.es/?ch=13&com=downloads) (Download tab, Task 3 Evaluation script).
 
 <table align="center">
 <tr>
@@ -397,9 +399,40 @@ The SROIE dataset takes the micro-F1-score as the evaluation metric. The dataset
 
 ## CORD
 
-Many mainstream SOTAs treat CORD as an Entity Extraction dataset and follow the calculation protocol of SROIE. These practices are in fact controversial. Authors of the CORD dataset, the clovaai team, do not explicitly specify how to compute metrics for this dataset, but when we browse the [source code](https://github.com/clovaai/donut/blob/217cffb111a57ebce1025ff84a722a8d9914e05b/donut/util.py#L242) of their work (e.g. Donut, SPADE), we can see that they compute the F1-scores for Document Structure Parsing. For example, a receipt usually contains information about the items purchased, including its name, count, and unit price. These entities are hierarchically related, and an item can be represented by a python List in forms of `[item_name, item_count, item_price]`. The algorithm should extract all of the item information List as well as other information like changes, total price from a given document. The prediction will be counted as TP when a same information List exists in the ground-truth.
+The authors of the CORD dataset, the Clova-AI team, have not explicitly specified the task type and evaluation metrics for this dataset. However, upon reviewing the source code of [Donut](https://github.com/clovaai/donut/blob/217cffb111a57ebce1025ff84a722a8d9914e05b/donut/util.py#L242), one of Clova-AI's works, it is apparent that they evaluate the model's performance in **Document Structure Parsing**. In a typical receipt, various details about the purchased items are provided, such as their names, quantities, and unit prices. These entities have a hierarchical relationship, and a receipt can be represented by a JSON-like structure as shown below:
+```json
+{
+    "menu": [
+        {
+            "nm": "EGG TART",
+            "cnt": "1",
+            "price": "13,000"
+        },
+        {
+            "nm": "CHOCO CUS ARD PASTRY",
+            "cnt": "2",
+            "price": "24,000"
+        },
+        {
+            "nm": "REDBEAN BREAD",
+            "cnt": "1",
+            "price": "9,000"
+        }
+    ],
+    "total": {
+        "total_price": "46,000",
+        "cashprice": "50,000",
+        "changeprice": "4,000"
+    }
+}
+```
+The evaluation metric used by [Donut](https://github.com/clovaai/donut/blob/217cffb111a57ebce1025ff84a722a8d9914e05b/donut/util.py#L242) is the **TED Acc** (Tree Edit Distance Accuracy), which measures the similarity between the predicted JSON and the ground-truth. 
 
-Scores reported on both Entity Extraction and Document Structure Parsing are shown below. 
+In addition to Document Structure Parsing, [Donut](https://github.com/clovaai/donut/blob/217cffb111a57ebce1025ff84a722a8d9914e05b/donut/util.py#L242) also evaluates the model's performance on the **Entity Extraction** task, using the **Entity F1 score** as the evaluation metric. Most SOTA models follows this evaluation pipeline.
+
+Another work by clovvai, [SPADE](https://github.com/clovaai/spade/blob/master/spade/postprocess/eval.py), evaluate the model's performance on **Document Structure Parsing** through a relaxed **structured field F1-score**. This evaluation measures the accuracy of dependency parsing by computing the F1 score of predicted edges. The task is simplified by not considering differences between predictions and ground truth in certain fields (such as `store name`, `menu name`, and `item name`) when the edit distance is less than 2 or when the ratio of edit distance to the ground truth string length is less than or equal to 0.4. Details can be found in their [paper](https://arxiv.org/pdf/2005.00642.pdf) (Section 5.3 and A.2).
+
+Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lightning_modules/bros_spade_rel_module.py), evaluate the model's performance on **Entity Linking** using the **Linking F1 score**.
 
 
 <table align="center">
@@ -1094,11 +1127,11 @@ Scores reported on both Entity Extraction and Document Structure Parsing are sho
 
 ## FUNSD
 
-FUNSD requires extracting key entities (Entity Extraction) and key-value pairs (Entity Linking). Micro-F1 is taken as the evaluation metric. Each document contains two kinds of key information: Question and Answer, and each key category has multiple instances. In Entity Extraction task, the predicted entity will be considered as TP if and only if its content and category are consistent with the ground-truth. In Entity Linking task, the prediction will be considered as TP if and only if the predicted pair exists in the ground-truth pairs. 
+FUNSD comprises two tasks: **Entity Extraction** and **Entity Linking**. The **Entity Extraction** task requires extracting `header`, `question`, and `answer` entities from the document, and employs **Entity F1 Score** as the evaluation metric. The **Entity Linking** task focuses on linking predictions between `question` and `answer` entities, and uses **Linking F1 Score** as the evaluation metric.
 
-It is noticeable that the two subtasks are considered independent in most of the mainstream approaches' settings. Take LayoutLM as an example, in Entity Linking task, the [official implementation](https://github.com/microsoft/unilm) takes the ground-truth of Entity Extraction as input and predict the linkings only, the performance of entity extraction is not considered in this case. 
+It is worth noting that, in most mainstream approaches, these two subtasks are considered independent. For instance, LayoutLM's Entity Linking [official implementation](https://github.com/microsoft/unilm/blob/master/layoutlmft/layoutlmft/modules/decoders/re.py) takes the ground-truth of `question` and `answer` entities as input and predict the linkings only, without considering the performance of Entity Extraction.
 
-In real application, we need to extract all the key-value pairs from the document, which requires combining the EE and EL task, predicting the whole kv-pair content. We termed this task as the end-to-end pair extraction. In this case, challenges like error accumulation and segment text aggregation should be considered. However, only a few studies notice this challenge, while most of the work follow the traditional settings of separate EE&EL. We look forward to more studies on this case.
+Real-world applications require extracting all key-value pairs from the document, which involves combining the EE and EL tasks to predict the entire kv-pair content. We termed this task as the **End-to-end Pair Extraction**. It presents challenges such as error accumulation and text segment aggregation. Regrettably, only a few studies have recognized and addressed these challenges, while the majority of research continues to follow the conventional EE+EL setting. We hope to see more studies that delve into this particular case.
 
 <table align="center">
 <tr>
@@ -1934,9 +1967,9 @@ In real application, we need to extract all the key-value pairs from the documen
 
 ## XFUND
 
-XFUND is an extension of the FUNSD dataset. It covers 7 languages, including Chinese, Japanese, Spanish, French, Italian, German, and Portuguese. It contains 1,393 fully annotated forms, and each language includes 199 forms, where the training set includes 149 forms, and the test set includes 50 forms. XFUND also has two subtasks, and its evaluation protocol is consistent with the one in FUNSD.
+XFUND is an multi-lingual extension of FUNSD, covering 7 languages: Chinese, Japanese, Spanish, French, Italian, German, and Portuguese. It contains 1,393 fully annotated forms, with each language containing 199 forms. The training set comprises 149 forms, while the test set includes 50 forms. XFUND also includes two subtasks: **Entity Extraction** and **Entity Linking**. Its follows the same evaluation protocol as FUNSD.
 
-Note: In the following charts, only the scores reproted on XFUND is counted when calculating the Average F1-score. Hence the values of the Avg. score may be different from the ones reported in papers.
+Note: In the following chart, the term `Avg.` represents the average score of the 7 non-English subsets. Some methods include the English subset in their reported average scores. To ensure a fair comparison, we made adjustments accordingly.
 
 <table align="center">
 <tr>
@@ -2221,7 +2254,7 @@ Note: In the following charts, only the scores reproted on XFUND is counted when
 
 ## EPHOIE
 
-EPHOIE contains 11 key categories. It takes the micro-F1 as the evaluation metric. If the predicted string of a key category is consistant with the ground-truth string and not empty, it will be recorded as a TP sample.
+EPHOIE consists of 11 key categories for **Entity Extraction** and takes the **Entity F1** as the evaluation metric. If the predicted string of a key category is consistent with the ground-truth string and not empty, it will be recorded as a TP sample.
 
 <table align="center">
 <tr>
@@ -2371,7 +2404,7 @@ Kleister Charity (KLC) contains 8 kind of key categories. It contains 2788 finan
     <td>30.00</td>
 </tr>
 <tr>
-    <td rowspan=6>LLM-based</td>
+    <td rowspan=8>LLM-based</td>
     <td colspan=2>Qwen-VL</td>
     <td>15.90</td>
 </tr>
@@ -2395,5 +2428,14 @@ Kleister Charity (KLC) contains 8 kind of key categories. It contains 2788 finan
 <tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#ureader">UReader</a></td>
     <td>32.80</td>
+</tr>
+<tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#doco">DoCo</a></td>
+    <td>Qwen-VL-Chat</td>
+    <td>33.80</td>
+</tr>
+<tr>
+    <td>mPLUG-Owl</td>
+    <td>32.90</td>
 </tr>
 </table>

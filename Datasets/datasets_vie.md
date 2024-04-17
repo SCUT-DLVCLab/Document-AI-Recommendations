@@ -72,15 +72,15 @@
     </a> 
 </p>
 
-SROIE is a dataset for the 2019 ICDAR Robust Reading Challenge on Scanned Receipts OCR and Information Extraction competition. It contains 973 samples, 626 for training and 347 for testing. Each receipt contains four kinds of key entities: Company, Address, Date, and Total. 
+SROIE is a dataset for the 2019 ICDAR Robust Reading Challenge on Scanned Receipts OCR and Information Extraction competition. It contains 973 samples, 626 for training and 347 for testing. Each receipt contains four kinds of key entities: `Company`, `Address`, `Date`, and `Total`. 
 
-OCR results and strings of key entities for each sample are provided. To do VIE with token tagging approaches like LayoutLM, the category of each word is required. You may use [rule-based methods](https://github.com/antoinedelplace/Chargrid) or re-label the data manually.
+Line-level OCR results and texts of key entities are available for each sample. However, it is important to note that the two annotations are not aligned. In order to perform Entity Extraction using token tagging approaches like LayoutLM, it is necessary to have tags for each word. This can be achieved either through [rule-based methods](https://github.com/antoinedelplace/Chargrid) or by manually re-labeling the data.
 
 <p align=center>
     <img src="../img/dataset_img/SROIE_1.jpg" width=200>
 </p>
 
-It is worth noting that the quality of the data annotation will greatly affect the results of VIE. We launched experiments with [ViBERTgrid](https://github.com/ZeningLin/ViBERTgrid-PyTorch). When the model is trained with high quality annotations (re-labelled manually), the entity F1 can reach 97+. When poor quality annotations (rule-based matching) are used to train the model, the entity F1 is only 60.
+Indeed, the quality of data annotation plays a crucial role in the Entity Extraction performance. We conduct experiments with [ViBERTgrid](https://github.com/ZeningLin/ViBERTgrid-PyTorch). When the model is trained with high quality annotations (re-labelled manually), the entity F1 can reach 97+. While training with poor quality annotations (rule-based matching) results in a entity F1 of 60.
 
 <br>
 
@@ -109,12 +109,12 @@ It is worth noting that the quality of the data annotation will greatly affect t
         <th>Test</th>
     </tr>
     <tr>
-        <td rowspan=2>800</td>
-        <td rowspan=2>100</td>
-        <td rowspan=2>100</td>
-        <td rowspan=2>Receipt</td>
-        <td rowspan=2>English</td>
-        <td rowspan=2>
+        <td rowspan=3>800</td>
+        <td rowspan=3>100</td>
+        <td rowspan=3>100</td>
+        <td rowspan=3>Receipt</td>
+        <td rowspan=3>English</td>
+        <td rowspan=3>
             <p>
                 <a href="https://github.com/clovaai/cord">
                     <img alt="Link" src="https://img.shields.io/badge/Official-2e8b57"></img>
@@ -125,8 +125,12 @@ It is worth noting that the quality of the data annotation will greatly affect t
         <td rowspan=1>Entity F1-score</td>
     </tr>
     <tr>
-        <td rowspan=1>Structure Parsing</td>
-        <td rowspan=1>Structured Field F1-score </td>
+        <td rowspan=1>Entity Linking</td>
+        <td rowspan=1>Linking F1-score</td>
+    </tr>
+    <tr>
+        <td rowspan=1>Document Structure Parsing</td>
+        <td rowspan=1>Structured Field F1-score, TED Acc </td>
     </tr>
 </table>
 
@@ -136,7 +140,7 @@ It is worth noting that the quality of the data annotation will greatly affect t
     </a> 
 </p>
 
-CORD is an English receipt dataset proposed by Colva AI. 1000 samples are currently publicly available, 800 for training, 100 for validation, and 100 for testing. The receipt images are obtained through cameras, hence interference like paper bending and background noise may inevitably occur. The data contains high-quality annotations, key labels for each words and linking between entities are provided. The dataset contains a total of four main key information categories such as payment information, and each main category can be further divided into 30 sub-key fields. Unlike other datasets, entities in CORD are hierarchically related. Models should be able to extract all the structured fields, which makes the task challenging.
+CORD is an English receipt dataset proposed by Clova-AI. 1000 samples are currently publicly available, where 800 are for training, 100 for validation, and 100 for testing. The receipt images are captured by cameras, which may introduce interference such as paper bending and background noise. However, the dataset includes high-quality annotations with key labels for each word and linking between entities. It encompasses four main categories of key information, and can be further divided into 30 sub-key fields. Notably, the entities in CORD are hierarchically related, making the task of extracting all the structured fields particularly challenging for models.
 
 <p align=center>
     <img src="../img/dataset_img/CORD_1.png" width=600>
@@ -194,7 +198,7 @@ CORD is an English receipt dataset proposed by Colva AI. 1000 samples are curren
     </a> 
 </p>
 
-A dataset for Text Detection, Optical Character Recognition, Spatial Layout Analysis and Form Understanding. Contains 199 fully annotated forms, with 31485 words, 9707 semantic entities and 5304 relations. The OCR result of each text segment and word are given, and the category of each paragraph and linkings between entities are included in the annotations.
+A dataset for Text Detection, Optical Character Recognition, Spatial Layout Analysis and Form Understanding. It consists of 199 fully annotated forms, containing a total of 31485 words, 9707 semantic entities and 5304 relations. For each text segment and word, the dataset provides the corresponding OCR result. Furthermore, the annotations also include the category of each paragraph and linkings between entities.
 
 <p align=center>
     <img src="../img/dataset_img/FUNSD_1.jpg" width=500>
@@ -307,7 +311,7 @@ XFUND is a multilingual form understanding benchmark dataset that includes human
     </a> 
 </p>
 
-THe EPHOIE Dataset contains 1,494 images which are collected and scanned from real examination papers of various schools in China, and the authors crop the paper head regions which contains all key information. The texts are composed of handwritten and printed Chinese characters in horizontal and arbitrary quadrilateral shape. Complex layouts and noisy background also enhance the generalization of EPHOIE dataset. The dataset contains a total of 11 key categories including name, class, student id, and so on. Annotations of each character are given, hence we can directly apply token classification models using the original labels.
+The EPHOIE Dataset comprises 1,494 images that were collected and scanned from real examination papers from different schools in China. The authors of the dataset have cropped the paper head regions, which contain all the key information. The texts in the dataset consist of both handwritten and printed Chinese characters, arranged in horizontal and arbitrary quadrilateral shapes. The dataset also includes complex layouts and noisy backgrounds, which contribute to its generalization capabilities. In total, the dataset encompasses 11 key categories, such as name, class, and student ID. Each character in the dataset is annotated, allowing for the direct application of token classification models using the original labels.
 
 <p align=center>
 <img src="../img/dataset_img/EPHOIE_1.png" width=450 height=350>
@@ -363,7 +367,9 @@ THe EPHOIE Dataset contains 1,494 images which are collected and scanned from re
     </tr>
 </table>
 
-The CER-VIR dataset contains receipts in both Chinese and English. Each sample contains key information including company, date, total, tax and items. The item field can be further divided into three subkeys including item name, item count, and item unit price. The task aims to extract all the key fields from a given sample, including all the subkeys in the item field. The extracted result should be formatted, for example, each date entity should be given in forms YYYY-MM-DD. The OCR result is provided for reference, and the annotation of the key entities are given in forms of formatted strings (it may be different from the actual content shown in the image), which makes the task much more challenging than other existing VIE benchmarks.
+The CER-VIR dataset contains receipts in both Chinese and English. Each sample contains key information including company, date, total, tax and items. The item field within each sample can be further divided into three subkeys: item name, item count, and item unit price. The task associated with this dataset involves extracting all the key fields from a given sample, including all the subkeys within the item field.
+
+To ensure consistency, the extracted result should be properly formatted. For instance, date entities should be provided in the format of YYYY-MM-DD. The dataset also includes OCR results for reference. Additionally, the annotations of the key entities are provided in formatted string forms, which may differ from the actual content displayed in the image. This aspect of the dataset makes the task significantly more challenging compared to other existing benchmarks in the field of Visual Information Extraction.
 
 <p align=center>
     <img src="../img/dataset_img/CER_VIR.png" width=500>
@@ -417,7 +423,9 @@ The CER-VIR dataset contains receipts in both Chinese and English. Each sample c
     </tr>
 </table>
 
-There are 1000 images in the SIBR, including 600 Chinese invoices, 300 English bills of entry, and 100 bilingual receipts. SIBR is well annotated with 71227 entity-level boxes and 39004 links. Compared with real scene datasets such as SROIE and EPHOIE, SIBR has more diverse appearances and richer structures. The document images in SIBR are much more challenging in that they are taken from real applications and difficulties such as severe noise, uneven illumination, image deformation, printing shift and complicated links. Similar to FUNSD, the SIBR dataset contains 3 kinds of key information including question, answer, and header. It is worth noting that **the entity with multiple lines in SIBR is represented by text segments and intra-links between segments. Models are required to extract the full entity given only the text segment annotations**. 
+There are 1000 images in the SIBR, including 600 Chinese invoices, 300 English bills of entry, and 100 bilingual receipts. SIBR is well annotated with 71227 entity-level boxes and 39004 links. In comparison to other real scene datasets like SROIE and EPHOIE, SIBR offers a wider range of appearances and more diverse structures.
+
+The document images within the SIBR dataset pose additional challenges as they are sourced from real-world applications. These challenges include severe noise, uneven illumination, image deformation, printing shift, and complicated links. Similar to FUNSD, the SIBR dataset contains 3 kinds of key information including `question`, `answer`, and `header`. It is worth noting that **the entity with multiple lines in SIBR is represented by text segments and intra-links between them. Models are required to extract the full entity given only the text segment annotations**. 
 
 <p align=center>
     <img src="../img/dataset_img/SIBR_1.png" height=150>
@@ -546,9 +554,9 @@ where $y^i$ denotes the prediction of the $i$th field, $g^i$ denotes the corresp
 
 The WildReceipt dataset has two version: the CloseSet and OpenSet. 
 
-The CloseSet divides text boxes into 26 categories. There are 12 key-value pairs of fine-grained key information categories, such as (Prod_item_value, Prod_item_key), (Prod_price_value, Prod_price_key) and (Tax_value, Tax_key), plus two more "do not care" categories: Ignore and Others. The objective of the CloseSet is to apply Entity Extraction.
+The CloseSet divides text boxes into 26 categories. There are 12 key-value pairs of fine-grained key information categories, such as (`Prod_item_value`, `Prod_item_key`), (`Prod_price_value`, `Prod_price_key`), and (`Tax_value`, `Tax_key`), plus two more "do not care" categories: `Ignore` and `Others`. The objective of the CloseSet is to apply Entity Extraction.
 
-The OpenSet have only 4 possible categories: background, key, value, and others. The connectivity between nodes are annotated as edge labels. If a pair of key-value nodes have the same edge label, they are connected by an valid edge. The objective of the OpenSet is to extract pairs from the given sample.
+The OpenSet have only 4 possible categories: `background`, `key`, `value`, and `others`. The connectivity between nodes are annotated as edge labels. If a pair of key-value nodes have the same edge label, they are connected by an valid edge. The objective of the OpenSet is to extract pairs from the given sample.
 
 <p align=center>
     <img src="../img/dataset_img/WildReceipt_1.jpeg">
@@ -606,7 +614,7 @@ The OpenSet have only 4 possible categories: background, key, value, and others.
 
 The Kleister dataset contains two subset: NDA and Charity. 
 
-The goal of the NDA task is to Extract the key information from NDAs (Non-Disclosure Agreements) about the involved parties, jurisdiction, contract term, and effective date. It contains 540 documents with 3229 pages.
+The goal of the NDA task is to Extract the key information from NDAs (Non-Disclosure Agreements) about the `involved parties`, `jurisdiction`, `contract term`, and `effective date`. It contains 540 documents with 3229 pages.
 
 The goal of the Charity task is to retrieve 8 kinds of key information including charity address (but not other addresses), charity number, charity name and its annual income and spending in GBP (British Pounds) in PDF files published by British charities. It contains 2788 financial reports with 61643 pages in total.
 
@@ -661,9 +669,9 @@ The goal of the Charity task is to retrieve 8 kinds of key information including
     </tr>
 </table>
 
-This benchmark includes two datasets: **Ad-buy Forms** and **Registration Forms**. These documents contain structured data with rich schema including nested repeated fields, have complex layouts that clearly distinguish them from long text documents, have a mix of different templates, and have high-quality OCR results. The authors provide token-level annotations for the ground truth ensuring there is no ambiguity when mapping the annotations to the input text.
+This benchmark includes two datasets: **Ad-buy Forms** and **Registration Forms**. These documents consist of structured data with a comprehensive schema, including nested repeated fields. They have complex layouts that clearly distinguish them from long text documents and incorporate a variety of templates. Additionally, the OCR results are of high-quality. The authors have provided token-level annotations for the ground truth, ensuring there is no ambiguity when mapping the annotations to the input text.
 
-The Registration Forms subset contains 6 types of fields namely file_date, foreign_principal_name, registrant_name, registration_ID, signer_name, and signer_title. The Ad-buy Forms contains 9 key fields including advertiser, agency, contract_ID, flight_start_date, flight_end_date, ross_amount, product, TV_address, and property. Nested-fields containing line_item (description, start_date, end_date, sub_price) are also annotated in the Ad-buy Forms subset.
+The Registration Forms subset contains 6 types of key fields: `file_date`, `foreign_principal_name`, `registrant_name`, `registration_ID`, `signer_name`, and `signer_title`. The Ad-buy Forms contains 9 key fields including `advertiser`, `agency`, `contract_ID`, `flight_start_date`, `flight_end_date`, `ross_amount`, `product`, `TV_address`, and `property`. Further more, nested-fields containing line_item (`description`, `start_date`, `end_date`, `sub_price`) are also annotated in the Ad-buy Forms subset.
 
 <p align=center>
     <img src="./../img/dataset_img/VRDU-AD-buy-Forms_1.png" width=500>

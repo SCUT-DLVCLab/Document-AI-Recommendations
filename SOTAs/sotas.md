@@ -6,4 +6,4 @@
    <strong>Layout Analysis </a></strong>
 </p>
 
-This section collects performance on public benchmarks of SOTA models. Research fields include visual information extraction, layout analysis and table structure recognition. Click the link above to view details.
+This section is dedicated to collecting the performance SOTA models on public benchmarks within the research fields of visual information extraction (VIE) and table structure recognition (TSR). By clicking the link above, you can access detailed information about these benchmarks, including the metrics employed, and the performance achieved by the SOTA models. This compilation aims to provide a comprehensive resource for researchers and practitioners interested in evaluating and comparing the performance of different models in these domains.

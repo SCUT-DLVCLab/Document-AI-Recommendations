@@ -20,14 +20,13 @@
 
 <h2> Introduction </h2>
 
-This repository collects all information in the field of Document AI, including [algorithms](Approaches/approaches.md), [datasets](Datasets/datasets.md), [performance comparisons](SOTAs/sotas.md), and so on.
+This repository is a comprehensive collection of information in the field of Document AI. It includes various resources like [algorithms](Approaches/approaches.md), [datasets](Datasets/datasets.md), and [performance comparisons](SOTAs/sotas.md).
 
-Document AI algorithms aims an reading, analyzing and understanding documents. Research fields include Visual Information Extraction, Table Structure Recognition, Layout Analysis, Document Classification, Document VQA, etc. In recent years, researchers have proposed many methods based on deep learning with outstanding performance and high efficiency, which have been widely applied in real scenarios. We extensively survey the deep-learning-based algorithms and public datasets proposed in recent years and build this reposity. Hope our work helps.
+Document AI algorithms are designed to read, analyze, and understand documents. The research fields encompass Visual Information Extraction, Table Structure Recognition, Layout Analysis, Document Classification, Document VQA, etc. In recent years, researchers have proposed numerous deep learning-based methods that have demonstrated outstanding performance and efficiency, making them widely applicable in real-world scenarios. We have conducted an extensive survey of these algorithms/benchmarks and create this repository. We sincerely hope that our efforts contribute to the advancement of the field and prove beneficial to others.
 
 
-> If you found errors or want to add more related papers, please feel free to contact us. Any pull requests are welcome.
+> If you come across any errors or have suggestions for additional related papers, please do not hesitate to contact us. We highly encourage and welcome pull requests to enhance the repository. Your contributions are greatly appreciated.
 
-<br>
 <br>
 
 
@@ -45,9 +44,9 @@ Document AI algorithms aims an reading, analyzing and understanding documents. R
   </a>
 </p>
 
-With the rapid development of Internet technology and the increasing needs of information exchange, quantities of documents are digitalized, stored and distributed in the form of images. Numerous application scenarios, such as receipt understanding, card recognition, automatic paper scoring and document matching, are concerned on how to obtain key information from document images. The process is called visual information extraction (VIE), which aims at **mining, analyzing, and extracting key entities contained in visually rich documents**. For example, given an image of a receipt, the VIE algorithms will tell information such as store name, product details, price, etc. For documents like forms, VIE algorithms will tell the key-value pairs contained.
+With the rapid development of Internet technology and the growing demands of information exchange, a vast amount of documents are being digitalized, stored, and distributed in the form of images. Various application scenarios, including receipt understanding, card recognition, automatic paper scoring, and document matching, are concerned on how to extract key information from document images. The process, known as visual information extraction (VIE), focuses on **mining, analyzing, and extracting key entities present in visually-rich documents**. For instance, when provided with an image of a receipt, VIE algorithms can identify and extract information such as store name, product details, prices, and more. Similarly, for documents like forms, VIE algorithms can identify and extract the key-value pairs.
 
-Visual information extraction can be seen as the promotion and extension of named entity recognition(NER) and entity linking(EL) to the field of visually rich documents. Different from the information extraction in traditional natural language processing, results of VIE not only depends on texts, but also closely relates to the doucment layout, font style, block color, figures, charts and other components.
+Visual information extraction can be seen as the promotion and extension of named entity recognition(NER) and entity linking(EL) to the field of visually rich documents. Different from the information extraction in plain texts, results of VIE not only depends on texts, but also closely relates to the document layout, font style, block color, figures, charts and other components.
 
 <br>
 
@@ -65,9 +64,9 @@ Visual information extraction can be seen as the promotion and extension of name
   </a>
 </p>
 
-Tabular data have been widely used to help people manage and extract important information in many real-world scenarios, including the analysis of financial documents, air pollution indices, and electronic medical records. Though human can easily understand tables with different layouts and styles, it remains a great challenge for machines to automatically recognize the structure of various tables. Considering the massive amount of tabular data presented in unstructured formats (e.g., image and PDF files) and that most table analysis methods focus on semi-structured tables (e.g., CSV files), the community will significantly benefit from an automatic table recognition system, facilitating large-scale tabular data analysis such as table parsing, patient treatment prediction, and credit card fraud detection.
+Tabular data have been widely used to help people manage and extract important information in many real-world scenarios, including the analysis of financial documents, air pollution indices, and electronic medical records. While humans can easily comprehend tables with different layouts and styles, it remains a significant challenge for machines to automatically identify the structure of diverse tables. Considering the massive amount of tabular data presented in unstructured formats (e.g., image and PDF files) and that most table analysis methods focus on semi-structured tables (e.g., CSV files), the community will significantly benefit from an automatic table recognition system, facilitating large-scale tabular data analysis such as table parsing, patient treatment prediction, and credit card fraud detection.
 
-TSR aims to **recognize the cellular structures of tables from table images by extracting the coordinates of cell boxes and row/column spanning information.** This task is very challenging since tables may have complex structures, diverse styles and contents, and become geometrically distorted or even curved during an image capturing process.
+TSR aims to **recognize the cellular structures of tables from table images by extracting the coordinates of cell boxes and row/column spanning information.** This task poses significant difficulties due to the complexity, diverse styles, and contents of tables, as well as potential geometric distortions or curvature that may occur during the image capturing process.
 
 <br>
 <br>

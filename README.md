@@ -46,7 +46,7 @@ Document AI algorithms are designed to read, analyze, and understand documents. 
 
 With the rapid development of Internet technology and the growing demands of information exchange, a vast amount of documents are being digitalized, stored, and distributed in the form of images. Various application scenarios, including receipt understanding, card recognition, automatic paper scoring, and document matching, are concerned on how to extract key information from document images. The process, known as visual information extraction (VIE), focuses on **mining, analyzing, and extracting key entities present in visually-rich documents**. For instance, when provided with an image of a receipt, VIE algorithms can identify and extract information such as store name, product details, prices, and more. Similarly, for documents like forms, VIE algorithms can identify and extract the key-value pairs.
 
-Visual information extraction can be seen as the promotion and extension of named entity recognition(NER) and entity linking(EL) to the field of visually rich documents. Different from the information extraction in plain texts, results of VIE not only depends on texts, but also closely relates to the document layout, font style, block color, figures, charts and other components.
+Visual information extraction can be seen as the promotion and extension of named entity recognition (NER, or entity extraction, EE) and relation extraction (RE, or entity linking, EL) to the field of visually rich documents. Different from the information extraction in plain texts, results of VIE not only depends on texts, but also closely relates to the document layout, font style, block color, figures, charts and other components.
 
 <br>
 

@@ -927,7 +927,7 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
 </tr>
 <tr>
-    <td rowspan=3>End-to-End</td>
+    <td rowspan=4>End-to-End</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#donut">Donut</a></td>
     <td>-</td>
     <td>-</td>
@@ -960,6 +960,20 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
     <td>-</td>
     <td>97.58</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#donut">CREPE</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>85.00</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>

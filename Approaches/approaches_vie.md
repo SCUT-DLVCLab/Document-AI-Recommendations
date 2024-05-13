@@ -33,6 +33,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [GraphDoc](#graphdoc)
   - [FormNet](#formnet)
   - [FormNetV2](#formnetv2)
+  - [GeoContrastNet](#geocontrastnet)
 - [Large Scale Pre-trained Models](#large-scale-pre-trained-models)
   - [LayoutLM](#layoutlm)
   - [LayoutLMv2](#layoutlmv2)
@@ -306,6 +307,27 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Highlights**: Excellent performance; Contrastive learning
 - **Modalities**: Semantic; Layout; Visual
 - **Abstract**: The recent advent of self-supervised pre-training techniques has led to a surge in the use of multimodal learning in form document understanding. However, existing approaches that extend the mask language modeling to other modalities require careful multi-task tuning, complex reconstruction target designs, or additional pre-training data. In FormNetV2, we introduce a centralized multimodal graph contrastive learning strategy to unify self-supervised pre-training for all modalities in one loss. The graph contrastive objective maximizes the agreement of multimodal representations, providing a natural interplay for all modalities without special customization. In addition, we extract image features within the bounding box that joins a pair of tokens connected by a graph edge, capturing more targeted visual cues without loading a sophisticated and separately pre-trained image embedder. FormNetV2 establishes new state-of-the-art performance on FUNSD, CORD, SROIE and Payment benchmarks with a more compact model size.
+
+---
+
+## GeoContrastNet
+
+*Nil Biescas, et al. GeoContrastnet: Contrastive Key-value Edge learning for Luanguage-Agnostic Document Understanding. ICDAR, 2024.*
+
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/pdf/2405.03104">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/NilBiescas/GeoContrastNet">
+    <img alt="Code 1" src="https://img.shields.io/badge/Code-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Entity Linking; Contrastive learning
+- **Modalities**: Layout; Visual
+- **Abstract**: This paper presents GeoContrastNet, a language-agnostic framework to structured document understanding (DU) by integrating a contrastive learning objective with graph attention networks (GATs), emphasizing the significant role of geometric features. We propose a novel methodology that combines geometric edge features with visual features within an overall two-staged GAT-based framework, demonstrating promising results in both link prediction and semantic entity recognition performance. Our findings reveal that combining both geometric and visual features could match the capabilities of large DU models that rely heavily on Optical Character Recognition (OCR) features in terms of performance accuracy and efficiency. This approach underscores the critical importance of relational layout information between the named text entities in a semi-structured layout of a page. Specifically, our results highlight the model's proficiency in identifying key-value relationships within the FUNSD dataset for forms and also discovering the spatial relationships in table-structured layouts for RVLCDIP business invoices
 
 
 <br>

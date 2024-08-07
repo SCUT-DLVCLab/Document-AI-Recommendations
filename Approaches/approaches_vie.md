@@ -57,6 +57,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [KVPFormer](#kvpformer)
   - [TPP](#tpp)
   - [GraphLayoutLM](#graphlayoutlm)
+  - [HGALayoutLM](#hgalayoutlm)
   - [DocFormerv2](#docformerv2)
   - [DocTr](#doctr)
   - [LayoutMask](#layoutmask)
@@ -752,6 +753,24 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Highlights**: Excellent Entity Extraction Performance; LayoutLM with graph
 - **Modalities**: Semantic; Layout; Visual;
 - **Abstract**: In recent years, the use of multi-modal pre-trained Transformers has led to significant advancements in visually-rich document un- derstanding. However, existing models have mainly focused on features such as text and vision while neglecting the importance of layout relationship between text nodes. In this paper, we pro- pose GraphLayoutLM, a novel document understanding model that leverages the modeling of layout structure graph to inject document layout knowledge into the model. GraphLayoutLM utilizes a graph reordering algorithm to adjust the text sequence based on the graph structure. Additionally, our model uses a layout-aware multi-head self-attention layer to learn document layout knowledge. The pro- posed model enables the understanding of the spatial arrangement of text elements, improving document comprehension. We evaluate our model on various benchmarks, including FUNSD, XFUND and CORD, and achieve state-of-the-art results among these datasets. Our experimental results demonstrate that our proposed method provides a significant improvement over existing approaches and showcases the importance of incorporating layout information into document understanding models. We also conduct an ablation study to investigate the contribution of each component of our model. The results show that both the graph reordering algorithm and the layout-aware multi-head self-attention layer play a crucial role in achieving the best performance.
+
+---
+
+
+## HGALayoutLM
+
+*Li et al. Hypergraph based Understanding for Document Semantic Entity Recognition. ACL, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2407.06904">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Excellent Entity Extraction Performance
+- **Modalities**: Semantic; Layout; Visual;
+- **Abstract**: Semantic entity recognition is an important task in the field of visually-rich document understanding. It distinguishes the semantic types of text by analyzing the position relationship between text nodes and the relation between text content. The existing document understanding models mainly focus on entity categories while ignoring the extraction of entity boundaries. We build a novel hypergraph attention document semantic entity recognition framework, HGA, which uses hypergraph attention to focus on entity boundaries and entity categories at the same time. It can conduct a more detailed analysis of the document text representation analyzed by the upstream model and achieves a better performance of semantic information. We apply this method on the basis of GraphLayoutLM to construct a new semantic entity recognition model HGALayoutLM. Our experiment results on FUNSD, CORD, XFUND and SROIE show that our method can effectively improve the performance of semantic entity recognition tasks based on the original model. The results of HGALayoutLM on FUNSD and XFUND reach the new state-of-the-art results.
 
 ---
 

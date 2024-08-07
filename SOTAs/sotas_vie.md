@@ -136,7 +136,7 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
 </tr>
 </tr>
-    <td rowspan=17>Large Scale Pre-trained</td>
+    <td rowspan=19>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
     <td>base</td>
     <td>94.38</td>
@@ -261,6 +261,21 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
     <td>-</td>
     <td>97.27</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#hgalayoutlm">HGALayoutLM</a></td>
+    <td>base</td>
+    <td>99.58</td>
+    <td>99.48</td>
+    <td>99.53</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>large</td>
+    <td>99.69</td>
+    <td>99.53</td>
+    <td>99.61</td>
     <td>-</td>
 </tr>
 </tr>
@@ -507,7 +522,7 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
 </tr>
 </tr>
-    <td rowspan=29>Large Scale Pre-trained</td>
+    <td rowspan=31>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
     <td>base</td>
     <td>94.37</td>
@@ -845,6 +860,35 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
     <td>-</td>
     <td>97.75</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#hgalayoutlm">HGALayoutLM</a></td>
+    <td>base</td>
+    <td>97.89</td>
+    <td>97.16</td>
+    <td>97.52</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>large</td>
+    <td>97.97</td>
+    <td>97.38</td>
+    <td>97.67</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1261,7 +1305,7 @@ Real-world applications require extracting all key-value pairs from the document
     <td>-</td>
     <td>-</td>
 </tr>
-<td rowspan=41>Large Scale Pre-trained</td>
+<td rowspan=43>Large Scale Pre-trained</td>
 <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
         <td>base</td>
         <td>75.97</td>
@@ -1750,6 +1794,35 @@ Real-world applications require extracting all key-value pairs from the document
     <td>-</td>
 </tr>
 </tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#hgalayoutlm">HGALayoutLM</a></td>
+        <td>base</td>
+        <td>94.84</td>
+        <td>93.80</td>
+        <td>94.32</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+</tr>
+<tr>
+    <td>large</td>
+    <td>95.67</td>
+    <td>94.95</td>
+    <td>95.31</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#docformerv2">DocFormerv2</a></td>
     <td>base</td>
     <td>89.15</td>
@@ -2032,7 +2105,7 @@ Note: In the following chart, the term `Avg.` represents the average score of th
     <td>Avg.</td>
 </tr>
 </tr>
-    <td rowspan=11>Large Scale Pre-trained</td>
+    <td rowspan=12>Large Scale Pre-trained</td>
     <td rowspan=6><a href="../Approaches/approaches_vie.md/#layoutlxlm">LayoutXLM</a></td>
     <td>base, Language Specific Fine-tuning</td>
     <td>89.24</td>
@@ -2242,6 +2315,25 @@ Note: In the following chart, the term `Avg.` represents the average score of th
     <td>92.41</td>
     <td>92.19</td>
     <td>94.23</td>
+</tr>
+</tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#xylayoutlm">HGALayoutLM</a></td>
+    <td>94.22</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 </tr>
     <td rowspan=2>End-to-End</td>

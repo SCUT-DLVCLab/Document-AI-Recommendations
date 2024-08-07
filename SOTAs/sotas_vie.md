@@ -279,7 +279,7 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
 </tr>
 </tr>
-    <td rowspan=5>End-to-End</td>
+    <td rowspan=6>End-to-End</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#trie">TRIE</a></td>
     <td>ground-truth</td>
     <td>-</td>
@@ -318,7 +318,14 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
 </tr>
 <tr>
-    <td rowspan=9>LLM-based</td>
+    <td colspan=2><a href="../Approaches/approached_vie.md/#omniparser">OmniParser</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>85.60</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td rowspan=10>LLM-based</td>
     <td colspan=2><a href="../Approaches/approached_vie.md/#hrvda">HRVDA</a></td>
     <td>-</td>
     <td>-</td>
@@ -331,6 +338,20 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
     <td>-</td>
     <td>41.90</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approached_vie.md/#textmonkey">TextMonkey</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>47.00</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approached_vie.md/#minimonkey">MiniMonkey</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>70.30</td>
 </tr>
 <tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#unidoc">UniDoc</a></td>
@@ -376,13 +397,6 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
     <td>-</td>
     <td>72.12</td>
-</tr>
-<tr>
-    <td colspan=2><a href="../Approaches/approached_vie.md/#omniparser">OmniParser</a></td>
-    <td>-</td>
-    <td>-</td>
-    <td>85.60</td>
-    <td>-</td>
 </tr>
 </tr>
     <td rowspan=4>Other Methods</td>
@@ -971,7 +985,7 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
 </tr>
 <tr>
-    <td rowspan=4>End-to-End</td>
+    <td rowspan=5>End-to-End</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#donut">Donut</a></td>
     <td>-</td>
     <td>-</td>
@@ -1028,7 +1042,21 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
 </tr>
 <tr>
-    <td rowspan=4>LLM-based</td>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#omniparser">OmniParser</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>84.80</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>88.00</td>
+</tr>
+<tr>
+    <td rowspan=3>LLM-based</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#hrvda">HRVDA</a></td>
     <td>-</td>
     <td>-</td>
@@ -1070,20 +1098,6 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
     <td>-</td>
     <td>-</td>
-</tr>
-<tr>
-    <td colspan=2><a href="../Approaches/approaches_vie.md/#omniparser">OmniParser</a></td>
-    <td>-</td>
-    <td>-</td>
-    <td>84.80</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>88.00</td>
 </tr>
 <tr>
     <td rowspan=8>Other Methods</td>
@@ -1953,7 +1967,7 @@ Real-world applications require extracting all key-value pairs from the document
     <td>-</td>
 </tr>
 <tr>
-    <td rowspan=7>LLM-based</td>
+    <td rowspan=9>LLM-based</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#monkey">Monkey</a></td>
     <td>-</td>
     <td>-</td>
@@ -1963,6 +1977,44 @@ Real-world applications require extracting all key-value pairs from the document
     <td>-</td>
     <td>-</td>
     <td>24.10</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#textmonkey">TextMonkey</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>32.30</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#minimonkey">MiniMonkey</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>42.90</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>

@@ -91,6 +91,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [DoCo](#doco)
   - [OmniParser](#omniparser)
   - [LayoutLLM](#layoutllm)
+  - [MiniMonkey](#minimonkey)
 - [Other Methods](#other-methods)
   - [TCPN](#tcpn)
   - [SPADE♠](#spade)
@@ -1328,16 +1329,14 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 ---
 
-<!-- TODO replace cvpr links -->
-
 ## OmniParser
 
 *Wan et al. OmniParser: A Unified Framework for Text Spotting, Key Information Extraction and Table Recognition. CVPR, 2024.*
 
 <p>
   <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
-  <a href="https://arxiv.org/abs/2403.19128">
-    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Wan_OmniParser_A_Unified_Framework_for_Text_Spotting_Key_Information_Extraction_CVPR_2024_paper.html">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-CVF-brightgreen"></img>
   </a>
   <a href="https://github.com/AlibabaResearch/AdvancedLiterateMachinery">
     <img alt="Code" src="https://img.shields.io/badge/Code-GitHub-blue"></img>
@@ -1350,16 +1349,14 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 ---
 
-<!-- TODO replace cvpr links -->
-
 ## LayoutLLM
 
 *Luo et al. LayoutLLM: Layout Instruction Tuning with Large Language Models for Document Understanding. CVPR, 2024.*
 
 <p>
   <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
-  <a href="https://arxiv.org/abs/2404.05225">
-    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Luo_LayoutLLM_Layout_Instruction_Tuning_with_Large_Language_Models_for_Document_CVPR_2024_paper.htmlf">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-CVF-brightgreen"></img>
   </a>
   <a href="https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/DocumentUnderstanding/LayoutLLM">
     <img alt="Paper Link" src="https://img.shields.io/badge/Data-GitHub-yellow"></img>
@@ -1369,6 +1366,27 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 - **Modalities**: Visual, Semantic, Layout
 - **Abstract**: Recently, leveraging large language models (LLMs) or multimodal large language models (MLLMs) for document understanding has been proven very promising. However, previous works that employ LLMs/MLLMs for document understanding have not fully explored and utilized the document layout information, which is vital for precise document understanding. In this paper, we propose LayoutLLM, an LLM/MLLM based method for document understanding. The core of LayoutLLM is a layout instruction tuning strategy, which is specially designed to enhance the comprehension and utilization of document layouts. The proposed layout instruction tuning strategy consists of two components: Layout-aware Pre-training and Layout-aware Supervised Fine-tuning. To capture the characteristics of document layout in Layout-aware Pre-training, three groups of pre-training tasks, corresponding to document-level, region-level and segment-level information, are introduced. Furthermore, a novel module called layout chain-of-thought (LayoutCoT) is devised to enable LayoutLLM to focus on regions relevant to the question and generate accurate answers. LayoutCoT is effective for boosting the performance of document understanding. Meanwhile, it brings a certain degree of interpretability, which could facilitate manual inspection and correction. Experiments on standard benchmarks show that the proposed LayoutLLM significantly outperforms existing methods that adopt open-source 7B LLMs/MLLMs for document understanding.
+
+
+---
+
+## MiniMonkey
+
+*Mingxin Huang, et al. Mini-Monkey: Alleviate the Sawtooth Effect by Multi-Scale Adaptive Cropping. arXiv 2408.02034, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2408.02034">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/Yuliang-Liu/Monkey">
+    <img alt="Paper Link" src="https://img.shields.io/badge/Code-GitHub-blue"></img>
+  </a>
+
+</p>
+
+- **Modalities**: Visual, Semantic Prompt
+- **Abstract**: Recently, there has been significant interest in enhancing the capability of multimodal large language models (MLLMs) to process high-resolution images. Most existing methods focus on adopting a cropping strategy to improve the ability of multimodal large language models to understand image details. However, this cropping operation inevitably causes the segmentation of objects and connected areas, which impairs the MLLM's ability to recognize small or irregularly shaped objects or text. This issue is particularly evident in lightweight MLLMs. Addressing this issue, we propose Mini-Monkey, a lightweight MLLM that incorporates a plug-and-play method called multi-scale adaptive crop strategy (MSAC). Mini-Monkey adaptively generates multi-scale representations, allowing it to select non-segmented objects from various scales. To mitigate the computational overhead introduced by MSAC, we propose a Scale Compression Mechanism (SCM), which effectively compresses image tokens. Mini-Monkey achieves state-of-the-art performance among 2B-parameter MLLMs. It not only demonstrates leading performance on a variety of general multimodal understanding tasks but also shows consistent improvements in document understanding capabilities. On the OCRBench, Mini-Monkey achieves a score of 802, outperforming 8B-parameter state-of-the-art model InternVL2-8B. Besides, our model and training strategy are very efficient, which can be trained with only eight RTX 3090.
 
 
 <br>

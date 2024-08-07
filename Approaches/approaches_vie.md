@@ -33,6 +33,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [GraphDoc](#graphdoc)
   - [FormNet](#formnet)
   - [FormNetV2](#formnetv2)
+  - [GeoContrastNet](#geocontrastnet)
 - [Large Scale Pre-trained Models](#large-scale-pre-trained-models)
   - [LayoutLM](#layoutlm)
   - [LayoutLMv2](#layoutlmv2)
@@ -51,10 +52,12 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [Wei Robust Layout-aware IE](#wei-robust-layout-aware-ie)
   - [WUKONG-READER](#wukong-reader)
   - [ERNIE-Layout](#ernie-layout)
+  - [QGN](#qgn)
   - [GeoLayoutLM](#geolayoutlm)
   - [KVPFormer](#kvpformer)
   - [TPP](#tpp)
   - [GraphLayoutLM](#graphlayoutlm)
+  - [HGALayoutLM](#hgalayoutlm)
   - [DocFormerv2](#docformerv2)
   - [DocTr](#doctr)
   - [LayoutMask](#layoutmask)
@@ -70,6 +73,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [Pix2Struct](#pix2struct)
   - [SeRum](#serum)
   - [UDOP](#udop)
+  - [CREPE](#crepe)
 - [Few-shot Methods](#few-shot-methods)
   - [LASER](#laser)
   - [LF-Attn](#lf-attn)
@@ -87,6 +91,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [DoCo](#doco)
   - [OmniParser](#omniparser)
   - [LayoutLLM](#layoutllm)
+  - [MiniMonkey](#minimonkey)
 - [Other Methods](#other-methods)
   - [TCPN](#tcpn)
   - [SPADE♠](#spade)
@@ -304,6 +309,27 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Highlights**: Excellent performance; Contrastive learning
 - **Modalities**: Semantic; Layout; Visual
 - **Abstract**: The recent advent of self-supervised pre-training techniques has led to a surge in the use of multimodal learning in form document understanding. However, existing approaches that extend the mask language modeling to other modalities require careful multi-task tuning, complex reconstruction target designs, or additional pre-training data. In FormNetV2, we introduce a centralized multimodal graph contrastive learning strategy to unify self-supervised pre-training for all modalities in one loss. The graph contrastive objective maximizes the agreement of multimodal representations, providing a natural interplay for all modalities without special customization. In addition, we extract image features within the bounding box that joins a pair of tokens connected by a graph edge, capturing more targeted visual cues without loading a sophisticated and separately pre-trained image embedder. FormNetV2 establishes new state-of-the-art performance on FUNSD, CORD, SROIE and Payment benchmarks with a more compact model size.
+
+---
+
+## GeoContrastNet
+
+*Nil Biescas, et al. GeoContrastnet: Contrastive Key-value Edge learning for Luanguage-Agnostic Document Understanding. ICDAR, 2024.*
+
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/pdf/2405.03104">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/NilBiescas/GeoContrastNet">
+    <img alt="Code 1" src="https://img.shields.io/badge/Code-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Entity Linking; Contrastive learning
+- **Modalities**: Layout; Visual
+- **Abstract**: This paper presents GeoContrastNet, a language-agnostic framework to structured document understanding (DU) by integrating a contrastive learning objective with graph attention networks (GATs), emphasizing the significant role of geometric features. We propose a novel methodology that combines geometric edge features with visual features within an overall two-staged GAT-based framework, demonstrating promising results in both link prediction and semantic entity recognition performance. Our findings reveal that combining both geometric and visual features could match the capabilities of large DU models that rely heavily on Optical Character Recognition (OCR) features in terms of performance accuracy and efficiency. This approach underscores the critical importance of relational layout information between the named text entities in a semi-structured layout of a page. Specifically, our results highlight the model's proficiency in identifying key-value relationships within the FUNSD dataset for forms and also discovering the spatial relationships in table-structured layouts for RVLCDIP business invoices
 
 
 <br>
@@ -640,6 +666,24 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 ---
 
+## QGN
+
+*Cao et al. Query-driven Generative Network for Document Information Extraction in the Wild. ACMMM, 2022.*
+
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2022-orange"></img>
+  <a href="https://dl.acm.org/doi/10.1145/3503161.3547877">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACM-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Capable of real-world OCR input
+- **Modalities**: Semantic; Layout; Visual
+- **Abstract**: This paper focuses on solving Document Information Extraction (DIE) in the wild problem, which is rarely explored before. In contrast to existing studies mainly tailored for document cases in known templates with predefined layouts and keys under the ideal input without OCR errors involved, we aim to build up a more practical DIE paradigm for real-world scenarios where input document images may contain unknown layouts and keys in the scenes of the problematic OCR results. To achieve this goal, we propose a novel architecture, termed Query-driven Generative Network (QGN), which is equipped with two consecutive modules, i.e., Layout Context-aware Module (LCM) and Structured Generation Module (SGM). Given a document image with unseen layouts and fields, the former LCM yields the value prefix candidates serving as the query prompts for the SGM to generate the final key-value pairs even with OCR noise. To further investigate the potential of our method, we create a new large-scale dataset, named LArge-scale STructured Documents (LastDoc4000), containing 4,000 documents with 1,511 layouts and 3,500 different keys. In experiments, we demonstrate that our QGN consistently achieves the best F1-score on the new LastDoc4000 dataset by at most 30.32% absolute improvement. A more comprehensive experimental analysis and experiments on other public benchmarks also verify the effectiveness and robustness of our proposed method for the wild DIE task.
+
+---
+
 ## GeoLayoutLM
 
 *Luo et al. GeoLayoutLM: Geometric Pre-training for Visual Information Extraction. CVPR, 2023.*
@@ -710,6 +754,24 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Highlights**: Excellent Entity Extraction Performance; LayoutLM with graph
 - **Modalities**: Semantic; Layout; Visual;
 - **Abstract**: In recent years, the use of multi-modal pre-trained Transformers has led to significant advancements in visually-rich document un- derstanding. However, existing models have mainly focused on features such as text and vision while neglecting the importance of layout relationship between text nodes. In this paper, we pro- pose GraphLayoutLM, a novel document understanding model that leverages the modeling of layout structure graph to inject document layout knowledge into the model. GraphLayoutLM utilizes a graph reordering algorithm to adjust the text sequence based on the graph structure. Additionally, our model uses a layout-aware multi-head self-attention layer to learn document layout knowledge. The pro- posed model enables the understanding of the spatial arrangement of text elements, improving document comprehension. We evaluate our model on various benchmarks, including FUNSD, XFUND and CORD, and achieve state-of-the-art results among these datasets. Our experimental results demonstrate that our proposed method provides a significant improvement over existing approaches and showcases the importance of incorporating layout information into document understanding models. We also conduct an ablation study to investigate the contribution of each component of our model. The results show that both the graph reordering algorithm and the layout-aware multi-head self-attention layer play a crucial role in achieving the best performance.
+
+---
+
+
+## HGALayoutLM
+
+*Li et al. Hypergraph based Understanding for Document Semantic Entity Recognition. ACL, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2407.06904">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Excellent Entity Extraction Performance
+- **Modalities**: Semantic; Layout; Visual;
+- **Abstract**: Semantic entity recognition is an important task in the field of visually-rich document understanding. It distinguishes the semantic types of text by analyzing the position relationship between text nodes and the relation between text content. The existing document understanding models mainly focus on entity categories while ignoring the extraction of entity boundaries. We build a novel hypergraph attention document semantic entity recognition framework, HGA, which uses hypergraph attention to focus on entity boundaries and entity categories at the same time. It can conduct a more detailed analysis of the document text representation analyzed by the upstream model and achieves a better performance of semantic information. We apply this method on the basis of GraphLayoutLM to construct a new semantic entity recognition model HGALayoutLM. Our experiment results on FUNSD, CORD, XFUND and SROIE show that our method can effectively improve the performance of semantic entity recognition tasks based on the original model. The results of HGALayoutLM on FUNSD and XFUND reach the new state-of-the-art results.
 
 ---
 
@@ -990,6 +1052,23 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Modalities**: Visual
 - **Abstract**: We propose Universal Document Processing (UDOP), a foundation Document AI model which unifies text, image, and layout modalities together with varied task formats, including document understanding and generation. UDOP leverages the spatial correlation between textual content and document image to model image, text, and layout modalities with one uniform representation. With a novel Vision-Text-Layout Transformer, UDOP unifies pretraining and multi-domain downstream tasks into a prompt-based sequence generation scheme. UDOP is pretrained on both large-scale unlabeled document corpora using innovative self-supervised objectives and diverse labeled data. UDOP also learns to generate document images from text and layout modalities via masked image reconstruction. To the best of our knowledge, this is the first time in the field of document AI that one model simultaneously achieves high-quality neural document editing and content customization. Our method sets the state-of-the-art on 8 Document AI tasks, e.g., document understanding and QA, across diverse data domains like finance reports, academic papers, and websites. UDOP ranks first on the leaderboard of the Document Understanding Benchmark.
 
+---
+
+## CREPE
+
+*Yamoto Okamoto, et al. OCR-free Document Understanding Transformer. ICDAR, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/pdf/2405.00260">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Pure End-to-End; Structured IE
+- **Modalities**: Visual
+- **Abstract**: In this study, we formulate an OCR-free sequence generation model for visual document understanding (VDU). Our model not only parses text from document images but also extracts the spatial coordinates of the text based on the multi-head architecture. Named as Coordinate-aware End-to-end Document Parser (CREPE), our method uniquely integrates these capabilities by introducing a special token for OCR text, and token-triggered coordinate decoding. We also proposed a weakly-supervised framework for cost-efficient training, requiring only parsing annotations without high-cost coordinate annotations. Our experimental evaluations demonstrate CREPE's state-of-the-art performances on document parsing tasks. Beyond that, CREPE's adaptability is further highlighted by its successful usage in other document understanding tasks such as layout analysis, document visual question answering, and so one. CREPE's abilities including OCR and semantic parsing not only mitigate error propagation issues in existing OCR-dependent methods, it also significantly enhance the functionality of sequence generation models, ushering in a new era for document understanding studies.
+
 
 <br>
 <br>
@@ -1250,16 +1329,14 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 ---
 
-<!-- TODO replace cvpr links -->
-
 ## OmniParser
 
 *Wan et al. OmniParser: A Unified Framework for Text Spotting, Key Information Extraction and Table Recognition. CVPR, 2024.*
 
 <p>
   <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
-  <a href="https://arxiv.org/abs/2403.19128">
-    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Wan_OmniParser_A_Unified_Framework_for_Text_Spotting_Key_Information_Extraction_CVPR_2024_paper.html">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-CVF-brightgreen"></img>
   </a>
   <a href="https://github.com/AlibabaResearch/AdvancedLiterateMachinery">
     <img alt="Code" src="https://img.shields.io/badge/Code-GitHub-blue"></img>
@@ -1272,16 +1349,14 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 ---
 
-<!-- TODO replace cvpr links -->
-
 ## LayoutLLM
 
 *Luo et al. LayoutLLM: Layout Instruction Tuning with Large Language Models for Document Understanding. CVPR, 2024.*
 
 <p>
   <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
-  <a href="https://arxiv.org/abs/2404.05225">
-    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Luo_LayoutLLM_Layout_Instruction_Tuning_with_Large_Language_Models_for_Document_CVPR_2024_paper.htmlf">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-CVF-brightgreen"></img>
   </a>
   <a href="https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/DocumentUnderstanding/LayoutLLM">
     <img alt="Paper Link" src="https://img.shields.io/badge/Data-GitHub-yellow"></img>
@@ -1291,6 +1366,27 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 - **Modalities**: Visual, Semantic, Layout
 - **Abstract**: Recently, leveraging large language models (LLMs) or multimodal large language models (MLLMs) for document understanding has been proven very promising. However, previous works that employ LLMs/MLLMs for document understanding have not fully explored and utilized the document layout information, which is vital for precise document understanding. In this paper, we propose LayoutLLM, an LLM/MLLM based method for document understanding. The core of LayoutLLM is a layout instruction tuning strategy, which is specially designed to enhance the comprehension and utilization of document layouts. The proposed layout instruction tuning strategy consists of two components: Layout-aware Pre-training and Layout-aware Supervised Fine-tuning. To capture the characteristics of document layout in Layout-aware Pre-training, three groups of pre-training tasks, corresponding to document-level, region-level and segment-level information, are introduced. Furthermore, a novel module called layout chain-of-thought (LayoutCoT) is devised to enable LayoutLLM to focus on regions relevant to the question and generate accurate answers. LayoutCoT is effective for boosting the performance of document understanding. Meanwhile, it brings a certain degree of interpretability, which could facilitate manual inspection and correction. Experiments on standard benchmarks show that the proposed LayoutLLM significantly outperforms existing methods that adopt open-source 7B LLMs/MLLMs for document understanding.
+
+
+---
+
+## MiniMonkey
+
+*Mingxin Huang, et al. Mini-Monkey: Alleviate the Sawtooth Effect by Multi-Scale Adaptive Cropping. arXiv 2408.02034, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2408.02034">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/Yuliang-Liu/Monkey">
+    <img alt="Paper Link" src="https://img.shields.io/badge/Code-GitHub-blue"></img>
+  </a>
+
+</p>
+
+- **Modalities**: Visual, Semantic Prompt
+- **Abstract**: Recently, there has been significant interest in enhancing the capability of multimodal large language models (MLLMs) to process high-resolution images. Most existing methods focus on adopting a cropping strategy to improve the ability of multimodal large language models to understand image details. However, this cropping operation inevitably causes the segmentation of objects and connected areas, which impairs the MLLM's ability to recognize small or irregularly shaped objects or text. This issue is particularly evident in lightweight MLLMs. Addressing this issue, we propose Mini-Monkey, a lightweight MLLM that incorporates a plug-and-play method called multi-scale adaptive crop strategy (MSAC). Mini-Monkey adaptively generates multi-scale representations, allowing it to select non-segmented objects from various scales. To mitigate the computational overhead introduced by MSAC, we propose a Scale Compression Mechanism (SCM), which effectively compresses image tokens. Mini-Monkey achieves state-of-the-art performance among 2B-parameter MLLMs. It not only demonstrates leading performance on a variety of general multimodal understanding tasks but also shows consistent improvements in document understanding capabilities. On the OCRBench, Mini-Monkey achieves a score of 802, outperforming 8B-parameter state-of-the-art model InternVL2-8B. Besides, our model and training strategy are very efficient, which can be trained with only eight RTX 3090.
 
 
 <br>

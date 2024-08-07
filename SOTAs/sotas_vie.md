@@ -136,7 +136,7 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
 </tr>
 </tr>
-    <td rowspan=16>Large Scale Pre-trained</td>
+    <td rowspan=19>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
     <td>base</td>
     <td>94.38</td>
@@ -242,6 +242,13 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
 </tr>
 </tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#qgn">QGN</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>97.90</td>
+    <td>-</td>
+</tr>
+</tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutmask">LayoutMask</a></td>
     <td>base</td>
     <td>-</td>
@@ -257,7 +264,22 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
 </tr>
 </tr>
-    <td rowspan=5>End-to-End</td>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#hgalayoutlm">HGALayoutLM</a></td>
+    <td>base</td>
+    <td>99.58</td>
+    <td>99.48</td>
+    <td>99.53</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>large</td>
+    <td>99.69</td>
+    <td>99.53</td>
+    <td>99.61</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td rowspan=6>End-to-End</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#trie">TRIE</a></td>
     <td>ground-truth</td>
     <td>-</td>
@@ -296,7 +318,14 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
 </tr>
 <tr>
-    <td rowspan=9>LLM-based</td>
+    <td colspan=2><a href="../Approaches/approached_vie.md/#omniparser">OmniParser</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>85.60</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td rowspan=10>LLM-based</td>
     <td colspan=2><a href="../Approaches/approached_vie.md/#hrvda">HRVDA</a></td>
     <td>-</td>
     <td>-</td>
@@ -309,6 +338,20 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
     <td>-</td>
     <td>41.90</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approached_vie.md/#textmonkey">TextMonkey</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>47.00</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approached_vie.md/#minimonkey">MiniMonkey</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>70.30</td>
 </tr>
 <tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#unidoc">UniDoc</a></td>
@@ -354,13 +397,6 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
     <td>-</td>
     <td>72.12</td>
-</tr>
-<tr>
-    <td colspan=2><a href="../Approaches/approached_vie.md/#omniparser">OmniParser</a></td>
-    <td>-</td>
-    <td>-</td>
-    <td>85.60</td>
-    <td>-</td>
 </tr>
 </tr>
     <td rowspan=4>Other Methods</td>
@@ -500,7 +536,7 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
 </tr>
 </tr>
-    <td rowspan=28>Large Scale Pre-trained</td>
+    <td rowspan=31>Large Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
     <td>base</td>
     <td>94.37</td>
@@ -791,6 +827,20 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
 </tr>
 </tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#qgn">QGN</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>96.84</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#geolayoutlm">GeoLayoutLM</a></td>
     <td>-</td>
     <td>-</td>
@@ -824,6 +874,35 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
     <td>-</td>
     <td>97.75</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#hgalayoutlm">HGALayoutLM</a></td>
+    <td>base</td>
+    <td>97.89</td>
+    <td>97.16</td>
+    <td>97.52</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>large</td>
+    <td>97.97</td>
+    <td>97.38</td>
+    <td>97.67</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -906,7 +985,7 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
 </tr>
 <tr>
-    <td rowspan=3>End-to-End</td>
+    <td rowspan=5>End-to-End</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#donut">Donut</a></td>
     <td>-</td>
     <td>-</td>
@@ -949,7 +1028,35 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
 </tr>
 <tr>
-    <td rowspan=4>LLM-based</td>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#donut">CREPE</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>85.00</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#omniparser">OmniParser</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>84.80</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>88.00</td>
+</tr>
+<tr>
+    <td rowspan=3>LLM-based</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#hrvda">HRVDA</a></td>
     <td>-</td>
     <td>-</td>
@@ -991,20 +1098,6 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
     <td>-</td>
     <td>-</td>
-</tr>
-<tr>
-    <td colspan=2><a href="../Approaches/approaches_vie.md/#omniparser">OmniParser</a></td>
-    <td>-</td>
-    <td>-</td>
-    <td>84.80</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>88.00</td>
 </tr>
 <tr>
     <td rowspan=8>Other Methods</td>
@@ -1226,7 +1319,7 @@ Real-world applications require extracting all key-value pairs from the document
     <td>-</td>
     <td>-</td>
 </tr>
-<td rowspan=41>Large Scale Pre-trained</td>
+<td rowspan=43>Large Scale Pre-trained</td>
 <td rowspan=2><a href="../Approaches/approaches_vie.md/#layoutlm">LayoutLM</a></td>
         <td>base</td>
         <td>75.97</td>
@@ -1715,6 +1808,35 @@ Real-world applications require extracting all key-value pairs from the document
     <td>-</td>
 </tr>
 </tr>
+    <td rowspan=2><a href="../Approaches/approaches_vie.md/#hgalayoutlm">HGALayoutLM</a></td>
+        <td>base</td>
+        <td>94.84</td>
+        <td>93.80</td>
+        <td>94.32</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+</tr>
+<tr>
+    <td>large</td>
+    <td>95.67</td>
+    <td>94.95</td>
+    <td>95.31</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#docformerv2">DocFormerv2</a></td>
     <td>base</td>
     <td>89.15</td>
@@ -1845,7 +1967,7 @@ Real-world applications require extracting all key-value pairs from the document
     <td>-</td>
 </tr>
 <tr>
-    <td rowspan=7>LLM-based</td>
+    <td rowspan=9>LLM-based</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#monkey">Monkey</a></td>
     <td>-</td>
     <td>-</td>
@@ -1855,6 +1977,44 @@ Real-world applications require extracting all key-value pairs from the document
     <td>-</td>
     <td>-</td>
     <td>24.10</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#textmonkey">TextMonkey</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>32.30</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#minimonkey">MiniMonkey</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>42.90</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1997,7 +2157,7 @@ Note: In the following chart, the term `Avg.` represents the average score of th
     <td>Avg.</td>
 </tr>
 </tr>
-    <td rowspan=11>Large Scale Pre-trained</td>
+    <td rowspan=12>Large Scale Pre-trained</td>
     <td rowspan=6><a href="../Approaches/approaches_vie.md/#layoutlxlm">LayoutXLM</a></td>
     <td>base, Language Specific Fine-tuning</td>
     <td>89.24</td>
@@ -2209,6 +2369,25 @@ Note: In the following chart, the term `Avg.` represents the average score of th
     <td>94.23</td>
 </tr>
 </tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#xylayoutlm">HGALayoutLM</a></td>
+    <td>94.22</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+</tr>
     <td rowspan=2>End-to-End</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#esp">ESP</a></td>
     <td>Language Specific Fine-tuning</td>
@@ -2272,7 +2451,7 @@ EPHOIE consists of 11 key categories for **Entity Extraction** and takes the **E
     <td>96.87</td>
 </tr>
 <tr>
-    <td rowspan=4>Large-Scale Pre-trained</td>
+    <td rowspan=5>Large-Scale Pre-trained</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#structext">StrucTexT</a></td>
     <td>chn&eng-base</td>
     <td>-</td>
@@ -2297,6 +2476,12 @@ EPHOIE consists of 11 key categories for **Entity Extraction** and takes the **E
     <td>97.62</td>
     <td>98.33</td>
     <td>97.97</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#qgn">QGN</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>98.49</td>
 </tr>
 <tr>
     <td rowspan=2>End-to-End</td>

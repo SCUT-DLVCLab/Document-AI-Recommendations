@@ -95,6 +95,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [LayoutLLM‡](#layoutllm‡)
   - [LayTextLLM](#laytextllm)
   - [DocLayLLM](#doclayllm)
+  - [DocKylin](#dockylin)
   - [MiniMonkey](#minimonkey)
 - [Other Methods](#other-methods)
   - [TCPN](#tcpn)
@@ -1446,6 +1447,24 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 - **Modalities**: Visual, Semantic, Layout
 - **Abstract**: Text-rich document understanding (TDU) refers to analyzing and comprehending documents containing substantial textual content. With the rapid evolution of large language models (LLMs), they have been widely leveraged for TDU due to their remarkable versatility and generalization. In this paper, we introduce DocLayLLM, an efficient and effective multi-modal extension of LLMs specifically designed for TDU. By integrating visual patch tokens and 2D positional tokens into LLMs and encoding the document content using the LLMs themselves, we fully take advantage of the document comprehension capability of LLMs and enhance their perception of OCR information. We have also deeply considered the role of the chain-of-thought (CoT) and innovatively proposed the techniques of CoT Pre-training and CoT Annealing. Our DocLayLLM can achieve remarkable performances with lightweight training settings, showcasing its efficiency and effectiveness. Experimental results demonstrate that our DocLayLLM surpasses existing OCR-dependent methods and also outperforms OCR-free competitors.
+
+---
+
+## DocKylin
+
+*Zhang et al. DocKylin: A Large Multimodal Model for Visual Document Understanding with Efficient Visual Slimming. arXiv, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2406.19101">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+
+</p>
+
+- **Modalities**: Visual, Semantic Prompt
+- **Abstract**: Current multimodal large language models (MLLMs) face significant challenges in visual document understanding (VDU) tasks due to the high resolution, dense text, and complex layouts typical of document images. These characteristics demand a high level of detail perception ability from MLLMs. While increasing input resolution improves detail perception, it also leads to longer sequences of visual tokens, increasing computational costs and straining the models' ability to handle long contexts. To address these challenges, we introduce DocKylin, a document-centric MLLM that performs visual content slimming at both the pixel and token levels, thereby reducing token sequence length in VDU scenarios. DocKylin utilizes an Adaptive Pixel Slimming (APS) preprocessing module to perform pixel-level slimming, increasing the proportion of informative pixels. Moreover, DocKylin incorporates a novel Dynamic Token Slimming (DTS) module to conduct token-level slimming, filtering essential tokens and removing others to create a compressed, adaptive visual sequence. Experiments demonstrate DocKylin's promising performance across various VDU benchmarks. Notably, both the proposed APS and DTS are parameter-free, facilitating easy integration into existing MLLMs, and our experiments indicate their potential for broader applications.
+
 
 ---
 

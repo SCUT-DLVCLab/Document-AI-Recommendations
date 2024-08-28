@@ -90,7 +90,12 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [HRVDA](#hrvda)
   - [DoCo](#doco)
   - [OmniParser](#omniparser)
-  - [LayoutLLM](#layoutllm)
+  - [DocLLM](#docllm)
+  - [LayoutLLM†](#layoutllm†)
+  - [LayoutLLM‡](#layoutllm‡)
+  - [LayTextLLM](#laytextllm)
+  - [DocLayLLM](#doclayllm)
+  - [DocKylin](#dockylin)
   - [MiniMonkey](#minimonkey)
 - [Other Methods](#other-methods)
   - [TCPN](#tcpn)
@@ -1349,13 +1354,31 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 ---
 
-## LayoutLLM
+
+## DocLLM
+
+*Wang et al. DocLLM: A layout-aware generative language model for multimodal document understanding. ACL, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://aclanthology.org/2024.acl-long.463/">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACL-brightgreen"></img>
+  </a>
+
+</p>
+
+- **Modalities**: Semantic, Layout
+- **Abstract**: Enterprise documents such as forms, receipts, reports, and other such records, often carry rich semantics at the intersection of textual and spatial modalities. The visual cues offered by their complex layouts play a crucial role in comprehending these documents effectively. In this paper, we present DocLLM, a lightweight extension to traditional large language models (LLMs) for reasoning over visual documents, taking into account both textual semantics and spatial layout. Our model differs from existing multimodal LLMs by avoiding expensive image encoders and focuses exclusively on bounding box information to incorporate the spatial layout structure. Specifically, the cross-alignment between text and spatial modalities is captured by decomposing the attention mechanism in classical transformers to a set of disentangled matrices. Furthermore, we devise a pre-training objective that learns to infill text segments. This approach allows us to address irregular layouts and heterogeneous content frequently encountered in visual documents. The pre-trained model is fine-tuned using a large-scale instruction dataset, covering four core document intelligence tasks. We demonstrate that our solution outperforms SotA LLMs on 14 out of 16 datasets across all tasks, and generalizes well to 4 out of 5 previously unseen datasets.
+
+---
+
+## LayoutLLM†
 
 *Luo et al. LayoutLLM: Layout Instruction Tuning with Large Language Models for Document Understanding. CVPR, 2024.*
 
 <p>
   <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
-  <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Luo_LayoutLLM_Layout_Instruction_Tuning_with_Large_Language_Models_for_Document_CVPR_2024_paper.htmlf">
+  <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Luo_LayoutLLM_Layout_Instruction_Tuning_with_Large_Language_Models_for_Document_CVPR_2024_paper.html">
     <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-CVF-brightgreen"></img>
   </a>
   <a href="https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/DocumentUnderstanding/LayoutLLM">
@@ -1369,6 +1392,82 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 
 ---
+
+
+## LayoutLLM‡
+
+*Fujitake. LayoutLLM: Large Language Model Instruction Tuning for Visually Rich Document Understanding. LREC | COLING, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://aclanthology.org/2024.lrec-main.892/">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACL-brightgreen"></img>
+  </a>
+
+</p>
+
+- **Modalities**: Visual, Semantic, Layout
+- **Abstract**: This paper proposes LayoutLLM, a more flexible document analysis method for understanding imaged documents. Visually Rich Document Understanding tasks, such as document image classification and information extraction, have gained significant attention due to their importance. Existing methods have been developed to enhance document comprehension by incorporating pre-training awareness of images, text, and layout structure. However, these methods require fine-tuning for each task and dataset, and the models are expensive to train and operate. To overcome this limitation, we propose a new LayoutLLM that integrates these with large-scale language models (LLMs). By leveraging the strengths of existing research in document image understanding and LLMs’ superior language understanding capabilities, the proposed model, fine-tuned with multimodal instruction datasets, performs an understanding of document images in a single model. Our experiments demonstrate improvement over the baseline model in various document analysis tasks.
+
+
+---
+
+
+## LayTextLLM
+
+*Lu et al. LayTextLLM: A Bounding Box is Worth One TokenInterleaving Layout and Text in a Large Language Model for Document Understanding. arXiv, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2407.01976">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/laytextllm/laytextllm">
+    <img alt="Paper Link" src="https://img.shields.io/badge/Code-GitHub-yellow"></img>
+  </a>
+
+</p>
+
+- **Modalities**: Semantic, Layout
+- **Abstract**: Recently, many studies have demonstrated that exclusively incorporating OCR-derived text and spatial layouts with large language models (LLMs) can be highly effective for document understanding tasks. However, existing methods that integrate spatial layouts with text have limitations, such as producing overly long text sequences or failing to fully leverage the autoregressive traits of LLMs. In this work, we introduce Interleaving Layout and Text in a Large Language Model (LayTextLLM)} for document understanding. In particular, LayTextLLM projects each bounding box to a single embedding and interleaves it with text, efficiently avoiding long sequence issues while leveraging autoregressive traits of LLMs. LayTextLLM not only streamlines the interaction of layout and textual data but also shows enhanced performance in Key Information Extraction (KIE) and Visual Question Answering (VQA). Comprehensive benchmark evaluations reveal significant improvements, with a 27.2% increase on KIE tasks and 12.0% on VQA tasks compared to previous state-of-the-art document understanding MLLMs, as well as a 15.1% improvement over other SOTA OCR-based LLMs on KIE tasks.
+
+---
+
+## DocLayLLM
+
+*Liao et al. DocLayLLM: An Efficient and Effective Multi-modal Extension of Large Language Models for Text-rich Document Understanding. arXiv, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2408.15045">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+
+</p>
+
+- **Modalities**: Visual, Semantic, Layout
+- **Abstract**: Text-rich document understanding (TDU) refers to analyzing and comprehending documents containing substantial textual content. With the rapid evolution of large language models (LLMs), they have been widely leveraged for TDU due to their remarkable versatility and generalization. In this paper, we introduce DocLayLLM, an efficient and effective multi-modal extension of LLMs specifically designed for TDU. By integrating visual patch tokens and 2D positional tokens into LLMs and encoding the document content using the LLMs themselves, we fully take advantage of the document comprehension capability of LLMs and enhance their perception of OCR information. We have also deeply considered the role of the chain-of-thought (CoT) and innovatively proposed the techniques of CoT Pre-training and CoT Annealing. Our DocLayLLM can achieve remarkable performances with lightweight training settings, showcasing its efficiency and effectiveness. Experimental results demonstrate that our DocLayLLM surpasses existing OCR-dependent methods and also outperforms OCR-free competitors.
+
+---
+
+## DocKylin
+
+*Zhang et al. DocKylin: A Large Multimodal Model for Visual Document Understanding with Efficient Visual Slimming. arXiv, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/abs/2406.19101">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+
+</p>
+
+- **Modalities**: Visual, Semantic Prompt
+- **Abstract**: Current multimodal large language models (MLLMs) face significant challenges in visual document understanding (VDU) tasks due to the high resolution, dense text, and complex layouts typical of document images. These characteristics demand a high level of detail perception ability from MLLMs. While increasing input resolution improves detail perception, it also leads to longer sequences of visual tokens, increasing computational costs and straining the models' ability to handle long contexts. To address these challenges, we introduce DocKylin, a document-centric MLLM that performs visual content slimming at both the pixel and token levels, thereby reducing token sequence length in VDU scenarios. DocKylin utilizes an Adaptive Pixel Slimming (APS) preprocessing module to perform pixel-level slimming, increasing the proportion of informative pixels. Moreover, DocKylin incorporates a novel Dynamic Token Slimming (DTS) module to conduct token-level slimming, filtering essential tokens and removing others to create a compressed, adaptive visual sequence. Experiments demonstrate DocKylin's promising performance across various VDU benchmarks. Notably, both the proposed APS and DTS are parameter-free, facilitating easy integration into existing MLLMs, and our experiments indicate their potential for broader applications.
+
+
+---
+
 
 ## MiniMonkey
 

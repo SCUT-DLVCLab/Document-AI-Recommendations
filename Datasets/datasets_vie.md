@@ -15,6 +15,7 @@
 - [Kleister](#kleister)
 - [VRDU](#vrdu)
 - [POIE](#poie)
+- [KVP10k](#kvp10k)
 
 
 <br>
@@ -730,3 +731,59 @@ The images in POIE contain Nutrition Facts labels from various commodities in th
 </p>
 
 <br>
+
+
+# KVP10k
+
+<p>
+    <img alt="License" src="https://img.shields.io/badge/License-Apache License 2.0-c1c1c1"></img>
+    <img align=right alt="Commercial" src="https://img.shields.io/badge/Commercial-✔️-brightgreen"></img>
+    <img align=right  alt="Adapt" src="https://img.shields.io/badge/Adapt-✔️-brightgreen"></img>
+    <img align=right alt="Share" src="https://img.shields.io/badge/Share-✔️-brightgreen"></img>
+    </a>
+</p>
+
+<table align=center>
+    <th colspan=3>Number of Samples</th>
+    <th rowspan=2>Type</th>
+    <th rowspan=2>Language</th>
+    <th rowspan=2>Access Link</th>
+    <th rowspan=2>Task</th>
+    <th rowspan=2>Evaluation Metric</th>
+    <tr>
+        <th>Train</th>
+        <th>Validate</th>
+        <th>Test</th>
+    </tr>
+    <tr>
+        <td rowspan=2>48280</td>
+        <td rowspan=2>-</td>
+        <td rowspan=2>5255</td>
+        <td rowspan=2>Mixed Form-like Documents</td>
+        <td rowspan=2>English</td>
+        <td rowspan=2>
+            <p>
+                <a href="https://github.com/IBM/KVP10k">
+                    <img alt="Link" src="https://img.shields.io/badge/Official-2e8b57"></img>
+                </a>
+            </p>
+        </td>
+        <td rowspan=1>Entity Extraction</td>
+        <td rowspan=1>ED-IOU-based Entity F1-score</td>
+    </tr>
+    <tr>
+        <td rowspan=1>Pair Extraction</td>
+        <td rowspan=1>
+            IOU-based Pair F1-score <br>
+            ED-based Pair F1-score <br>
+            ED-IOU-based Pair F1-score
+        </td>
+    </tr>
+</table>
+
+KVP10k is the largest dataset available for KVP extraction. It features a broad array of keys and precise annotations, with text labeled as keys or values, providing a solid basis for training and evaluation. The authors also proposed a novel metric for evaluating the Pair Extraction Performance.
+
+<p align=center>
+    <img src="../img/dataset_img/KVP10k.png" height=600>
+</p>
+

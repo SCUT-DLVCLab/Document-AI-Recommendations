@@ -61,6 +61,10 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [DocFormerv2](#docformerv2)
   - [DocTr](#doctr)
   - [LayoutMask](#layoutmask)
+  - [PEneo](#peneo)
+  - [UNER](#uner)
+  - [ROOR](#roor)
+  - [ReLayout](#relayout)
 - [End-to-End Methods](#end-to-end-methods)
   - [EATEN](#eaten)
   - [TRIE](#trie)
@@ -74,6 +78,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [SeRum](#serum)
   - [UDOP](#udop)
   - [CREPE](#crepe)
+  - [VisFocus](#visfocus)
 - [Few-shot Methods](#few-shot-methods)
   - [LASER](#laser)
   - [LF-Attn](#lf-attn)
@@ -832,6 +837,81 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Modalities**: Semantic; Layout; Visual;
 - **Abstract**: Visually-rich Document Understanding (VrDU) has attracted much research attention over the past years. Pre-trained models on a large number of document images with transformer-based backbones have led to significant performance gains in this field. The major challenge is how to fusion the different modalities (text, layout, and image) of the documents in a unified model with different pre-training tasks. This paper focuses on improving text-layout interactions and proposes a novel multi-modal pre-training model, LayoutMask. LayoutMask uses local 1D position, instead of global 1D position, as layout input and has two pre-training objectives: (1) Masked Language Modeling: predicting masked tokens with two novel masking strategies; (2) Masked Position Modeling: predicting masked 2D positions to improve layout representation learning. LayoutMask can enhance the interactions between text and layout modalities in a unified model and produce adaptive and robust multi-modal representations for downstream tasks. Experimental results show that our proposed method can achieve state-of-the-art results on a wide variety of VrDU problems, including form understanding, receipt understanding, and document image classification.
 
+---
+
+## PEneo
+
+*Lin, Zening, et al. PEneo: Unifying Line Extraction, Line Grouping, and Entity Linking for End-to-end Document Pair Extraction. ACMMM, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://dl.acm.org/doi/abs/10.1145/3664647.3680931">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACM-brightgreen"></img>
+  </a>
+  <a href="https://github.com/ZeningLin/PEneo">
+    <img alt="Code" src="https://img.shields.io/badge/Code-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Key-value Pair Extraction; Capable for Real-world OCR Input
+- **Modalities**: Semantic; Layout; Visual;
+- **Abstract**: Document pair extraction aims to identify key and value entities as well as their relationships from visually-rich documents. Most existing methods divide it into two separate tasks: semantic entity recognition (SER) and relation extraction (RE). However, simply concatenating SER and RE serially can lead to severe error propagation, and it fails to handle cases like multi-line entities in real scenarios. To address these issues, this paper introduces a novel framework, PEneo (Pair Extraction new decoder option), which performs document pair extraction in a unified pipeline, incorporating three concurrent sub-tasks: line extraction, line grouping, and entity linking. This approach alleviates the error accumulation problem and can handle the case of multi-line entities. Furthermore, to better evaluate the model's performance and to facilitate future research on pair extraction, we introduce RFUND, a re-annotated version of the commonly used FUNSD and XFUND datasets, to make them more accurate and cover realistic situations. Experiments on various benchmarks demonstrate PEneo's superiority over previous pipelines, boosting the performance by a large margin (e.g., 19.89%-22.91% F1 score on RFUND-EN) when combined with various backbones like LiLT and LayoutLMv3, showing its effectiveness and generality.
+
+---
+
+## UNER
+
+*Tu, Yi, et al. UNER: A Unified Prediction Head for Named Entity Recognition in Visually-rich Documents ACMMM, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://dl.acm.org/doi/10.1145/3664647.3681473">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACM-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Capable for Real-world OCR Input
+- **Modalities**: Semantic; Layout; Visual;
+- **Abstract**: The recognition of named entities in visually-rich documents (VrD-NER) plays a critical role in various real-world scenarios and applications. However, the research in VrD-NER faces three major challenges: complex document layouts, incorrect reading orders, and unsuitable task formulations. To address these challenges, we propose a query-aware entity extraction head, namely UNER, to collaborate with existing multi-modal document transformers to develop more robust VrD-NER models. The UNER head considers the VrD-NER task as a combination of sequence labeling and reading order prediction, effectively addressing the issues of discontinuous entities in documents. Experimental evaluations on diverse datasets demonstrate the effectiveness of UNER in improving entity extraction performance. Moreover, the UNER head enables a supervised pre-training stage on various VrD-NER datasets to enhance the document transformer backbones and exhibits substantial knowledge transfer from the pre-training stage to the fine-tuning stage. By incorporating universal layout understanding, a pre-trained UNER-based model demonstrates significant advantages in few-shot and cross-linguistic scenarios and exhibits zero-shot entity extraction abilities.
+
+---
+
+## ROOR
+
+*Zhang, Chong, et al. Modeling Layout Reading Order as Ordering Relations for Visually-rich Document Understanding. EMNLP, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://aclanthology.org/2024.emnlp-main.540/">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACL-brightgreen"></img>
+  </a>
+  <a href="https://github.com/chongzhangFDU/ROOR">
+    <img alt="Code" src="https://img.shields.io/badge/Code-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Reading Order Predicion
+- **Modalities**: Semantic; Layout; Visual;
+- **Abstract**: Modeling and leveraging layout reading order in visually-rich documents (VrDs) is critical in document intelligence as it captures the rich structure semantics within documents.Previous works typically formulated layout reading order as a permutation of layout elements, i.e. a sequence containing all the layout elements.However, we argue that this formulation does not adequately convey the complete reading order information in the layout, which may potentially lead to performance decline in downstream tasks.To address this issue, we propose to model the layout reading order as ordering relations over the set of layout elements, which have sufficient expressive capability for the complete reading order information. To enable empirical evaluation on methods towards the improved form of reading order prediction (ROP), we establish a comprehensive benchmark dataset including the reading order annotation as relations over layout elements, together with a relation-extraction-based method that outperforms previous models. Moreover, we propose a reading-order-relation-enhancing pipeline to improve model performance on any arbitrary VrD task by introducing additional reading order relation inputs.We conduct comprehensive experiments to demonstrate that the pipeline generally benefits downstream VrD tasks:(1) with utilizing the reading order relation information, the enhanced downstream models achieve SOTA results on both two task settings of the targeted dataset; (2) with utilizing the pseudo reading order information generated by the proposed ROP model, the performance of the enhanced models has improved across all three models and eight cross-domain VrD-IE/QA task settings without targeted optimization.
+
+---
+
+## ReLayout
+
+*Jiang, Zhouqiang, et al. ReLayout: Towards Real-World Document Understanding via Layout-enhanced Pre-training. arXiv, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/pdf/2410.10471">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Capable for Real-world OCR Input to some extent
+- **Modalities**: Semantic; Layout
+- **Abstract**: Recent approaches for visually-rich document understanding (VrDU) uses manually annotated semantic groups, where a semantic group encompasses all semantically relevant but not obviously grouped words. As OCR tools are unable to automatically identify such grouping, we argue that current VrDU approaches are unrealistic. We thus introduce a new variant of the VrDU task, real-world visually-rich document understanding (ReVrDU), that does not allow for using manually annotated semantic groups. We also propose a new method, ReLayout, compliant with the ReVrDU scenario, which learns to capture semantic grouping through arranging words and bringing the representations of words that belong to the potential same semantic group closer together. Our experimental results demonstrate the performance of existing methods is deteriorated with the ReVrDU task, while ReLayout shows superiour performance.
+
+
 <br>
 <br>
 
@@ -1049,7 +1129,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
     <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-CVF-brightgreen"></img>
   </a>
   <a href="https://github.com/microsoft/i-Code/tree/main/i-Code-Doc">
-    <img alt="DatasetRelease" src="https://img.shields.io/badge/Code-Official-blue"></img>
+    <img alt="Code" src="https://img.shields.io/badge/Code-Official-blue"></img>
   </a>
 </p>
 
@@ -1074,6 +1154,25 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Modalities**: Visual
 - **Abstract**: In this study, we formulate an OCR-free sequence generation model for visual document understanding (VDU). Our model not only parses text from document images but also extracts the spatial coordinates of the text based on the multi-head architecture. Named as Coordinate-aware End-to-end Document Parser (CREPE), our method uniquely integrates these capabilities by introducing a special token for OCR text, and token-triggered coordinate decoding. We also proposed a weakly-supervised framework for cost-efficient training, requiring only parsing annotations without high-cost coordinate annotations. Our experimental evaluations demonstrate CREPE's state-of-the-art performances on document parsing tasks. Beyond that, CREPE's adaptability is further highlighted by its successful usage in other document understanding tasks such as layout analysis, document visual question answering, and so one. CREPE's abilities including OCR and semantic parsing not only mitigate error propagation issues in existing OCR-dependent methods, it also significantly enhance the functionality of sequence generation models, ushering in a new era for document understanding studies.
 
+---
+
+## VisFocus
+
+*Ofir Abramovich, et al. VisFocus: Prompt-Guided Vision Encoders for OCR-Free Dense Document Understanding. ECCV, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/pdf/2407.12594">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+  <a href="https://github.com/amazon-science/visfocus">
+    <img alt="Code" src="https://img.shields.io/badge/Code-Official-blue"></img>
+  </a>
+</p>
+
+- **Highlights**: Pure End-to-End; Structured IE
+- **Modalities**: Visual
+- **Abstract**: In recent years, notable advancements have been made in the domain of visual document understanding, with the prevailing architecture comprising a cascade of vision and language models. The text component can either be extracted explicitly with the use of external OCR models in OCR-based approaches, or alternatively, the vision model can be endowed with reading capabilities in OCR-free approaches. Typically, the queries to the model are input exclusively to the language component, necessitating the visual features to encompass the entire document. In this paper, we present VisFocus, an OCR-free method designed to better exploit the vision encoder’s capacity by coupling it directly with the language prompt. To do so, we replace the down-sampling layers with layers that receive the input prompt and allow highlighting relevant parts of the document, while disregarding others. We pair the architecture enhancements with a novel pre-training task, using language masking on a snippet of the document text fed to the visual encoder in place of the prompt, to empower the model with focusing capabilities. Consequently, VisFocus learns to allocate its attention to text patches pertinent to the provided prompt. Our experiments demonstrate that this prompt-guided visual encoding approach significantly improves performance, achieving state-of-the-art results on various benchmarks.
 
 <br>
 <br>

@@ -79,6 +79,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [UDOP](#udop)
   - [CREPE](#crepe)
   - [VisFocus](#visfocus)
+  - [HIP](#hip)
 - [Few-shot Methods](#few-shot-methods)
   - [LASER](#laser)
   - [LF-Attn](#lf-attn)
@@ -96,8 +97,8 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [DoCo](#doco)
   - [OmniParser](#omniparser)
   - [DocLLM](#docllm)
-  - [LayoutLLM†](#layoutllm†)
-  - [LayoutLLM‡](#layoutllm‡)
+  - [LayoutLLM†](#layoutllm)
+  - [LayoutLLM‡](#layoutllm-1)
   - [LayTextLLM](#laytextllm)
   - [DocLayLLM](#doclayllm)
   - [DocKylin](#dockylin)
@@ -1173,6 +1174,23 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Highlights**: Pure End-to-End; Structured IE
 - **Modalities**: Visual
 - **Abstract**: In recent years, notable advancements have been made in the domain of visual document understanding, with the prevailing architecture comprising a cascade of vision and language models. The text component can either be extracted explicitly with the use of external OCR models in OCR-based approaches, or alternatively, the vision model can be endowed with reading capabilities in OCR-free approaches. Typically, the queries to the model are input exclusively to the language component, necessitating the visual features to encompass the entire document. In this paper, we present VisFocus, an OCR-free method designed to better exploit the vision encoder’s capacity by coupling it directly with the language prompt. To do so, we replace the down-sampling layers with layers that receive the input prompt and allow highlighting relevant parts of the document, while disregarding others. We pair the architecture enhancements with a novel pre-training task, using language masking on a snippet of the document text fed to the visual encoder in place of the prompt, to empower the model with focusing capabilities. Consequently, VisFocus learns to allocate its attention to text patches pertinent to the provided prompt. Our experiments demonstrate that this prompt-guided visual encoding approach significantly improves performance, achieving state-of-the-art results on various benchmarks.
+
+---
+
+## HIP
+
+*Rujiao Long, et al. HIP: Hierarchical Point Modeling and Pre-training for Visual Information Extractoin. arXiv preprint arXiv:2411.01139, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/pdf/2401.01139">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Pure End-to-End
+- **Modalities**: Visual
+- **Abstract**: End-to-end visual information extraction (VIE) aims at integrating the hierarchical subtasks of VIE, including text spotting, word grouping, and entity labeling, into a unified framework. Dealing with the gaps among the three subtasks plays a pivotal role in designing an effective VIE model. OCR-dependent methods heavily rely on offline OCR engines and inevitably suffer from OCR errors, while OCR-free methods, particularly those employing a black-box model, might produce outputs that lack interpretability or contain hallucinated content. Inspired by CenterNet, DeepSolo, and ESP, we propose HIP, which models entities as HIerarchical Points to better conform to the hierarchical nature of the end-to-end VIE task. Specifically, such hierarchical points can be flexibly encoded and subsequently decoded into desired text transcripts, centers of various regions, and categories of entities. Furthermore, we devise corresponding hierarchical pre-training strategies, categorized as image reconstruction, layout learning, and language enhancement, to reinforce the cross-modality representation of the hierarchical encoders. Quantitative experiments on public benchmarks demonstrate that HIP outperforms previous state-of-the-art methods, while qualitative results show its excellent interpretability.
 
 <br>
 <br>

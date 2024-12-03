@@ -65,6 +65,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [UNER](#uner)
   - [ROOR](#roor)
   - [ReLayout](#relayout)
+  - [LOFI](#lofi)
 - [End-to-End Methods](#end-to-end-methods)
   - [EATEN](#eaten)
   - [TRIE](#trie)
@@ -912,6 +913,23 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Modalities**: Semantic; Layout
 - **Abstract**: Recent approaches for visually-rich document understanding (VrDU) uses manually annotated semantic groups, where a semantic group encompasses all semantically relevant but not obviously grouped words. As OCR tools are unable to automatically identify such grouping, we argue that current VrDU approaches are unrealistic. We thus introduce a new variant of the VrDU task, real-world visually-rich document understanding (ReVrDU), that does not allow for using manually annotated semantic groups. We also propose a new method, ReLayout, compliant with the ReVrDU scenario, which learns to capture semantic grouping through arranging words and bringing the representations of words that belong to the potential same semantic group closer together. Our experimental results demonstrate the performance of existing methods is deteriorated with the ReVrDU task, while ReLayout shows superiour performance.
 
+---
+
+## LOFI
+
+*Chang Oh Yoon, et al. Language, OCR, Form Independent (LOFI) Pipeline for Industrial Document Information Extraction. EMNLP Industry Track, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://aclanthology.org/2024.emnlp-industry.79.pdf">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACL-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Capable for Real-world OCR Input at different box granularity
+- **Modalities**: Semantic; Layout
+- **Abstract**: This paper presents LOFI (Language, OCR, Form Independent), a pipeline for Document Information Extraction (DIE) in Low-Resource Language (LRL) business documents. LOFI pipeline solves language, Optical Character Recognition (OCR), and form dependencies through flexible model architecture, a tokenlevel box split algorithm, and the SPADE decoder. Experiments on Korean and Japanese documents demonstrate high performance in Semantic Entity Recognition (SER) task without additional pre-training. The pipeline’s effectiveness is validated through real-world applications in insurance and tax-free declaration services, advancing DIE capabilities for diverse languages and document types in industrial settings.
+
 
 <br>
 <br>
@@ -1134,8 +1152,8 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   </a>
 </p>
 
-- **Highlights**: Pure End-to-End
-- **Modalities**: Visual
+- **Highlights**: Unified framework for Document AI
+- **Modalities**: Visual, Semantic, Layout
 - **Abstract**: We propose Universal Document Processing (UDOP), a foundation Document AI model which unifies text, image, and layout modalities together with varied task formats, including document understanding and generation. UDOP leverages the spatial correlation between textual content and document image to model image, text, and layout modalities with one uniform representation. With a novel Vision-Text-Layout Transformer, UDOP unifies pretraining and multi-domain downstream tasks into a prompt-based sequence generation scheme. UDOP is pretrained on both large-scale unlabeled document corpora using innovative self-supervised objectives and diverse labeled data. UDOP also learns to generate document images from text and layout modalities via masked image reconstruction. To the best of our knowledge, this is the first time in the field of document AI that one model simultaneously achieves high-quality neural document editing and content customization. Our method sets the state-of-the-art on 8 Document AI tasks, e.g., document understanding and QA, across diverse data domains like finance reports, academic papers, and websites. UDOP ranks first on the leaderboard of the Document Understanding Benchmark.
 
 ---

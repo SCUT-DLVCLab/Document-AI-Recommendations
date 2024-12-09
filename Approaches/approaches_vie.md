@@ -65,6 +65,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [UNER](#uner)
   - [ROOR](#roor)
   - [ReLayout](#relayout)
+  - [LOFI](#lofi)
 - [End-to-End Methods](#end-to-end-methods)
   - [EATEN](#eaten)
   - [TRIE](#trie)
@@ -79,6 +80,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [UDOP](#udop)
   - [CREPE](#crepe)
   - [VisFocus](#visfocus)
+  - [HIP](#hip)
 - [Few-shot Methods](#few-shot-methods)
   - [LASER](#laser)
   - [LF-Attn](#lf-attn)
@@ -96,8 +98,8 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   - [DoCo](#doco)
   - [OmniParser](#omniparser)
   - [DocLLM](#docllm)
-  - [LayoutLLM†](#layoutllm†)
-  - [LayoutLLM‡](#layoutllm‡)
+  - [LayoutLLM†](#layoutllm)
+  - [LayoutLLM‡](#layoutllm-1)
   - [LayTextLLM](#laytextllm)
   - [DocLayLLM](#doclayllm)
   - [DocKylin](#dockylin)
@@ -911,6 +913,23 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Modalities**: Semantic; Layout
 - **Abstract**: Recent approaches for visually-rich document understanding (VrDU) uses manually annotated semantic groups, where a semantic group encompasses all semantically relevant but not obviously grouped words. As OCR tools are unable to automatically identify such grouping, we argue that current VrDU approaches are unrealistic. We thus introduce a new variant of the VrDU task, real-world visually-rich document understanding (ReVrDU), that does not allow for using manually annotated semantic groups. We also propose a new method, ReLayout, compliant with the ReVrDU scenario, which learns to capture semantic grouping through arranging words and bringing the representations of words that belong to the potential same semantic group closer together. Our experimental results demonstrate the performance of existing methods is deteriorated with the ReVrDU task, while ReLayout shows superiour performance.
 
+---
+
+## LOFI
+
+*Chang Oh Yoon, et al. Language, OCR, Form Independent (LOFI) Pipeline for Industrial Document Information Extraction. EMNLP Industry Track, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://aclanthology.org/2024.emnlp-industry.79.pdf">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-ACL-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Capable for Real-world OCR Input at different box granularity
+- **Modalities**: Semantic; Layout
+- **Abstract**: This paper presents LOFI (Language, OCR, Form Independent), a pipeline for Document Information Extraction (DIE) in Low-Resource Language (LRL) business documents. LOFI pipeline solves language, Optical Character Recognition (OCR), and form dependencies through flexible model architecture, a tokenlevel box split algorithm, and the SPADE decoder. Experiments on Korean and Japanese documents demonstrate high performance in Semantic Entity Recognition (SER) task without additional pre-training. The pipeline’s effectiveness is validated through real-world applications in insurance and tax-free declaration services, advancing DIE capabilities for diverse languages and document types in industrial settings.
+
 
 <br>
 <br>
@@ -1133,8 +1152,8 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
   </a>
 </p>
 
-- **Highlights**: Pure End-to-End
-- **Modalities**: Visual
+- **Highlights**: Unified framework for Document AI
+- **Modalities**: Visual, Semantic, Layout
 - **Abstract**: We propose Universal Document Processing (UDOP), a foundation Document AI model which unifies text, image, and layout modalities together with varied task formats, including document understanding and generation. UDOP leverages the spatial correlation between textual content and document image to model image, text, and layout modalities with one uniform representation. With a novel Vision-Text-Layout Transformer, UDOP unifies pretraining and multi-domain downstream tasks into a prompt-based sequence generation scheme. UDOP is pretrained on both large-scale unlabeled document corpora using innovative self-supervised objectives and diverse labeled data. UDOP also learns to generate document images from text and layout modalities via masked image reconstruction. To the best of our knowledge, this is the first time in the field of document AI that one model simultaneously achieves high-quality neural document editing and content customization. Our method sets the state-of-the-art on 8 Document AI tasks, e.g., document understanding and QA, across diverse data domains like finance reports, academic papers, and websites. UDOP ranks first on the leaderboard of the Document Understanding Benchmark.
 
 ---
@@ -1173,6 +1192,23 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 - **Highlights**: Pure End-to-End; Structured IE
 - **Modalities**: Visual
 - **Abstract**: In recent years, notable advancements have been made in the domain of visual document understanding, with the prevailing architecture comprising a cascade of vision and language models. The text component can either be extracted explicitly with the use of external OCR models in OCR-based approaches, or alternatively, the vision model can be endowed with reading capabilities in OCR-free approaches. Typically, the queries to the model are input exclusively to the language component, necessitating the visual features to encompass the entire document. In this paper, we present VisFocus, an OCR-free method designed to better exploit the vision encoder’s capacity by coupling it directly with the language prompt. To do so, we replace the down-sampling layers with layers that receive the input prompt and allow highlighting relevant parts of the document, while disregarding others. We pair the architecture enhancements with a novel pre-training task, using language masking on a snippet of the document text fed to the visual encoder in place of the prompt, to empower the model with focusing capabilities. Consequently, VisFocus learns to allocate its attention to text patches pertinent to the provided prompt. Our experiments demonstrate that this prompt-guided visual encoding approach significantly improves performance, achieving state-of-the-art results on various benchmarks.
+
+---
+
+## HIP
+
+*Rujiao Long, et al. HIP: Hierarchical Point Modeling and Pre-training for Visual Information Extractoin. arXiv preprint arXiv:2411.01139, 2024.*
+
+<p>
+  <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
+  <a href="https://arxiv.org/pdf/2401.01139">
+    <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
+  </a>
+</p>
+
+- **Highlights**: Pure End-to-End
+- **Modalities**: Visual
+- **Abstract**: End-to-end visual information extraction (VIE) aims at integrating the hierarchical subtasks of VIE, including text spotting, word grouping, and entity labeling, into a unified framework. Dealing with the gaps among the three subtasks plays a pivotal role in designing an effective VIE model. OCR-dependent methods heavily rely on offline OCR engines and inevitably suffer from OCR errors, while OCR-free methods, particularly those employing a black-box model, might produce outputs that lack interpretability or contain hallucinated content. Inspired by CenterNet, DeepSolo, and ESP, we propose HIP, which models entities as HIerarchical Points to better conform to the hierarchical nature of the end-to-end VIE task. Specifically, such hierarchical points can be flexibly encoded and subsequently decoded into desired text transcripts, centers of various regions, and categories of entities. Furthermore, we devise corresponding hierarchical pre-training strategies, categorized as image reconstruction, layout learning, and language enhancement, to reinforce the cross-modality representation of the hierarchical encoders. Quantitative experiments on public benchmarks demonstrate that HIP outperforms previous state-of-the-art methods, while qualitative results show its excellent interpretability.
 
 <br>
 <br>

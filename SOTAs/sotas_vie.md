@@ -279,7 +279,7 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
 </tr>
 </tr>
-    <td rowspan=6>End-to-End</td>
+    <td rowspan=7>End-to-End</td>
     <td rowspan=2><a href="../Approaches/approaches_vie.md/#trie">TRIE</a></td>
     <td>ground-truth</td>
     <td>-</td>
@@ -322,6 +322,13 @@ You can find the evaluation scripts for the SROIE dataset on the [ICDAR2019 SROI
     <td>-</td>
     <td>-</td>
     <td>85.60</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approached_vie.md/#hip">HIP</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>87.60</td>
     <td>-</td>
 </tr>
 <tr>
@@ -985,7 +992,7 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
 </tr>
 <tr>
-    <td rowspan=5>End-to-End</td>
+    <td rowspan=6>End-to-End</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#donut">Donut</a></td>
     <td>-</td>
     <td>-</td>
@@ -1054,6 +1061,20 @@ Some other works, such as [BROS](https://github.com/clovaai/bros/blob/master/lig
     <td>-</td>
     <td>-</td>
     <td>88.00</td>
+</tr>
+<tr>
+    <td colspan=2><a href="../Approaches/approaches_vie.md/#hip">HIP</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>85.70</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
 </tr>
 <tr>
     <td rowspan=3>LLM-based</td>
@@ -1938,7 +1959,7 @@ Real-world applications require extracting all key-value pairs from the document
         <td>-</td>
 </tr>
 <tr>
-    <td rowspan=2>End-to-End</td>
+    <td rowspan=3>End-to-End</td>
     <td colspan=2><a href="../Approaches/approaches_vie.md/#esp">ESP</a></td>
     <td>-</td>
     <td>-</td>
@@ -1957,6 +1978,20 @@ Real-world applications require extracting all key-value pairs from the document
     <td>-</td>
     <td>-</td>
     <td>91.62</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
+<tr>
+<td colspan=2><a href="../Approaches/approaches_vie.md/#hip">HIP</a></td>
+    <td>-</td>
+    <td>-</td>
+    <td>52.00</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>

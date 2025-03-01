@@ -1201,7 +1201,7 @@ Recently proposed deep-learning-based VIE methods can be roughly categorized int
 
 <p>
   <img alt="year" src="https://img.shields.io/badge/Year-2024-orange"></img>
-  <a href="https://arxiv.org/pdf/2401.01139">
+  <a href="https://arxiv.org/pdf/2411.01139">
     <img alt="Paper Link" src="https://img.shields.io/badge/PaperLink-arXiv-brightgreen"></img>
   </a>
 </p>
